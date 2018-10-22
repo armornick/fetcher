@@ -13,10 +13,9 @@ const defaultCacheDir = process.env.npm_config_cache;
 /* ----------------------------------------------------
 ---------------------------------------------------- */
 
-if (projects.cacheDir && projects.cacheDir.trim() != '') {
-	setupCacheDir(projects.cacheDir);
-}
 moveToBuildDir();
+
+const isolateMode = projects.isolate;
 
 let projectsToBuild = projects.defaults;
 for (let project of projectsToBuild) {
@@ -55,14 +54,36 @@ function moveToBuildDir () {
 	process.chdir(BUILD_DIR);
 }
 
-function prepareDirectory (dirname) {
+function setupCacheDir (cachePath) {
+	cachePath = !path.isAbsolute(cachePath) ? path.resolve(cachePath) : cachePath;
+	console.log(`setting '${ cachePath }' as cache directory`);
+	forceDir(cachePath);
+	process.env.npm_config_cache = cachePath;
+}
+
+function setupPrefixDir (dirname) {
+	let dirToInstall = !path.isAbsolute(dirname) ? path.join(globalDir, dirname) : dirname;
+	console.log(`setting '${ dirToInstall }' as global application directory`);
+	forceDir(dirToInstall);
+	process.env.npm_config_prefix = dirToInstall;
+}
+
+function prepareDirectory (dirname, isolate) {
 	forceDir(dirname);
 	process.chdir(dirname);
+
+	if (isolate) {
+		setupCacheDir('_cache');
+
+		let prefixDir = path.join(process.cwd(), '_prefix');
+		setupPrefixDir(prefixDir);
+	}
+
 	exec('npm init -f');
 }
 
 function buildProject (name, project) {
-	prepareDirectory(name);
+	prepareDirectory(name, project.isolate || isolateMode);
 
 	if (project.mergeInstall) {
 		exec(`npm i --save ${ project.packages.join(' ') }`);
@@ -89,22 +110,13 @@ function buildProject (name, project) {
 	process.chdir('..');
 }
 
-function setupGlobalDir (dirname) {
-	let dirToInstall = path.join(globalDir, dirname);
-	console.log(`setting '${ dirToInstall }' as global application directory`);
-	forceDir(dirToInstall);
-	process.env.npm_config_prefix = dirToInstall;
-}
-
 function buildGlobalProject (name, project) {
-	setupGlobalDir( project.path || name );
+	if (project.isolate || isolateMode) {
+		prepareDirectory(name, true);
+	} else {
+		setupPrefixDir( project.path || name );
+	}
 	exec(`npm i -g ${ project.package }`);
 	process.env.npm_config_prefix = globalDir;
 }
 
-function setupCacheDir (cachePath) {
-	cachePath = !path.isAbsolute(cachePath) ? path.resolve(cachePath) : cachePath;
-	console.log(`setting '${ cachePath }' as cache directory`);
-	forceDir(cachePath);
-	process.env.npm_config_cache = cachePath;
-}

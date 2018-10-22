@@ -1,20 +1,22 @@
 module.exports = {
 	
-	defaults: ['typescriptBundle','sassBundle','styles'],
-	cacheDir: 'build/_cache',
+	defaults: ['browserifyBundle','webpackBundle','gulpjs','transpilers','templateEngines'],
+	isolate: true,
 
 	// library packages
 
 	libs: {
 		packages: ['request','chalk','lodash','async','bluebird','commander','minimist','yargs','cheerio',
 			'underscore','backbone','backbone.marionette','stapes','backbone.localstorage','jquery',
-			'yaml','front-matter','gray-matter','moment']
+			'yaml','front-matter','gray-matter','moment','gator','bean','masonry','toastr','notie']
 	},
 
 	libs2: {
-		packages: ['react','react-dom','mithril','preact','hyperapp','vue','vue-router','riot','riot-compiler','@fortawesome/fontawesome-free',
+		packages: ['react','react-dom','mithril','preact','hyperapp','vue','vue-router','vue-server-renderer',
+			'riot','riot-compiler','@fortawesome/fontawesome-free','react-redux','redux','vuex',
 			'flat-file-db','lowdb','rxjs','hash-router','page','rlite-router','trkl','zepto','crel','offside-js',
-			'micro-events','emitonoff','corner.js','dual-emitter','store2','cookie_js','mom','pyrsmk-toast','csv.js']
+			'micro-events','emitonoff','corner.js','dual-emitter','store2','cookie_js','mom','pyrsmk-toast','csv.js',
+			'hyperscript','hyperscript-helpers','hyperx','virtual-dom']
 	},
 
 	angularjs: {
@@ -38,7 +40,7 @@ module.exports = {
 
 	transpilers: {
 		packages: ['coffeescript','buble','postcss','precss','postcss-preset-env','csso','terser','less',
-			'stylus','html-minifier','minimize','marked','prismjs','highlight.js',
+			'stylus','html-minifier','minimize','marked','prismjs','highlight.js', 'node-sass','nib','axis','jeet','susy',
 			'@babel/core','@babel/cli','@babel/preset-env','@babel/polyfill','@babel/preset-react','@babel/preset-typescript',
 			'babel-preset-minify','@babel/plugin-transform-runtime','@babel/runtime','@babel/helpers']
 	},
@@ -64,30 +66,29 @@ module.exports = {
 			'@types/nunjucks','@types/pug','@types/ejs']
 	},
 
-	sassBundle: {
-		packages: ['metalsmith-sass','sassify','node-sass','scssify','sass-loader','gulp-sass']
-	},
-
 	// build tools
 
 	browserifyBundle: {
 		packages: ['browserify','hbsfy','handlebars','ngify','stylify','watchify','riotify','uglifyify','browser-unpack',
 			'sheetify','nanohtml','css-modulesify','brfs','aliasify','babelify','@babel/core','@babel/preset-env',
-			'@babel/preset-react']
+			'@babel/preset-react','vueify','budo','beefy','wzrd','sassify','node-sass','scssify']
 	},
 
 	webpackBundle: {
 		packages: ['webpack','webpack-cli','style-loader','css-loader','file-loader','csv-loader','xml-loader','buble-loader ',
 			'pug-loader','markdown-loader','stylus','stylus-loader','vue-loader','polymer-loader','coffee-loader','twig-loader','less','less-loader',
-			'postcss-loader','postcss','sugarss','precss','postcss-preset-env','postcss-color-palette','raw-loader','babel-loader','@babel/core','@babel/preset-env','@babel/preset-react','babel-preset-minify',
-			'html-webpack-plugin','source-map-loader','awesome-typescript-loader','ts-loader','typescript']
+			'postcss-loader','postcss','sugarss','precss','postcss-preset-env','postcss-color-palette','raw-loader','babel-loader','@babel/core','@babel/preset-env',
+			'@babel/preset-react','babel-preset-minify', 'sass-loader','node-sass','html-loader','handlebars-loader','underscore-template-loader','underscore',
+			'html-webpack-plugin','source-map-loader','awesome-typescript-loader','ts-loader','typescript','riot-tag-loader','riot-compiler',
+			'copy-webpack-plugin','static-site-generator-webpack-plugin']
 	},
 
 	gulpjs: {
 		packages: ['gulp-cli','gulp','gulp-pug','gulp-less','gulp-csso','gulp-concat','gulp-stylus','gulp-data','gulp-postcss','gulp-coffee',
 			'gulp-typescript','typescript','gulp-babel','@babel/core','@babel/preset-env','gulp-inject','gulp-angular-templatecache','gulp-handlebars',
-			'gulp-declare','gulp-wrap','gulp-nunjucks','gulp-dust','gulp-riot','gulp-template','gulp-swig','gulp-util','gulp-ng-annotate',
-			'gulp-consolidate','gulp-plumber','webpack-stream','gulp-sourcemaps','gulp-webserver']
+			'gulp-declare','gulp-wrap','gulp-dust','gulp-riot','gulp-template','gulp-swig','gulp-util','gulp-ng-annotate',
+			'gulp-consolidate','gulp-plumber','webpack-stream','gulp-sourcemaps','gulp-webserver','gulp-sass','node-sass','gulp-vueify','gulp-vueify2',
+			'gulp-if','gulp-terser','gulp-buble','gulp-clean-css','gulp-uglify','pump','gulp-htmlmin','gulp-markdown']
 	},
 
 	metalsmithBundle: {
@@ -95,8 +96,9 @@ module.exports = {
 			'metalsmith-archive','metalsmith-assets','metalsmith-auto-collections','metalsmith-browserify','metalsmith-clean-css','clean-css','metalsmith-coffee',
 			'metalsmith-code-highlight','metalsmith-collections','metalsmith-concat','metalsmith-concat-convention','metalsmith-html-minifier','metalsmith-less',
 			'metalsmith-lunr','metalsmith-markdownit','metalsmith-markdown-remarkable','metalsmith-metallic','metalsmith-ng-annotate','metalsmith-stylus',
+			'metalsmith-watch','metalsmith-serve','metalsmith-sass','node-sass','metalsmith-jade','metalsmith-pug','metalsmith-paginate',
 			'jstransformer-nunjucks','jstransformer-handlebars','jstransformer-ejs','jstransformer-lodash','jstransformer-hogan','jstransformer-riotjs','jstransformer-mustache',
-			'jstransformer-pug','jstransformer-swig','metalsmith-watch','metalsmith-serve']
+			'jstransformer-pug','jstransformer-swig']
 	},
 
 	// global application packages
@@ -131,6 +133,11 @@ module.exports = {
 		global: true
 	},
 
+	httpServer: {
+		package: 'http-server',
+		global: true
+	},
+
 	// hexo packages
 
 	hexoApp: {
@@ -143,61 +150,5 @@ module.exports = {
 			'hexo-renderer-less','hexo-renderer-markdown','hexo-renderer-markdown-it','hexo-renderer-markdown-it-plus','hexo-renderer-marked','hexo-renderer-mustache',
 			'hexo-renderer-sass','hexo-renderer-stylus','hexo-renderer-yasr','hexo-server','hexo-prism-plugin','hexo-auto-category']
 	},
-
-	// project templates
-
-	"gulp-base-template": {
-		mergeInstall: true,
-
-		packages: ['lodash','stapes'],
-
-		devPackages: ['gulp','gulp-cli','gulp-webserver','gulp-concat','gulp-sourcemaps','gulp-pug','gulp-less','gulp-csso']
-	},
-
-	"gulp-vue-template": {
-		mergeInstall: true,
-
-		packages: ['vue','vue-router'],
-
-		devPackages: ['gulp','gulp-cli','gulp-webserver','gulp-concat','gulp-sourcemaps','webpack-stream',
-			'webpack','webpack-cli','vue-loader','vue-style-loader',
-			'css-loader','sass-loader','node-sass','less-loader','less','stylus-loader','stylus',
-			'pug-plain-loader','pug','raw-loader','pug-plain-loader']
-	},
-
-	"gulp-angular-template": {
-		mergeInstall: true,
-
-		packages: ['angular','angular-route','angular-animate','angular-aria','angular-resource','angular-cookies','angular-sanitize'],
-
-		devPackages: ['gulp','gulp-cli','gulp-webserver','gulp-concat','gulp-sourcemaps',
-			'gulp-ng-html2js','gulp-minify-html','gulp-uglify','gulp-ng-annotate','gulp-angular-templatecache',
-			'gulp-consolidate','eco','nunjucks','pug','ejs','hogan.js','handlebars',
-			'gulp-csso','gulp-sass','node-sass','gulp-stylus','nib','axis','jeet','susy']
-	},
-
-	"metalsmith-static-site": {
-		mergeInstall: true,
-
-		packages: ['metalsmith','metalsmith-markdown','metalsmith-permalinks','metalsmith-watch','metalsmith-serve','metalsmith-drafts','metalsmith-collections','metalsmith-paginate',
-			'metalsmith-layouts','jstransformer-handlebars']
-	},
-
-	"metalsmith-wintersmith": {
-		mergeInstall: true,
-
-		packages: ['metalsmith','metalsmith-markdown','metalsmith-permalinks','metalsmith-watch','metalsmith-serve','metalsmith-drafts','metalsmith-collections','metalsmith-paginate',
-			'metalsmith-layouts','jstransformer-pug']
-	},
-
-	"metalsmith-angularjs": {
-		mergeInstall: true,
-
-		packages: ['angular','angular-route','angular-animate','angular-aria','angular-resource','angular-cookies','angular-sanitize'],
-
-		devPackages: ['metalsmith','metalsmith-watch','metalsmith-serve','metalsmith-ng-annotate','metalsmith-angular-templatecache',
-			'metalsmith-less','metalsmith-stylus','metalsmith-sass','metalsmith-jade']
-	},
-
 
 }
