@@ -142,7 +142,8 @@ module.exports = {
 	},
 
 	"handlebars-bundle": {
-		packages: ['handlebars','hbsfy','handlebars-loader','gulp-handlebars','jstransformer-handlebars'],
+		packages: ['handlebars','hbsfy','handlebars-loader','gulp-handlebars','jstransformer-handlebars'
+			'handlebars-layouts','handlebars-helpers'],
 		depends: ['consolidate-bundle']
 	},
 
