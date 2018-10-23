@@ -23,11 +23,21 @@ for (let project of projectsToBuild) {
 
 		let obj = projects[project];
 
+		let depends = [];
+		if (obj.depends) {
+			console.log('depends:', obj.depends);
+			for (let dependency of obj.depends) {
+				if (dependency in projects) {
+					depends.push(projects[dependency]);
+				}
+			}
+		}
+
 		console.log(`===== building project ${ project } =====`)
 		if (obj.global) {
 			buildGlobalProject(project, obj);
 		} else {
-			buildProject(project, obj);
+			buildProject(project, obj, depends);
 		}
 		console.log('==========\n');
 
@@ -82,31 +92,43 @@ function prepareDirectory (dirname, isolate) {
 	exec('npm init -f');
 }
 
-function buildProject (name, project) {
-	prepareDirectory(name, project.isolate || isolateMode);
-
-	if (project.mergeInstall) {
+function performMergedInstall(project) {
+	if (project.packages) {
 		exec(`npm i --save ${ project.packages.join(' ') }`);
-		if (project.devPackages) {
-			exec(`npm i --save-dev ${ project.devPackages.join(' ') }`);
+	}
+	if (project.devPackages) {
+		exec(`npm i --save-dev ${ project.devPackages.join(' ') }`);
+	}
+}
+
+function performMultiInstall(project) {
+	if (project.packages) {
+		for (let package of project.packages) {
+			exec(`npm i --save ${ package }`);
 		}
 	}
-	else {
-
-	// -----------
-	for (let package of project.packages) {
-		exec(`npm i --save ${ package }`);
-	}
-
 	if (project.devPackages) {
 		for (let package of project.devPackages) {
 			exec(`npm i --save-dev ${ package }`);
 		}
 	}
-	// -----------
+}
 
+function performInstall(project) {
+	if (project.mergeInstall) {
+		performMergedInstall(project);
 	}
+	else {
+		performMultiInstall(project);
+	}
+}
 
+function buildProject (name, project, depends) {
+	prepareDirectory(name, project.isolate || isolateMode);
+	performInstall(project);
+	for (let dependency of depends) {
+		performInstall(dependency);
+	}
 	process.chdir('..');
 }
 

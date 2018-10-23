@@ -1,9 +1,13 @@
 module.exports = {
 	
-	defaults: ['vue-app'],
+	defaults: ['libraries-bundle'],
 	isolate: true,
 
 	// library packages
+
+	"libraries-bundle": {
+		depends: ['popular-libraries','server-libraries','microjs-bundle']
+	},
 
 	"popular-libraries": {
 		packages: ['lodash','async','bluebird','jquery','masonry','moment','rxjs','blocks',
