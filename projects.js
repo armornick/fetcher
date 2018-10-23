@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['libraries-bundle'],
+	defaults: ['handlebars-bundle'],
 	isolate: true,
 
 	// library packages
@@ -32,8 +32,9 @@ module.exports = {
 	},
 
 	"template-libraries": {
-		packages: ['consolidate','mustache','hogan.js','handlebars','nunjucks','swig-templates','ejs','eco','hamljs','jade',
-			'dot','gulp-consolidate','pug','jade'],
+		packages: ['mustache','hogan.js','handlebars','nunjucks','swig-templates','ejs','eco','hamljs','jade',
+			'dot','pug','jade'],
+		depends: ['consolidate-bundle']
 	},
 
 	// css packages
@@ -120,30 +121,38 @@ module.exports = {
 	// template engines
 
 	"mustache-bundle": {
-		packages: ['mustache','hogan.js','jstransformer-mustache','jstransformer-hogan','consolidate','gulp-consolidate']
+		packages: ['mustache','hogan.js','jstransformer-mustache','jstransformer-hogan'],
+		depends: ['consolidate-bundle']
 	},
 
 	"ejs-bundle": {
 		packages: ['lodash','underscore','ejs','jstransformer-ejs','jstransformer-lodash','browserify-ejs','ejs-loader',
-			'consolidate','gulp-consolidate','gulp-template','browserify-compile-templates','jstify','node-underscorify']
+			'gulp-template','browserify-compile-templates','jstify','node-underscorify'],
+		depends: ['consolidate-bundle']
 	},
 
 	"pug-bundle": {
-		packages: ['pug','pug-cli','gulp-pug','jstransformer-pug','consolidate','gulp-consolidate','pug-loader']
+		packages: ['pug','pug-cli','gulp-pug','jstransformer-pug','pug-loader'],
+		depends: ['consolidate-bundle']
 	},
 
 	"jade-bundle": {
-		packages: ['jade','jstransformer-jade','consolidate','gulp-consolidate','jade-loader','jadeify']
+		packages: ['jade','jstransformer-jade','jade-loader','jadeify'],
+		depends: ['consolidate-bundle']
 	},
 
 	"handlebars-bundle": {
-		packages: ['handlebars','hbsfy','handlebars-loader','gulp-handlebars','jstransformer-handlebars',
-			'consolidate','gulp-consolidate']
+		packages: ['handlebars','hbsfy','handlebars-loader','gulp-handlebars','jstransformer-handlebars'],
+		depends: ['consolidate-bundle']
 	},
 
 	"swig-bundle": {
-		packages: ['swig','swig-templates','jstransformer-swig','consolidate','gulp-consolidate',
-			'gulp-swig','swigify','swig-loader','swig-webpack-plugin']
+		packages: ['swig','swig-templates','jstransformer-swig','gulp-swig','swigify','swig-loader','swig-webpack-plugin'],
+		depends: ['consolidate-bundle']
+	},
+
+	"consolidate-bundle": {
+		packages: ['consolidate','gulp-consolidate']
 	},
 
 	// build tool packages
