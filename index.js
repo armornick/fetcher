@@ -117,6 +117,12 @@ function buildGlobalProject (name, project) {
 		setupPrefixDir( project.path || name );
 	}
 	exec(`npm i -g ${ project.package }`);
+
+	if (project.postCommand) {
+		process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
+		exec(`${ project.postCommand }`);
+	}
+
 	process.env.npm_config_prefix = globalDir;
 }
 

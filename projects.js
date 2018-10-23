@@ -166,7 +166,7 @@ module.exports = {
 		package: '@vue/cli',
 		global: true,
 
-		postCommand: 'vue create vue-skel'
+		postCommand: 'vue create -d vue-skel'
 	},
 
 	angular: {
