@@ -41,6 +41,15 @@ module.exports = {
 			'gulp-babel','babel-loader','babelify']
 	},
 
+	"babel6-bundle": {
+		packages: ['babel-core','babel-cli','babel-preset-env','babel-polyfill','babel-plugin-transform-runtime','babel-runtime','babel-preset-react',
+			'babel-plugin-angularjs-annotate','gulp-babel@7','babelify@8','babel-loader@7']
+	},
+
+	"buble-bundle": {
+		packages: ['buble','gulp-buble','bubleify','buble-loader']
+	},
+
 	"typescript-bundle": {
 		packages: ['typescript','gulp-typescript','tsify','vinyl-source-stream','ts-loader','awesome-typescript-loader',
 			'@types/underscore','@types/jquery','@types/backbone','@types/backbone.localstorage','@types/backbone.marionette',

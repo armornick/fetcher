@@ -9,18 +9,18 @@ module.exports = {
 	"popular-libraries": {
 		packages: ['lodash','async','bluebird','jquery','masonry','moment','rxjs','blocks',
 			'underscore','backbone','backbone.marionette','backbone.localstorage','knockout','knockback',
-			'flat-file-db','lowdb']
+			'flat-file-db','lowdb','lunr']
 	},
 
 	"server-libraries": {
 		packages: ['request','chalk','commander','minimist','yargs','cheerio',
-			'yaml','front-matter','gray-matter',]
+			'yaml','front-matter','gray-matter','tlr','tiny-lr','browser-sync']
 	},
 
 	"microjs-bundle": {
 		packages: ['stapes','hash-router','page','rlite-router','trkl','zepto','crel','offside-js',
 			'micro-events','emitonoff','corner.js','dual-emitter','store2','cookie_js','mom','pyrsmk-toast','csv.js',
-			'toastr','notie','gator','bean','dot']
+			'toastr','notie','gator','bean','dot','form-to-obj','flexsearch','director']
 	},
 
 	"vdom-libraries": {
