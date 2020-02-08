@@ -20,27 +20,10 @@ const isolateMode = projects.isolate;
 let projectsToBuild = projects.defaults;
 for (let project of projectsToBuild) {
 	if (project in projects) {
-
-		let obj = projects[project];
-
-		let depends = [];
-		if (obj.depends) {
-			console.log('depends:', obj.depends);
-			for (let dependency of obj.depends) {
-				if (dependency in projects) {
-					depends.push(projects[dependency]);
-				}
-			}
-		}
-
 		console.log(`===== building project ${ project } =====`)
-		if (obj.global) {
-			buildGlobalProject(project, obj);
-		} else {
-			buildProject(project, obj, depends);
-		}
+		let obj = projects[project];
+		buildProject(project, obj);
 		console.log('==========\n');
-
 	}
 }
 
@@ -114,30 +97,7 @@ function performMultiInstall(project) {
 	}
 }
 
-function performInstall(project) {
-	if (project.mergeInstall) {
-		performMergedInstall(project);
-	}
-	else {
-		performMultiInstall(project);
-	}
-}
-
-function buildProject (name, project, depends) {
-	prepareDirectory(name, project.isolate || isolateMode);
-	performInstall(project);
-	for (let dependency of depends) {
-		performInstall(dependency);
-	}
-	process.chdir('..');
-}
-
-function buildGlobalProject (name, project) {
-	if (project.isolate || isolateMode) {
-		prepareDirectory(name, true);
-	} else {
-		setupPrefixDir( project.path || name );
-	}
+function performGlobalInstall(project) {
 	exec(`npm i -g ${ project.package }`);
 
 	if (project.postCommand) {
@@ -147,4 +107,33 @@ function buildGlobalProject (name, project) {
 
 	process.env.npm_config_prefix = globalDir;
 }
+
+function performInstall(project) {
+	if (project.global) {
+		performGlobalInstall(project);
+		return;
+	}
+	if (project.mergeInstall) {
+		performMergedInstall(project);
+	}
+	else {
+		performMultiInstall(project);
+	}
+}
+
+function buildProject (name, project) {
+	prepareDirectory(name, project.isolate || isolateMode);
+	performInstall(project);
+	if (project.depends) {
+		for (let dep of project.depends) {
+			if (dep in projects) {
+				let dependency = projects[dep];
+				performInstall(dependency);
+			}
+		}
+	}
+	process.chdir('..');
+}
+
+
 
