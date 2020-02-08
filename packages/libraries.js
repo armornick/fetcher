@@ -20,7 +20,7 @@ module.exports = {
 	"microjs-bundle": {
 		packages: ['stapes','hash-router','page','rlite-router','trkl','zepto','crel','offside-js',
 			'micro-events','emitonoff','corner.js','dual-emitter','store2','cookie_js','mom','pyrsmk-toast','csv.js',
-			'toastr','notie','gator','bean','dot','form-to-obj','flexsearch','director']
+			'toastr','notie','gator','bean','dot','form-to-obj','flexsearch','director','q','jbone','vissense']
 	},
 
 	"vdom-libraries": {
@@ -63,6 +63,10 @@ module.exports = {
 		packages: ['react','react-dom','react-redux','redux', 'hyperx',
 			'@babel/core','@babel/cli','@babel/preset-env','@babel/polyfill','@babel/preset-react','babel-preset-minify','@babel/plugin-transform-runtime','@babel/runtime',
 			'gulp-babel','babel-loader','babelify']
+	},
+
+	"shortcodes": {
+		packages: ['shortcode-insert','meta-shortcodes','hexo-wordpress-shortcodes','metalsmith-flexible-shortcodes']
 	},
 	
 }

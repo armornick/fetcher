@@ -1,7 +1,9 @@
 module.exports = {
 	
-	defaults: ['babel7-preset-env','babel7-transform-runtime','babel7-preset-bundle','babel7-react-bundle','buble-bundle','babel6-bundle',
-		'babel6-preset-env','babel6-transform-runtime','babel6-preset-bundle','babel6-react-bundle','misc-libs'],
+	defaults: ['misc-libs','browserify-bundle','postcss-bundle','stylus-bundle','less-bundle','gulp-bundle',
+				'ejs-bundle','mustache-bundle','pug-bundle','swig-bundle','styles',
+				'libraries-bundle','microjs-bundle','vdom-libraries','template-libraries','vue-bundle','react-bundle',
+				'babel7-preset-env','babel7-preset-bundle','babel7-react-bundle','asciidoctor'],
 	isolate: true,
 
 	// build tool packages
@@ -9,6 +11,11 @@ module.exports = {
 	"gulp-bundle": {
 		packages: ['gulp-cli','gulp','gulp-concat','gulp-data','gulp-inject','gulp-plumber','gulp-sourcemaps','gulp-webserver',
 			'gulp-if','pump','gulp-connect','vinyl-source-stream','gulp-livereload']
+	},
+
+	"gulp-bundle2": {
+		packages: ['through2','gulp-tap','vinyl','vinyl-bufferstream','gulp-front-matter','gulp-meta-markdown',
+			'vinyl-source-stream','gulp-if']
 	},
 
 	"webpack-bundle": {
@@ -25,7 +32,7 @@ module.exports = {
 	// misc packages
 
 	"misc-libs": {
-		packages: ['lunr','form-to-obj','flexsearch','director']
+		packages: ['lunr','form-to-obj','flexsearch','director','asciidoctor.js']
 	},
 
 }

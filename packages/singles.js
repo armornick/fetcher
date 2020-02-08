@@ -30,5 +30,9 @@ module.exports = {
 
 	'babel6-react-bundle': {
 		packages: ['babel-core','babel-preset-env','babel-preset-react','babel-polyfill']
-	},	
+	},
+
+	'asciidoctor': {
+		packages: ['asciidoctor.js']
+	}
 }

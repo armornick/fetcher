@@ -33,7 +33,7 @@ module.exports = {
 			'markdown-it','markdown-it-container','markdown-it-footnote','markdown-it-anchor',
 			'markdown-it-highlightjs','markdown-it-task-lists','markdown-it-prism','markdown-it-div',
 			'markdown-it-anchor','markdown-it-table-of-contents','markdown-it-iframe',
-			'gulp-markdown','gulp-markdown-it']
+			'gulp-markdown','gulp-markdown-it','asciidoctor.js']
 	},
 
 	"babel-bundle": {

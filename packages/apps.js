@@ -19,6 +19,14 @@ module.exports = {
 		global: true
 	},
 
+	preactApp: {
+		package: 'preact-cli',
+		global: true,
+
+		postCommand: 'preact create default preact-skel'
+	},
+
+
 	harpjs: {
 		package: 'harp',
 		global: true
@@ -33,5 +41,6 @@ module.exports = {
 		package: 'http-server',
 		global: true
 	},
+
 	
 }
