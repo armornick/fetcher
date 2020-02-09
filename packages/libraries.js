@@ -68,5 +68,14 @@ module.exports = {
 	"shortcodes": {
 		packages: ['shortcode-insert','meta-shortcodes','hexo-wordpress-shortcodes','metalsmith-flexible-shortcodes']
 	},
+
+	"css-in-js": {
+		packages: ["jss","jss-preset-default","react-jss","emotion","@emotion/core","@emotion/styled",
+			"styled-components","babel-plugin-styled-components","aphrodite-jss","styled-jss"]
+	},
+
+	"web-components": {
+		packages: ['slim-js','@webcomponents/webcomponentsjs','lit-element','lit-html']
+	},
 	
 }

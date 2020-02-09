@@ -34,5 +34,9 @@ module.exports = {
 
 	'asciidoctor': {
 		packages: ['asciidoctor.js']
+	},
+
+	'electron-latest': {
+		packages: ['electron@latest']
 	}
 }

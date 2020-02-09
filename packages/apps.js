@@ -16,7 +16,9 @@ module.exports = {
 
 	reactApp: {
 		package: 'create-react-app',
-		global: true
+		global: true,
+
+		postCommand: 'npx create-react-app react-skel'
 	},
 
 	preactApp: {

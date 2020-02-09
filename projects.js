@@ -1,9 +1,6 @@
 module.exports = {
 	
-	defaults: ['misc-libs','browserify-bundle','postcss-bundle','stylus-bundle','less-bundle','gulp-bundle',
-				'ejs-bundle','mustache-bundle','pug-bundle','swig-bundle','styles',
-				'libraries-bundle','microjs-bundle','vdom-libraries','template-libraries','vue-bundle','react-bundle',
-				'babel7-preset-env','babel7-preset-bundle','babel7-react-bundle','asciidoctor'],
+	defaults: ['reactApp'],
 	isolate: true,
 
 	// build tool packages
