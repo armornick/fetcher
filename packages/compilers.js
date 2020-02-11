@@ -59,6 +59,10 @@ module.exports = {
 			'@types/nunjucks','@types/pug','@types/ejs']
 	},
 
+	"svelte-bundle": {
+		packages: ['svelte','sveltify','svelte-loader']
+	},
+
 	// template engines
 
 	"mustache-bundle": {

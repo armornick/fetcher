@@ -28,6 +28,15 @@ module.exports = {
 		postCommand: 'preact create default preact-skel'
 	},
 
+	'svelte-app': {
+		npx: 'degit sveltejs/template my-svelte-project',
+		install: 'my-svelte-project'
+	},
+
+	'npx-react-app': {
+		npx: 'create-react-app react-skel'
+	},
+
 	harpjs: {
 		package: 'harp',
 		global: true

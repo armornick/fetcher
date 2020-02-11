@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['parceljs-pkg','neutrinojs-pkg'],
+	defaults: ['svelte-bundle'],
 	isolate: true,
 
 	// package bundles
