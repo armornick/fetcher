@@ -110,9 +110,27 @@ function performGlobalInstall(project) {
 	process.env.npm_config_prefix = globalDir;
 }
 
+function performNpxInstall(project) {
+	let cmd = project.npx;
+	if (!cmd.startsWith('npx ')) {
+		cmd = 'npx ' + cmd;
+	}
+	exec(cmd);
+
+	if (project.install) {
+		process.chdir(project.install);
+		exec('npm install');
+		process.chdir('..');
+	}
+}
+
 function performInstall(project) {
 	if (project.global) {
 		performGlobalInstall(project);
+		return;
+	}
+	if (project.npx) {
+		performNpxInstall(project);
 		return;
 	}
 	if (project.mergeInstall) {
@@ -124,7 +142,8 @@ function performInstall(project) {
 }
 
 function buildProject (name, project) {
-	if (project.packages || project.devPackages || project.package || project.depends) {
+	if (project.packages || project.devPackages || project.package 
+		|| project.depends || project.npx) {
 		prepareDirectory(name, project.isolate || isolateMode);
 		performInstall(project);
 	} else {
