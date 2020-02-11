@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['vdom-pkg'],
+	defaults: ['parceljs-pkg','neutrinojs-pkg'],
 	isolate: true,
 
 	// package bundles
@@ -75,5 +75,6 @@ Object.assign(
 	require('./packages/libraries'),
 	require('./packages/compilers'),
 	require('./packages/apps'),
-	require('./packages/singles')
+	require('./packages/singles'),
+	require('./packages/templates')
 );

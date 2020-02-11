@@ -28,7 +28,6 @@ module.exports = {
 		postCommand: 'preact create default preact-skel'
 	},
 
-
 	harpjs: {
 		package: 'harp',
 		global: true
