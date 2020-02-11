@@ -124,7 +124,7 @@ function performInstall(project) {
 }
 
 function buildProject (name, project) {
-	if (project.packages || project.package || project.depends) {
+	if (project.packages || project.devPackages || project.package || project.depends) {
 		prepareDirectory(name, project.isolate || isolateMode);
 		performInstall(project);
 	} else {
