@@ -42,9 +42,13 @@ function forceDir (dirname) {
 	}
 }
 
+function moveToDir(dirname) {
+	forceDir(dirname);
+	process.chdir(dirname);
+}
+
 function moveToBuildDir () {
-	forceDir(BUILD_DIR);
-	process.chdir(BUILD_DIR);
+	moveToDir(BUILD_DIR);
 }
 
 function setupCacheDir (cachePath) {
@@ -62,9 +66,7 @@ function setupPrefixDir (dirname) {
 }
 
 function prepareDirectory (dirname, isolate) {
-	forceDir(dirname);
-	process.chdir(dirname);
-
+	moveToDir(dirname);
 	if (isolate) {
 		setupCacheDir('_cache');
 
@@ -122,8 +124,20 @@ function performInstall(project) {
 }
 
 function buildProject (name, project) {
-	prepareDirectory(name, project.isolate || isolateMode);
-	performInstall(project);
+	if (project.packages || project.package || project.depends) {
+		prepareDirectory(name, project.isolate || isolateMode);
+		performInstall(project);
+	} else {
+		moveToDir(name);
+	}
+	if (project.subs) {
+		for (let sub of project.subs) {
+			if (sub in projects) {
+				let subproject = projects[sub];
+				buildProject(sub, subproject);
+			}
+		}
+	}
 	if (project.depends) {
 		for (let dep of project.depends) {
 			if (dep in projects) {
