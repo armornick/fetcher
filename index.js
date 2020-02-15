@@ -106,6 +106,12 @@ function performGlobalInstall(project) {
 		process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
 		exec(`${ project.postCommand }`);
 	}
+	if (project.postCommands) {
+		process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
+		for (let cmd of project.postCommands) {
+			exec(`${ cmd }`);
+		}
+	}
 
 	process.env.npm_config_prefix = globalDir;
 }
