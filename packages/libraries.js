@@ -39,7 +39,7 @@ module.exports = {
 	styles: {
 		packages: ['bootstrap','foundation-sites','bulma','muicss','spectre.css','mini.css','semantic-ui-css','semantic-ui-less',
 			'uikit','materialize-css@next','strawberry-css','flexboxgrid','milligram','minireset.css','normalize.css','animate.css',
-			'@fortawesome/fontawesome-free']
+			'@fortawesome/fontawesome-free','inuitcss','wingcss','awsm.css','chota','uikit@3.3.1','tachyons@4.10.0','tailwindcss']
 	},
 
 	// library bundles

@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['svelte-bundle'],
+	defaults: ['styles','gulp-bundle','webpack-pkg','postcss-bundle','browserify-pkg'],
 	isolate: true,
 
 	// package bundles
@@ -37,11 +37,15 @@ module.exports = {
 	// build tool packages
 
 	"gulp-bundle": {
+		depends: ['gulp-01','gulp-02']
+	},
+
+	"gulp-01": {
 		packages: ['gulp-cli','gulp','gulp-concat','gulp-data','gulp-inject','gulp-plumber','gulp-sourcemaps','gulp-webserver',
 			'gulp-if','pump','gulp-connect','vinyl-source-stream','gulp-livereload']
 	},
 
-	"gulp-bundle2": {
+	"gulp-02": {
 		packages: ['through2','gulp-tap','vinyl','vinyl-bufferstream','gulp-front-matter','gulp-meta-markdown',
 			'vinyl-source-stream','gulp-if']
 	},
@@ -50,6 +54,18 @@ module.exports = {
 		packages: ['webpack','webpack-cli','style-loader','css-loader','file-loader','csv-loader','xml-loader',
 			'raw-loader','html-loader',
 			'html-webpack-plugin','source-map-loader','copy-webpack-plugin','static-site-generator-webpack-plugin']
+	},
+
+	"webpack-bundle2": {
+		packages: [
+			'webpack','webpack-cli','webpack-dev-server',
+			// loaders
+			'raw-loader','val-loader','file-loader','json-loader','babel-loader','buble-loader','buble','coffee-loader',
+			'fengari-loader','fengari-web','html-loader','pug-loader','handlebars-loader','style-loader','css-loader',
+			'less-loader','less','postcss-loader','stylus-loader','stylus','vue-loader',
+			// plugins
+			'babel-minify-webpack-plugin','copy-webpack-plugin','html-webpack-plugin','terser-webpack-plugin'
+		]
 	},
 
 	"browserify-bundle": {
