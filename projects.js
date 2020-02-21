@@ -1,6 +1,7 @@
 module.exports = {
 	
-	defaults: ['styles','gulp-bundle','webpack-pkg','postcss-bundle','browserify-pkg'],
+	defaults: ['gatsby-app','gatsby-app2','nanogen-app','nextApp','eleventy-app','harpjs-app','wintersmith-app',
+		'_node-static-site','_node-static-site_full','cuttlebelle-app','metalsmithBundle'],
 	isolate: true,
 
 	// package bundles
@@ -82,6 +83,16 @@ module.exports = {
 	"babel-singles": {
 		subs: ['babel7-preset-env','babel7-preset-bundle','babel7-react-bundle',
 			'babel6-preset-env','babel6-preset-bundle','babel6-react-bundle']
+	},
+
+	metalsmithBundle: {
+		packages: ['metalsmith','metalsmith-collections','metalsmith-layouts','metalsmith-markdown','metalsmith-permalinks','metalsmith-angular-templatecache',
+			'metalsmith-archive','metalsmith-assets','metalsmith-auto-collections','metalsmith-browserify','metalsmith-clean-css','clean-css','metalsmith-coffee',
+			'metalsmith-code-highlight','metalsmith-collections','metalsmith-concat','metalsmith-concat-convention','metalsmith-html-minifier','metalsmith-less',
+			'metalsmith-lunr','metalsmith-markdownit','metalsmith-markdown-remarkable','metalsmith-metallic','metalsmith-ng-annotate','metalsmith-stylus',
+			'metalsmith-watch','metalsmith-serve','metalsmith-sass','node-sass','metalsmith-jade','metalsmith-pug','metalsmith-paginate',
+			'jstransformer-nunjucks','jstransformer-handlebars','jstransformer-ejs','jstransformer-lodash','jstransformer-hogan','jstransformer-riotjs','jstransformer-mustache',
+			'jstransformer-pug','jstransformer-swig']
 	},
 
 }

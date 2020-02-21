@@ -67,11 +67,19 @@ module.exports = {
 		postCommands: [
 			'gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world',
 			'gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog',
+			'gatsby new gatsby-starter-minimal-blog https://github.com/LekoArts/gatsby-starter-minimal-blog',
+			'gatsby new gatsby-starter-tailwind https://github.com/taylorbryant/gatsby-starter-tailwind',
+		]
+	},
+
+	'gatsby-app2': {
+		package: 'gatsby-cli',
+		global: true,
+
+		postCommands: [
 			'gatsby new gatsby-advanced-starter https://github.com/Vagr9K/gatsby-advanced-starter',
 			'gatsby new gatsby-starter-deck https://github.com/fabe/gatsby-starter-deck',
 			'gatsby new gatsby-gitbook-starter https://github.com/hasura/gatsby-gitbook-starter',
-			'gatsby new gatsby-starter-minimal-blog https://github.com/LekoArts/gatsby-starter-minimal-blog',
-			'gatsby new gatsby-starter-tailwind https://github.com/taylorbryant/gatsby-starter-tailwind',
 			'gatsby new gatsby-starter-bootstrap https://github.com/jaxx2104/gatsby-starter-bootstrap'
 		]
 	},
@@ -82,6 +90,48 @@ module.exports = {
 			'gatsby-remark-copy-linked-files','gatsby-remark-prismjs','prismjs','gatsby-transformer-json','gatsby-plugin-postcss',
 			'gatsby-transformer-yaml','gatsby-plugin-less','gatsby-plugin-purgecss','gatsby-remark-embed-video','gatsby-remark-embed-snippet',
 			'gatsby-plugin-breadcrumb','gatsby-plugin-stylus','gatsby-plugin-coffeescript','gatsby-plugin-typography','react-typography']
+	},
+
+	'nanogen-app': {
+		package: 'nanogen',
+		global: true
+	},
+
+	'eleventy-app': {
+		package: '@11ty/eleventy',
+		global: true
+	},
+
+	'wintersmith-app': {
+		package: 'wintersmith',
+		global: true,
+
+		postCommand: 'wintersmith new wintersmith-skel'
+	},
+
+	'cuttlebelle-app': {
+		package: 'cuttlebelle',
+		global: true
+	},
+
+	'gridsome-app': {
+		package: '@gridsome/cli',
+		global: true,
+
+		postCommand: 'gridsome create gridsome-skel'
+	},
+
+	'gridsome-starters': {
+		package: '@gridsome/cli',
+		global: true,
+
+		postCommands: [
+			'gridsome create gridsome-minimal-blog https://github.com/lauragift21/gridsome-minimal-blog',
+			'gridsome create gridsome-starter-skeleventy https://github.com/noxify/gridsome-starter-skeleventy',
+			'gridsome create gridsome-bulma-starter https://github.com/calebanthony/gridsome-bulma.git',
+			'gridsome create gridsome-starter-bleda https://github.com/cossssmin/gridsome-starter-bleda.git',
+			'gridsome create gridsome-starter-blog https://github.com/gridsome/gridsome-starter-blog.git'
+		]
 	},
 	
 }

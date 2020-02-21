@@ -1,5 +1,15 @@
 module.exports = {
 
+	// https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/
+
+	"_node-static-site": {
+		packages: ['fs-extra','glob']
+	},
+
+	"_node-static-site_full": {
+		packages: ['fs-extra','glob','ejs','marked','gray-matter']
+	},
+
 	// parceljs templates
 
 	'parceljs-pkg': {
@@ -59,6 +69,5 @@ module.exports = {
 	"_neutrinojs-web": {
 		devPackages: ['neutrino','@neutrinojs/web','webpack','webpack-cli','webpack-dev-server']
 	},
-
 
 }
