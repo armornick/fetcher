@@ -9,9 +9,11 @@ module.exports = {
 		postCommand: 'vue create -d vue-skel'
 	},
 
-	angular: {
+	'angular-app': {
 		package: '@angular/cli',
 		global: true,
+
+		postCommand: 'ng new angular-skel'
 	},
 
 	reactApp: {
