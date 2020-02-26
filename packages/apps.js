@@ -55,7 +55,7 @@ module.exports = {
 	},
 
 
-	nextApp: {
+	"next-app": {
 		package: 'create-next-app',
 		global: true,
 
@@ -136,4 +136,22 @@ module.exports = {
 		]
 	},
 	
+	'hexo-app': {
+		package: 'hexo-cli',
+		global: true,
+
+		postCommand: 'hexo init hexo-skel'
+	},
+
+	'hexo-plugin-bundle': {
+		packages: ['hexo-all-minifier','hexo-auto-category','hexo-auto-excerpt','hexo-blogroll','hexo-breadcrumb',
+			'hexo-clean-css','hexo-custom-fields','hexo-directory-category','hexo-enhancer','hexo-filter-highlight',
+			'hexo-filter-inline-assets','hexo-generator-archive','hexo-generator-category','hexo-generator-index',
+			'hexo-generator-index-plus','hexo-helper-partial-page','hexo-html-minifier','hexo-prism-plugin',
+			'hexo-render-pug','hexo-renderer-asciidoc','hexo-renderer-babelify','hexo-renderer-coffeescript',
+			'hexo-renderer-ejs','hexo-renderer-less','hexo-renderer-markdown','hexo-renderer-markdown-it',
+			'hexo-renderer-markdown-it-plus','hexo-renderer-mustache','hexo-renderer-postcss2','hexo-renderer-stylus',
+			'hexo-server','hexo-uncss','hexo-uglify']
+	}
+
 }

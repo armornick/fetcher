@@ -20,7 +20,8 @@ module.exports = {
 	"microjs-bundle": {
 		packages: ['stapes','hash-router','page','rlite-router','trkl','zepto','crel','offside-js',
 			'micro-events','emitonoff','corner.js','dual-emitter','store2','cookie_js','mom','pyrsmk-toast','csv.js',
-			'toastr','notie','gator','bean','dot','form-to-obj','flexsearch','director','q','jbone','vissense']
+			'toastr','notie','gator','bean','dot','form-to-obj','flexsearch','director','q','jbone','vissense',
+			'nanomodal','mess-js','float-sidebar','simple-slider']
 	},
 
 	"vdom-libraries": {
@@ -34,12 +35,31 @@ module.exports = {
 		depends: ['consolidate-bundle']
 	},
 
+	"remark-bundle": {
+		packages: ['unified','unified-stream',
+			// remark
+			'remark','remark-abbr','remark-align','remark-attr','remark-autolink-headings',
+			'remark-behead','remark-bookmarks','remark-bracketed-spans','remark-breaks','remark-capitalize','remark-containers',
+			'remark-external-links','remark-frontmatter','remark-highlight.js','remark-html','remark-metadata','remark-sectionize',
+			'remark-shortcodes','remark-sub-super','remark-toc','remark-wiki-link','remark-preset-gfm','remark-rehype',
+			// rehype
+			'rehype','rehype-add-classes','rehype-autolink-headings','rehype-document','rehype-highlight',
+			'@mapbox/rehype-highlight-code-block','rehype-preset-minify','rehype-partials','@mapbox/rehype-prism',
+			'rehype-sanitize','@agentofuser/rehype-section','rehype-shiki','rehype-stringify','rehype-parse']
+	},
+
 	// css packages
 
 	styles: {
 		packages: ['bootstrap','foundation-sites','bulma','muicss','spectre.css','mini.css','semantic-ui-css','semantic-ui-less',
 			'uikit','materialize-css@next','strawberry-css','flexboxgrid','milligram','minireset.css','normalize.css','animate.css',
 			'@fortawesome/fontawesome-free','inuitcss','wingcss','awsm.css','chota','uikit@3.3.1','tachyons@4.10.0','tailwindcss']
+	},
+
+	styles2: {
+		packages: ['normalize.css','minireset.css','modern-normalize','milligram','picnic','mini.css','wingcss','marx-css',
+			'chota','bootstrap','bulma','uikit','spectre.css','tachyons@4.10.0','turretcss','cirrus-ui',
+			'materialize-css@next','tailwindcss','flexboxgrid','buttercake','strawberry-css']
 	},
 
 	// library bundles

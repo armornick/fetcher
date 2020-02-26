@@ -1,7 +1,6 @@
 module.exports = {
 	
-	defaults: ['gatsby-app','gatsby-app2','nanogen-app','nextApp','eleventy-app','harpjs-app','wintersmith-app',
-		'_node-static-site','_node-static-site_full','cuttlebelle-app','metalsmithBundle'],
+	defaults: ['css-pkg'],
 	isolate: true,
 
 	// package bundles
@@ -35,49 +34,8 @@ module.exports = {
 		subs: ['preactApp','riot-bundle','web-components','vdom-libraries']
 	},
 
-	// build tool packages
-
-	"gulp-bundle": {
-		depends: ['gulp-01','gulp-02']
-	},
-
-	"gulp-01": {
-		packages: ['gulp-cli','gulp','gulp-concat','gulp-data','gulp-inject','gulp-plumber','gulp-sourcemaps','gulp-webserver',
-			'gulp-if','pump','gulp-connect','vinyl-source-stream','gulp-livereload']
-	},
-
-	"gulp-02": {
-		packages: ['through2','gulp-tap','vinyl','vinyl-bufferstream','gulp-front-matter','gulp-meta-markdown',
-			'vinyl-source-stream','gulp-if']
-	},
-
-	"webpack-bundle": {
-		packages: ['webpack','webpack-cli','style-loader','css-loader','file-loader','csv-loader','xml-loader',
-			'raw-loader','html-loader',
-			'html-webpack-plugin','source-map-loader','copy-webpack-plugin','static-site-generator-webpack-plugin']
-	},
-
-	"webpack-bundle2": {
-		packages: [
-			'webpack','webpack-cli','webpack-dev-server',
-			// loaders
-			'raw-loader','val-loader','file-loader','json-loader','babel-loader','buble-loader','buble','coffee-loader',
-			'fengari-loader','fengari-web','html-loader','pug-loader','handlebars-loader','style-loader','css-loader',
-			'less-loader','less','postcss-loader','stylus-loader','stylus','vue-loader',
-			// plugins
-			'babel-minify-webpack-plugin','copy-webpack-plugin','html-webpack-plugin','terser-webpack-plugin'
-		]
-	},
-
-	"browserify-bundle": {
-		packages: ['browserify','watchify','budo','beefy','wzrd','stylify','browser-unpack','sheetify','nanohtml',
-			'css-modulesify','brfs','aliasify']
-	},
-
-	// misc packages
-
-	"misc-libs": {
-		packages: ['lunr','form-to-obj','flexsearch','director','asciidoctor.js']
+	"css-pkg": {
+		subs: ['less-bundle','stylus-bundle','postcss-bundle','minifier-bundle','styles','styles2']
 	},
 
 	"babel-singles": {
@@ -85,14 +43,10 @@ module.exports = {
 			'babel6-preset-env','babel6-preset-bundle','babel6-react-bundle']
 	},
 
-	metalsmithBundle: {
-		packages: ['metalsmith','metalsmith-collections','metalsmith-layouts','metalsmith-markdown','metalsmith-permalinks','metalsmith-angular-templatecache',
-			'metalsmith-archive','metalsmith-assets','metalsmith-auto-collections','metalsmith-browserify','metalsmith-clean-css','clean-css','metalsmith-coffee',
-			'metalsmith-code-highlight','metalsmith-collections','metalsmith-concat','metalsmith-concat-convention','metalsmith-html-minifier','metalsmith-less',
-			'metalsmith-lunr','metalsmith-markdownit','metalsmith-markdown-remarkable','metalsmith-metallic','metalsmith-ng-annotate','metalsmith-stylus',
-			'metalsmith-watch','metalsmith-serve','metalsmith-sass','node-sass','metalsmith-jade','metalsmith-pug','metalsmith-paginate',
-			'jstransformer-nunjucks','jstransformer-handlebars','jstransformer-ejs','jstransformer-lodash','jstransformer-hogan','jstransformer-riotjs','jstransformer-mustache',
-			'jstransformer-pug','jstransformer-swig']
+	// misc packages
+
+	"misc-libs": {
+		packages: ['lunr','form-to-obj','flexsearch','director','asciidoctor.js']
 	},
 
 }
