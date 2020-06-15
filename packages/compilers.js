@@ -130,6 +130,7 @@ module.exports = {
 	"webpack-bundle": {
 		packages: ['webpack','webpack-cli','style-loader','css-loader','file-loader','csv-loader','xml-loader',
 			'raw-loader','html-loader',
+			'webpack-blocks','@webpack-blocks/typescript','webpack-blocks-less','webpack-blocks-vue','webpack-blocks-ts',
 			'html-webpack-plugin','source-map-loader','copy-webpack-plugin','static-site-generator-webpack-plugin']
 	},
 

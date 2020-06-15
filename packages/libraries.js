@@ -9,7 +9,7 @@ module.exports = {
 	"popular-libraries": {
 		packages: ['lodash','async','bluebird','jquery','masonry','moment','rxjs','blocks',
 			'underscore','backbone','backbone.marionette','backbone.localstorage','knockout','knockback',
-			'flat-file-db','lowdb','lunr']
+			'flat-file-db','lowdb','lunr','faker','casual','chance']
 	},
 
 	"server-libraries": {
@@ -46,6 +46,15 @@ module.exports = {
 			'rehype','rehype-add-classes','rehype-autolink-headings','rehype-document','rehype-highlight',
 			'@mapbox/rehype-highlight-code-block','rehype-preset-minify','rehype-partials','@mapbox/rehype-prism',
 			'rehype-sanitize','@agentofuser/rehype-section','rehype-shiki','rehype-stringify','rehype-parse']
+	},
+
+	"express-bundle": {
+		packages: ['express',
+			// middleware
+			'body-parser','compression','cookie-parser','cookie-session','csurf','errorhandler','morgan','multer',
+			'serve-favicon','serve-index','serve-static','express-slash','view-helpers','express-uncapitalize',
+			// frameworks
+			'@feathersjs/feathers','@feathersjs/express','poet']
 	},
 
 	// css packages
