@@ -38,5 +38,9 @@ module.exports = {
 
 	'electron-latest': {
 		packages: ['electron@latest']
+	},
+
+	'electron-current': {
+		packages: ['electron']
 	}
 }

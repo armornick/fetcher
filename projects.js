@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['electron-latest','angular-app'],
+	defaults: ['css-pkg','webdev-apps-min','angular-app','webdev-apps'],
 	isolate: true,
 
 	// package bundles
@@ -36,6 +36,16 @@ module.exports = {
 
 	"css-pkg": {
 		subs: ['less-bundle','stylus-bundle','postcss-bundle','minifier-bundle','styles','styles2']
+	},
+
+	"webdev-apps": {
+		subs: ['angular-app','svelte-app','harpjs-app','tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app',
+			'wintersmith-app','gridsome-app','gridsome-starters']
+	},
+
+	"webdev-apps-min": {
+		subs: ['svelte-app','harpjs-app','tiddlywiki','httpServer','nanogen-app','eleventy-app',
+			'wintersmith-app']
 	},
 
 	"babel-singles": {

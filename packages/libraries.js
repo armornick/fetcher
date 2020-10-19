@@ -21,7 +21,7 @@ module.exports = {
 		packages: ['stapes','hash-router','page','rlite-router','trkl','zepto','crel','offside-js',
 			'micro-events','emitonoff','corner.js','dual-emitter','store2','cookie_js','mom','pyrsmk-toast','csv.js',
 			'toastr','notie','gator','bean','dot','form-to-obj','flexsearch','director','q','jbone','vissense',
-			'nanomodal','mess-js','float-sidebar','simple-slider']
+			'nanomodal','mess-js','float-sidebar','simple-slider','dayjs','bueno']
 	},
 
 	"vdom-libraries": {
