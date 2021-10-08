@@ -1,6 +1,7 @@
 module.exports = {
 	
-	defaults: ['css-pkg','webdev-apps-min','angular-app','webdev-apps'],
+	defaults: ['angularjs-1','frontend-pkg'],
+	// defaults: ['css-pkg','webdev-apps-min','angular-app','webdev-apps'],
 	isolate: true,
 
 	// package bundles
@@ -40,12 +41,12 @@ module.exports = {
 
 	"webdev-apps": {
 		subs: ['angular-app','svelte-app','harpjs-app','tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app',
-			'wintersmith-app','gridsome-app','gridsome-starters']
+			'wintersmith-app','gridsome-app','gridsome-starters','parcel-app','zero-server-app']
 	},
 
 	"webdev-apps-min": {
 		subs: ['svelte-app','harpjs-app','tiddlywiki','httpServer','nanogen-app','eleventy-app',
-			'wintersmith-app']
+			'wintersmith-app','parcel-app','zero-server-app']
 	},
 
 	"babel-singles": {
@@ -53,11 +54,15 @@ module.exports = {
 			'babel6-preset-env','babel6-preset-bundle','babel6-react-bundle']
 	},
 
+	"frontend-pkg": {
+		subs: ['frontend-1','frontend-2','styles3']
+	},
+
 	// misc packages
 
 	"misc-libs": {
 		packages: ['lunr','asciidoctor.js','faker','casual','chance','tinyreq','cheerio','request','axios','lowdb',
-			'glob','globby']
+			'glob','globby','sergey','@hotwired/stimulus']
 	},
 
 	"styles3": {

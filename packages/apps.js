@@ -152,6 +152,18 @@ module.exports = {
 			'hexo-renderer-ejs','hexo-renderer-less','hexo-renderer-markdown','hexo-renderer-markdown-it',
 			'hexo-renderer-markdown-it-plus','hexo-renderer-mustache','hexo-renderer-postcss2','hexo-renderer-stylus',
 			'hexo-server','hexo-uncss','hexo-uglify']
-	}
+	},
+
+	"zero-server-app": {
+		package: "zero",
+		global: true,
+	},
+
+	"parcel-app": {
+		package: "parcel-bundler",
+		global: true,
+	},
+
+	
 
 }
