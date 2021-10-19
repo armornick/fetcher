@@ -42,5 +42,18 @@ module.exports = {
 
 	'electron-current': {
 		packages: ['electron']
-	}
+	},
+
+	'sqlite_': {
+		packages: ['sqlite']
+	},
+
+	'sqlite_3_': {
+		packages: ['sqlite@3']
+	},
+
+	'sqlite3_': {
+		packages: ['sqlite3']
+	},
+	
 }

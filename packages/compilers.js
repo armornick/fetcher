@@ -151,4 +151,34 @@ module.exports = {
 			'css-modulesify','brfs','aliasify']
 	},
 
+	"snowpack-app": {
+		package: 'create-snowpack-app',
+		global: true,
+
+		postCommand: 'npx create-snowpack-app snowpack-skel --template @snowpack/app-template-minimal'
+	},
+
+	"snowpack-bundle": {
+		packages: ['snowpack','@snowpack/plugin-babel','@snowpack/plugin-postcss','@snowpack/plugin-svelte','@snowpack/plugin-run-script','@snowpack/plugin-typescript',
+			'@snowpack/plugin-webpack','snowpack-plugin-inliner','snowpack-plugin-rollup-bundle','snowpack-plugin-dsv','snowpack-plugin-asciidoctor','snowpack-plugin-assets',
+			'snowpack-plugin-ejs','snowpack-plugin-pug','@jadex/snowpack-plugin-tailwindcss-jit','snowpack-plugin-less','snowpack-plugin-mdx','snowpack-plugin-stylus',
+			'@snowpack/plugin-sass','@snowpack/plugin-vue',''
+		]
+	},
+
+	"snowpack-starters": {
+		package: 'create-snowpack-app',
+		global: true,
+
+		postCommands: [
+			'npx create-snowpack-app snowpack-skel --template @snowpack/app-template-minimal',
+			'npx create-snowpack-app snowpack-skel-11ty --template @snowpack/app-template-11ty',
+			'npx create-snowpack-app snowpack-skel-preact --template @snowpack/app-template-preact',
+			'npx create-snowpack-app snowpack-skel-react --template @snowpack/app-template-react',
+			'npx create-snowpack-app snowpack-skel-svelte --template @snowpack/app-template-svelte',
+			'npx create-snowpack-app snowpack-skel-vue --template @snowpack/app-template-vue',
+			'npx create-snowpack-app snowpack-skel-hyperapp --template @martel/hyperapp-snowpack',
+		]
+	},
+
 }

@@ -135,6 +135,38 @@ module.exports = {
 			'gridsome create gridsome-starter-blog https://github.com/gridsome/gridsome-starter-blog.git'
 		]
 	},
+
+	"nuxt-bundle": {
+		packages: ['create-nuxt-app','nuxt',
+			// nuxt modules
+			'@nuxtjs/moment','@nuxtjs/composition-api','@nuxt/content','@nuxt/types','@nuxtjs/svg',
+			'bootstrap-vue','@nuxtjs/axios','@nuxtjs/vuetify','@nuxtjs/tailwindcss'
+		]
+	},
+
+	"vuepress-app": {
+		package: 'create-vuepress-site',
+		global: true,
+
+		postCommand: 'npx create-vuepress-site vuepress-skel'
+	},
+
+	"vuepress-bundle": {
+		packages: ['create-vuepress-site','vuepress',
+			// plugins
+			'@vuepress/plugin-active-header-links','@vuepress/plugin-back-to-top','@vuepress/plugin-blog','@vuepress/last-updated',
+			'@vuepress/plugin-register-components','@vuepress/plugin-search'
+		]
+	},
+
+	"docusaurus-app": {
+		command: "npm init docusaurus@latest docusaurus-skel classic"
+	},
+
+	"docusaurus-plugins": {
+		packages: ['@docusaurus/plugin-content-docs','@docusaurus/plugin-content-blog','@docusaurus/plugin-content-pages',
+			'@docusaurus/plugin-sitemap','@docusaurus/plugin-pwa']
+	},
 	
 	'hexo-app': {
 		package: 'hexo-cli',
@@ -160,10 +192,29 @@ module.exports = {
 	},
 
 	"parcel-app": {
-		package: "parcel-bundler",
+		package: "parcel",
 		global: true,
 	},
 
+	"parcel-bundle": {
+		packages: ['parcel',
+			'@parcel/transformer-vue','@parcel/transformer-sass','@parcel/transformer-less','@parcel/transformer-stylus',
+			'@parcel/transformer-coffeescript','@parcel/transformer-toml',"@parcel/transformer-yaml",'@parcel/transformer-pug',
+			'@parcel/transformer-mdx','@mdx-js/react']
+	},
 	
+	"forgo-app": {
+		package: 'create-forgo-app',
+		global: true,
+
+		postCommand: 'create-forgo-app forgo-skel'
+	},
+
+	"quasar-app": {
+		package: '@quasar/cli',
+		global: true,
+
+		postCommand: 'quasar create quasar-skel'
+	},
 
 }

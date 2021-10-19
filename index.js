@@ -65,11 +65,12 @@ function setupPrefixDir (dirname) {
 	process.env.npm_config_prefix = dirToInstall;
 }
 
-function prepareDirectory (dirname, isolate) {
+function prepareDirectory (dirname, isolate, topCache) {
 	moveToDir(dirname);
 	if (isolate) {
-		setupCacheDir('_cache');
-
+		if (!topCache) {
+			setupCacheDir('_cache');
+		}
 		let prefixDir = path.join(process.cwd(), '_prefix');
 		setupPrefixDir(prefixDir);
 	}
@@ -130,6 +131,17 @@ function performNpxInstall(project) {
 	}
 }
 
+function performCommandInstall(project) {
+	let cmd = project.command;
+	exec(cmd);
+
+	if (project.install) {
+		process.chdir(project.install);
+		exec('npm install');
+		process.chdir('..');
+	}
+}
+
 function performInstall(project) {
 	if (project.global) {
 		performGlobalInstall(project);
@@ -137,6 +149,10 @@ function performInstall(project) {
 	}
 	if (project.npx) {
 		performNpxInstall(project);
+		return;
+	}
+	if (project.command) {
+		performCommandInstall(project);
 		return;
 	}
 	if (project.mergeInstall) {
@@ -147,19 +163,23 @@ function performInstall(project) {
 	}
 }
 
-function buildProject (name, project) {
+function buildProject (name, project, topCache) {
+	topCache = project.topCache || topCache;
 	if (project.packages || project.devPackages || project.package 
-		|| project.depends || project.npx) {
-		prepareDirectory(name, project.isolate || isolateMode);
+		|| project.depends || project.npx || project.command) {
+		prepareDirectory(name, project.isolate || isolateMode, topCache);
 		performInstall(project);
 	} else {
 		moveToDir(name);
+		if (project.topCache) {
+			setupCacheDir('_cache');
+		}
 	}
 	if (project.subs) {
 		for (let sub of project.subs) {
 			if (sub in projects) {
 				let subproject = projects[sub];
-				buildProject(sub, subproject);
+				buildProject(sub, subproject, topCache);
 			}
 		}
 	}

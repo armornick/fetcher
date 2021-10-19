@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['angularjs-1','frontend-pkg'],
+	defaults: ['libraries-pkg','templates-pkg','vdom-pkg','css-pkg','frontend-pkg'],
 	// defaults: ['css-pkg','webdev-apps-min','angular-app','webdev-apps'],
 	isolate: true,
 
@@ -12,15 +12,17 @@ module.exports = {
 
 	"webpack-pkg": {
 		subs: ['webpack-bundle','less-bundle','sass-bundle','stylus-bundle','postcss-bundle','babel-bundle','buble-bundle',
-			'ejs-bundle','pug-bundle','swig-bundle']
+			'ejs-bundle','pug-bundle','swig-bundle'],
 	},
 
 	"libraries-pkg": {
-		subs: ['popular-libraries','server-libraries','microjs-bundle','vdom-libraries','template-libraries']
+		subs: ['popular-libraries','server-libraries','microjs-bundle','vdom-libraries','template-libraries'],
+		topCache: true,
 	},
 
 	"templates-pkg": {
-		subs: ['template-libraries','mustache-bundle','ejs-bundle','pug-bundle','handlebars-bundle','swig-bundle']
+		subs: ['template-libraries','mustache-bundle','ejs-bundle','pug-bundle','handlebars-bundle','swig-bundle'],
+		topCache: true,
 	},
 
 	"vue-pkg": {
@@ -32,11 +34,13 @@ module.exports = {
 	},
 
 	"vdom-pkg": {
-		subs: ['preactApp','riot-bundle','web-components','vdom-libraries']
+		subs: ['preactApp','riot-bundle','web-components','vdom-libraries'],
+		topCache: true,
 	},
 
 	"css-pkg": {
-		subs: ['less-bundle','stylus-bundle','postcss-bundle','minifier-bundle','styles','styles2']
+		subs: ['less-bundle','stylus-bundle','postcss-bundle','minifier-bundle','styles','styles2','styles3'],
+		topCache: true,
 	},
 
 	"webdev-apps": {
@@ -44,9 +48,17 @@ module.exports = {
 			'wintersmith-app','gridsome-app','gridsome-starters','parcel-app','zero-server-app']
 	},
 
-	"webdev-apps-min": {
+	"webapp-apps-min": {
 		subs: ['svelte-app','harpjs-app','tiddlywiki','httpServer','nanogen-app','eleventy-app',
 			'wintersmith-app','parcel-app','zero-server-app']
+	},
+
+	"webapp-pkg-1": {
+		subs: ['next-app','gatsby-app','gatsby-plugins','gridsome-app','gridsome-starters']
+	},
+
+	"webapp-pkg-2": {
+		subs: ['cuttlebelle-app','nuxt-bundle','docusaurus-app','docusaurus-plugins']
 	},
 
 	"babel-singles": {
@@ -55,7 +67,16 @@ module.exports = {
 	},
 
 	"frontend-pkg": {
-		subs: ['frontend-1','frontend-2','styles3']
+		subs: ['frontend-1','frontend-2','styles','styles2','styles3'],
+		topCache: true,
+	},
+
+	"database-pkg": {
+		subs: ['database-libs','sqlite3_']
+	},
+
+	"snowpack-pkg": {
+		subs: ['snowpack-app','snowpack-bundle','snowpack-starters']
 	},
 
 	// misc packages
@@ -65,6 +86,11 @@ module.exports = {
 			'glob','globby','sergey','@hotwired/stimulus']
 	},
 
+	"misc-libs-2": {
+		packages: ['@hotwired/stimulus','daisyui','forgo','tailwindcss@latest','postcss@latest','autoprefixer@latest','jsdom',
+			'dayjs']
+	},
+
 	"styles3": {
 		packages: ['minireset.css','modern-normalize','purecss','milligram','picnic','mini.css','wingcss',
 			'chota','bootstrap','bulma','spectre.css','materialize-css','muicss','buttercake','cirrus-ui',
@@ -72,6 +98,12 @@ module.exports = {
 			'sierra-library','gridlex','jeet','flexiblegs-sass','susy','open-color','animatewithsass',
 			'hover.css','buttono','scut',
 			'bootswatch','uikit','open-color','animate.less']
+	},
+
+	"styles4": {
+		packages: ['tailwindcss@latest','postcss@latest','autoprefixer@latest',
+			'tachyons@4.12.0','shed-css','milligram','chota','bootstrap','@fortawesome/fontawesome-free','bulma',
+			'spectre.css','@primer/css','basscss@8.0.2','daisyui']
 	},
 
 	'frontend-1': {
