@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['libraries-pkg','templates-pkg','vdom-pkg','css-pkg','frontend-pkg'],
+	defaults: ['misc-libs-3'],
 	// defaults: ['css-pkg','webdev-apps-min','angular-app','webdev-apps'],
 	isolate: true,
 
@@ -89,6 +89,14 @@ module.exports = {
 	"misc-libs-2": {
 		packages: ['@hotwired/stimulus','daisyui','forgo','tailwindcss@latest','postcss@latest','autoprefixer@latest','jsdom',
 			'dayjs']
+	},
+
+	"misc-libs-3": {
+		packages: [
+			'htm','hyperscript','@optoolco/tonic','lit',
+			'markdown-it','markdown-it-container',
+			'hyperapp','@hyperapp/dom','@hyperapp/svg','@hyperapp/html','@hyperapp/time','@hyperapp/events',
+		]
 	},
 
 	"styles3": {
