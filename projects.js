@@ -1,6 +1,6 @@
 module.exports = {
 	
-	defaults: ['misc-libs-3'],
+	defaults: ['graphql-bundle','css-variables'],
 	// defaults: ['css-pkg','webdev-apps-min','angular-app','webdev-apps'],
 	isolate: true,
 
@@ -39,7 +39,10 @@ module.exports = {
 	},
 
 	"css-pkg": {
-		subs: ['less-bundle','stylus-bundle','postcss-bundle','minifier-bundle','styles','styles2','styles3'],
+		subs: [
+			'less-bundle','stylus-bundle','postcss-bundle','minifier-bundle','styles','styles2','styles3',
+			'css-variables','tailwind-components'
+		],
 		topCache: true,
 	},
 

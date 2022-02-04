@@ -53,6 +53,12 @@ module.exports = {
 			'typeorm','xlsx']
 	},
 
+	"graphql-bundle": {
+		packages: ['graphql','apollo-server','express-graphql','graphql-helix','graphql-yoga','@apollo/client',
+			'graphql-request','react-relay','urql','@urql/vue','@urql/svelte','@urql/core','@urql/preact',
+			'graphql-hooks','lokka','lokka-transport-http','nanographql','@giraphql/core']
+	},
+
 	// server bundles
 
 	"express-bundle": {
@@ -92,6 +98,10 @@ module.exports = {
 		packages: ['tailwindcss@latest','postcss@latest','autoprefixer@latest','daisyui',
 			'@tailwindcss/typography','@tailwindcss/forms','tailwindcss-theming@next','tailwindcss-typography','tailwind-bootstrap-grid',
 			'windicss','nuxt-windicss','svelte-windicss-preprocess','vue-cli-plugin-windicss','gridsome-plugin-windicss']
+	},
+
+	"css-variables": {
+		packages: ['pollen-css','dashvar']
 	},
 
 	// library bundles
