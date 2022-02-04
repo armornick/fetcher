@@ -1,50 +1,5 @@
 module.exports = {
-
-	// https://www.webdevdrops.com/en/build-static-site-generator-nodejs-8969ebe34b22/
-
-	"_node-static-site": {
-		packages: ['fs-extra','glob']
-	},
-
-	"_node-static-site_full": {
-		packages: ['fs-extra','glob','ejs','marked','gray-matter']
-	},
-
-	// parceljs templates
-
-	'parceljs-pkg': {
-		subs: ['_parceljs-bare','_parceljs-react','_parceljs-preact','_parceljs-vue','_parceljs-typescript','_parceljs-svelte']
-	},
-
-	'_parceljs-bare': {
-		package: 'parcel-bundler',
-		global: true
-	},
-
-	"_parceljs-react": {
-		packages: ['react','react-dom'],
-		devPackages: ['parcel-bundler']
-	},
-
-	"_parceljs-preact": {
-		packages: ['preact'],
-		devPackages: ['parcel-bundler']
-	},
-
-	"_parceljs-vue": {
-		packages: ['vue'],
-		devPackages: ['parcel-bundler']
-	},
-
-	"_parceljs-typescript": {
-		packages: ['typescript'],
-		devPackages: ['parcel-bundler']
-	},
-
-	"_parceljs-svelte": {
-		devPackages: ['parcel-bundler','svelte','parcel-plugin-svelte']
-	},
-
+	
 	// neutrinojs templates
 
 	"neutrinojs-pkg": {

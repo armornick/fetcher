@@ -39,11 +39,6 @@ module.exports = {
 		npx: 'create-react-app react-skel'
 	},
 
-	'harpjs-app': {
-		package: 'harp',
-		global: true
-	},
-
 	tiddlywiki: {
 		package: 'tiddlywiki',
 		global: true
@@ -60,38 +55,6 @@ module.exports = {
 		global: true,
 
 		postCommand: 'create-next-app next-skel'
-	},
-
-	'gatsby-app': {
-		package: 'gatsby-cli',
-		global: true,
-
-		postCommands: [
-			'gatsby new hello-world https://github.com/gatsbyjs/gatsby-starter-hello-world',
-			'gatsby new gatsby-starter-blog https://github.com/gatsbyjs/gatsby-starter-blog',
-			'gatsby new gatsby-starter-minimal-blog https://github.com/LekoArts/gatsby-starter-minimal-blog',
-			'gatsby new gatsby-starter-tailwind https://github.com/taylorbryant/gatsby-starter-tailwind',
-		]
-	},
-
-	'gatsby-app2': {
-		package: 'gatsby-cli',
-		global: true,
-
-		postCommands: [
-			'gatsby new gatsby-advanced-starter https://github.com/Vagr9K/gatsby-advanced-starter',
-			'gatsby new gatsby-starter-deck https://github.com/fabe/gatsby-starter-deck',
-			'gatsby new gatsby-gitbook-starter https://github.com/hasura/gatsby-gitbook-starter',
-			'gatsby new gatsby-starter-bootstrap https://github.com/jaxx2104/gatsby-starter-bootstrap'
-		]
-	},
-
-	"gatsby-plugins": {
-		packages: ['gatsby-source-filesystem','gatsby-plugin-styled-components','styled-components','babel-plugin-styled-components',
-			'gatsby-plugin-mdx','gatsby-transformer-remark','gatsby-plugin-sass','gatsby-plugin-emotion','@emotion/core','@emotion/styled',
-			'gatsby-remark-copy-linked-files','gatsby-remark-prismjs','prismjs','gatsby-transformer-json','gatsby-plugin-postcss',
-			'gatsby-transformer-yaml','gatsby-plugin-less','gatsby-plugin-purgecss','gatsby-remark-embed-video','gatsby-remark-embed-snippet',
-			'gatsby-plugin-breadcrumb','gatsby-plugin-stylus','gatsby-plugin-coffeescript','gatsby-plugin-typography','react-typography']
 	},
 
 	'nanogen-app': {
@@ -116,56 +79,12 @@ module.exports = {
 		global: true
 	},
 
-	'gridsome-app': {
-		package: '@gridsome/cli',
-		global: true,
-
-		postCommand: 'gridsome create gridsome-skel'
-	},
-
-	'gridsome-starters': {
-		package: '@gridsome/cli',
-		global: true,
-
-		postCommands: [
-			'gridsome create gridsome-minimal-blog https://github.com/lauragift21/gridsome-minimal-blog',
-			'gridsome create gridsome-starter-skeleventy https://github.com/noxify/gridsome-starter-skeleventy',
-			'gridsome create gridsome-bulma-starter https://github.com/calebanthony/gridsome-bulma.git',
-			'gridsome create gridsome-starter-bleda https://github.com/cossssmin/gridsome-starter-bleda.git',
-			'gridsome create gridsome-starter-blog https://github.com/gridsome/gridsome-starter-blog.git'
-		]
-	},
-
 	"nuxt-bundle": {
 		packages: ['create-nuxt-app','nuxt',
 			// nuxt modules
 			'@nuxtjs/moment','@nuxtjs/composition-api','@nuxt/content','@nuxt/types','@nuxtjs/svg',
 			'bootstrap-vue','@nuxtjs/axios','@nuxtjs/vuetify','@nuxtjs/tailwindcss'
 		]
-	},
-
-	"vuepress-app": {
-		package: 'create-vuepress-site',
-		global: true,
-
-		postCommand: 'npx create-vuepress-site vuepress-skel'
-	},
-
-	"vuepress-bundle": {
-		packages: ['create-vuepress-site','vuepress',
-			// plugins
-			'@vuepress/plugin-active-header-links','@vuepress/plugin-back-to-top','@vuepress/plugin-blog','@vuepress/last-updated',
-			'@vuepress/plugin-register-components','@vuepress/plugin-search'
-		]
-	},
-
-	"docusaurus-app": {
-		command: "npm init docusaurus@latest docusaurus-skel classic"
-	},
-
-	"docusaurus-plugins": {
-		packages: ['@docusaurus/plugin-content-docs','@docusaurus/plugin-content-blog','@docusaurus/plugin-content-pages',
-			'@docusaurus/plugin-sitemap','@docusaurus/plugin-pwa']
 	},
 	
 	'hexo-app': {
@@ -210,11 +129,52 @@ module.exports = {
 		postCommand: 'create-forgo-app forgo-skel'
 	},
 
-	"quasar-app": {
-		package: '@quasar/cli',
-		global: true,
+	"vite-pkg": {
+		subs: ['vite-bundle','vite-vanilla','vite-vanilla-ts','vite-vue','vite-react',
+			'vite-preact','vite-lit','vite-svelte'],
+		topCache: true,
+	},
 
-		postCommand: 'quasar create quasar-skel'
+	"vite-bundle": {
+		packages: [
+			'create-vite@latest',
+			'@vitejs/plugin-vue','@vitejs/plugin-vue-jsx','@vitejs/plugin-react',
+		],
+	},
+
+	'vite-vanilla': {
+		npx: 'create-vite@latest vite-vanilla-skel --template vanilla',
+		install: 'vite-vanilla-skel'
+	},
+
+	'vite-vanilla-ts': {
+		npx: 'create-vite@latest vite-vanilla-ts-skel --template vanilla-ts',
+		install: 'vite-vanilla-ts-skel'
+	},
+
+	'vite-vue': {
+		npx: 'create-vite@latest vite-vue-skel --template vue',
+		install: 'vite-vue-skel'
+	},
+
+	'vite-react': {
+		npx: 'create-vite@latest vite-react-skel --template react',
+		install: 'vite-react-skel'
+	},
+
+	'vite-preact': {
+		npx: 'create-vite@latest vite-preact-skel --template preact',
+		install: 'vite-preact-skel'
+	},
+
+	'vite-lit': {
+		npx: 'create-vite@latest vite-lit-skel --template lit',
+		install: 'vite-lit-skel'
+	},
+
+	'vite-svelte': {
+		npx: 'create-vite@latest vite-svelte-skel --template svelte',
+		install: 'vite-svelte-skel'
 	},
 
 }

@@ -106,12 +106,6 @@ module.exports = {
 
 	// library bundles
 
-	angularjs: {
-		packages: ['angular','angular-route','angular-animate','angular-aria','angular-resource','angular-cookies','angular-sanitize',
-			'angular-ui-bootstrap','bootstrap@3','angular-ui-layout','@uirouter/angularjs','angular-moment',
-			'ngify','gulp-angular-templatecache','gulp-ng-annotate']
-	},
-
 	"riot-bundle": {
 		packages: ['riot','riot-compiler','riot-route','gulp-riot','riot-tag-loader','riotify','riotify-fn']
 	},

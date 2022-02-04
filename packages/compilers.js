@@ -113,20 +113,6 @@ module.exports = {
 			'jstransformer-pug','jstransformer-swig']
 	},
 
-	"gulp-bundle": {
-		depends: ['gulp-01','gulp-02']
-	},
-
-	"gulp-01": {
-		packages: ['gulp-cli','gulp','gulp-concat','gulp-data','gulp-inject','gulp-plumber','gulp-sourcemaps','gulp-webserver',
-			'gulp-if','pump','gulp-connect','vinyl-source-stream','gulp-livereload']
-	},
-
-	"gulp-02": {
-		packages: ['through2','gulp-tap','vinyl','vinyl-bufferstream','gulp-front-matter','gulp-meta-markdown',
-			'vinyl-source-stream','gulp-if']
-	},
-
 	"webpack-bundle": {
 		packages: ['webpack','webpack-cli','style-loader','css-loader','file-loader','csv-loader','xml-loader',
 			'raw-loader','html-loader',
