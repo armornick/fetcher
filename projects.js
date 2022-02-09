@@ -1,12 +1,17 @@
 module.exports = {
 	
 	defaults: [
-		'misc-libs',//'css-libs','express-bundle',
-		'webpack-bundle','postcss-bundle','remark-bundle',
+		// 'misc-libs','css-libs','express-bundle',
+		// 'webpack-bundle',
+		// 'remark-bundle',
+		//'postcss-bundle',
+		// 'hyperhtml-bundle',
 		// 'metalsmith-bundle',
-		// 'neutrinojs-pkg','babeljs-pkg',
+		'neutrinojs-pkg',
+		// 'docsify-app',
+		// 'babeljs-pkg',"parcel-pkg",
 		// 'vue-app','vue-bundle','react-app','preact-app','svelte-app','npx-react-app',
-		// 'tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app',//'nuxt-bundle',
+		// 'tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app','nuxt-bundle',
 		// 'zero-server-app','parcel-app','parcel-bundle',
 	],
 	isolate: true,
@@ -56,7 +61,7 @@ module.exports = {
 	'webpack-bundle': {
 		packages: [
 			'webpack-cli','webpack',
-			'babel-loader','buble-loader','buble','html-loader','pug-loader','pug',
+			'babel-loader','buble-loader','buble','html-loader','pug-loader','pug@^2.0.0',
 			'posthtml-loader','handlebars-loader','handlebars','twig-loader','twig',
 			'remark-loader','style-loader','css-loader','postcss-loader','postcss',
 			'stylus-loader','stylus',
@@ -83,17 +88,22 @@ module.exports = {
 			'remark-rehype','rehype-remark','rehype-stringify','rehype-parse','rehype-cli','hast',
 			'rehype-dom','rehype-highlight','lowlight',//'rehype-prism','refractor',
 			'rehype-toc','rehype-url-inspector','rehype-truncate','rehype-add-classes','rehype-autolink-headings',
-			'rehype-components','rehype-concat-css-style','rehype-external-links','rehype-inline',
+			'rehype-concat-css-style','rehype-external-links','rehype-inline',
 			'rehype-minify-css-style','rehype-minify-javascript-script','rehype-partials','rehype-prism-plus',
-			'rehype-remove-comments','rehype-section','rehype-slug','rehype-template',''
+			'rehype-remove-comments','@agentofuser/rehype-section','rehype-slug',
+			'rehype-template','remark-frontmatter','remark-extract-frontmatter',
 		]
+	},
+
+	"hyperhtml-bundle": {
+		packages: ['hyperhtml','uhtml','hypersimple','lighterhtml','neverland','haunted','lit-html','lit']
 	},
 
 	"metalsmith-bundle": {
 		packages: [
 			'metalsmith','metalsmith-debug','micromatch',
 			'@metalsmith/collections','@metalsmith/layouts','@metalsmith/markdown','@metalsmith/permalinks',
-			'metalsmith-asciidoctor','metalsmith-auto-collections','metalsmith-clean-css','clean-css',
+			'metalsmith-asciidoctor','metalsmith-auto-collections','metalsmith-clean-css','clean-css@4.x.x',
 			'metalsmith-code-highlight','metalsmith-concat','metalsmith-data-loader','@metalsmith/drafts',
 			'metalsmith-html-minifier','metalsmith-inline-css','metalsmith-markdownit','metalsmith-pagination',
 			'metalsmith-with-postcss','metalsmith-slug','metalsmith-stylus','@metalsmith/table-of-contents',
@@ -110,22 +120,60 @@ module.exports = {
 	},
 
 	"_neutrinojs-react": {
+		mergeInstall: true,
 		packages: ['react','react-dom'],
 		devPackages: ['neutrino','@neutrinojs/react','webpack','webpack-cli','webpack-dev-server']
 	},
 
 	"_neutrinojs-preact": {
+		mergeInstall: true,
 		packages: ['preact'],
 		devPackages: ['neutrino','@neutrinojs/preact','webpack','webpack-cli','webpack-dev-server']
 	},
 
 	"_neutrinojs-vue": {
+		mergeInstall: true,
 		packages: ['vue'],
 		devPackages: ['neutrino','@neutrinojs/vue','webpack','webpack-cli','webpack-dev-server']
 	},
 
 	"_neutrinojs-web": {
+		mergeInstall: true,
 		devPackages: ['neutrino','@neutrinojs/web','webpack','webpack-cli','webpack-dev-server']
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	"parcel-pkg": {
+		subs: [
+			'parcel-app','parcel-bundle',
+			'_parcel_react','_parcel_vue','_parcel_preact','_parcel_inferno','_parcel_solid-js'
+		]
+	},
+
+	"_parcel_react": {
+		packages: ['react','react-dom','react-router-dom@6'],
+		devPackages: ['parcel']
+	},
+
+	"_parcel_vue": {
+		packages: ['vue@3','vue-router@4'],
+		devPackages: ['parcel','@parcel/transformer-vue']
+	},
+
+	"_parcel_preact": {
+		packages: ['preact'],
+		devPackages: ['parcel','@babel/plugin-transform-react-jsx']
+	},
+
+	"_parcel_inferno": {
+		packages: ['inferno','inferno-router','inferno-create-element'],
+		devPackages: ['parcel','@babel/plugin-transform-react-jsx']
+	},
+
+	"_parcel_solid-js": {
+		packages: ['solid-js'],
+		devPackages: ['parcel','babel-preset-solid']
 	},
 
 	// ----------------------------------------------------------------------------------------

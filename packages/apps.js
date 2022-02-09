@@ -75,6 +75,11 @@ module.exports = {
 		global: true
 	},
 
+	'docsify-app': {
+		package: 'docsify-cli',
+		global: true
+	},
+
 	'wintersmith-app': {
 		package: 'wintersmith',
 		global: true,
