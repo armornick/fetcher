@@ -1,102 +1,161 @@
 module.exports = {
 	
-	defaults: ['vite-pkg'],
-	// defaults: ['css-pkg','webdev-apps-min','angular-app','webdev-apps'],
+	defaults: [
+		'misc-libs',//'css-libs','express-bundle',
+		'webpack-bundle','postcss-bundle','remark-bundle',
+		// 'metalsmith-bundle',
+		// 'neutrinojs-pkg','babeljs-pkg',
+		// 'vue-app','vue-bundle','react-app','preact-app','svelte-app','npx-react-app',
+		// 'tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app',//'nuxt-bundle',
+		// 'zero-server-app','parcel-app','parcel-bundle',
+	],
 	isolate: true,
 
-	// package bundles
+	// ----------------------------------------------------------------------------------------
 
-	"webpack-pkg": {
-		subs: ['webpack-bundle','less-bundle','sass-bundle','stylus-bundle','postcss-bundle','babel-bundle','buble-bundle',
-			'ejs-bundle','pug-bundle','swig-bundle'],
-	},
-
-	"libraries-pkg": {
-		subs: ['popular-libraries','server-libraries','microjs-bundle','vdom-libraries','template-libraries'],
-		topCache: true,
-	},
-
-	"templates-pkg": {
-		subs: ['template-libraries','mustache-bundle','ejs-bundle','pug-bundle','handlebars-bundle','swig-bundle'],
-		topCache: true,
-	},
-
-	"vue-pkg": {
-		subs: ['vue-app','vue-bundle']
-	},
-
-	"react-pkg": {
-		subs: ['reactApp','react-bundle','babel7-react-bundle','buble-bundle']
-	},
-
-	"vdom-pkg": {
-		subs: ['preactApp','riot-bundle','web-components','vdom-libraries'],
-		topCache: true,
-	},
-
-	"css-pkg": {
-		subs: [
-			'less-bundle','stylus-bundle','postcss-bundle','minifier-bundle','styles','styles2','styles3',
-			'css-variables','tailwind-components'
-		],
-		topCache: true,
-	},
-
-	"webdev-apps": {
-		subs: ['angular-app','svelte-app','harpjs-app','tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app',
-			'wintersmith-app','gridsome-app','gridsome-starters','parcel-app','zero-server-app']
-	},
-
-	"webapp-apps-min": {
-		subs: ['svelte-app','harpjs-app','tiddlywiki','httpServer','nanogen-app','eleventy-app',
-			'wintersmith-app','parcel-app','zero-server-app']
-	},
-
-	"snowpack-pkg": {
-		subs: ['snowpack-app','snowpack-bundle','snowpack-starters']
-	},
-
-	// misc packages
-
-	"misc-libs": {
-		packages: ['lunr','asciidoctor.js','faker','casual','chance','tinyreq','cheerio','request','axios','lowdb',
-			'glob','globby','sergey','@hotwired/stimulus']
-	},
-
-	"misc-libs-2": {
-		packages: ['@hotwired/stimulus','daisyui','forgo','tailwindcss@latest','postcss@latest','autoprefixer@latest','jsdom',
-			'dayjs']
-	},
-
-	"misc-libs-3": {
+	"template-libs": {
 		packages: [
-			'htm','hyperscript','@optoolco/tonic','lit',
-			'markdown-it','markdown-it-container',
-			'hyperapp','@hyperapp/dom','@hyperapp/svg','@hyperapp/html','@hyperapp/time','@hyperapp/events',
+			'mustache','handlebars','nunjucks','hogan.js','pug','ejs'
 		]
 	},
 
-	"styles3": {
-		packages: ['minireset.css','modern-normalize','purecss','milligram','picnic','mini.css','wingcss',
-			'chota','bootstrap','bulma','spectre.css','materialize-css','muicss','buttercake','cirrus-ui',
-			'strawberry-css','tailwindcss','animate.css',
-			'sierra-library','gridlex','jeet','flexiblegs-sass','susy','open-color','animatewithsass',
-			'hover.css','buttono','scut',
-			'bootswatch','uikit','open-color','animate.less']
+	"misc-libs": {
+		packages: [
+			'lowdb','page','axios','highlight.js','prismjs','masonry-layout','lodash','rxjs',
+			'd3','chart.js','moment','dayjs','underscore','sweetalert','sweetalert2','reveal.js',
+			'html5sortable','csstag','facon','genel','marli',
+			'hyperhtml','uhtml','hypersimple','neverland','hyperhtml-element',
+			'inferno','inferno-hyperscript','inferno-create-element','preact','solid-js',
+			'mithril','htm','@types/mithril','alpinejs','marked','stimulus',
+			'markdown-it','markdown-it-sub','markdown-it-sup','markdown-it-footnote','markdown-it-deflist',
+			'markdown-it-abbr','markdown-it-emoji','markdown-it-container'
+		]
 	},
 
-	"styles4": {
-		packages: ['tailwindcss@latest','postcss@latest','autoprefixer@latest',
-			'tachyons@4.12.0','shed-css','milligram','chota','bootstrap','@fortawesome/fontawesome-free','bulma',
-			'spectre.css','@primer/css','basscss@8.0.2','daisyui']
+	"css-libs": {
+		packages: [
+			'@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',
+			'animate.css','bootstrap','bulma','chota','materialize-css@next','milligram','spectre.css',
+			'tachyons@4.12.0','tailwindcss','normalize.css','minireset.css','open-props',
+			'postcss','autoprefixer','postcss-preset-env','precss'
+		]
 	},
+
+	"express-bundle": {
+		packages: [
+			'express',
+			'body-parser','cookie-parser','multer','serve-index','serve-static',
+			'pug','ejs','hbs','nunjucks',
+			'poet',
+			' @feathersjs/feathers','@feathersjs/express','@feathersjs/socketio','@feathersjs/cli',
+		]
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	'webpack-bundle': {
+		packages: [
+			'webpack-cli','webpack',
+			'babel-loader','buble-loader','buble','html-loader','pug-loader','pug',
+			'posthtml-loader','handlebars-loader','handlebars','twig-loader','twig',
+			'remark-loader','style-loader','css-loader','postcss-loader','postcss',
+			'stylus-loader','stylus',
+			'copy-webpack-plugin','html-webpack-plugin','terser-webpack-plugin',
+			'@mdx-js/loader'
+		]
+	},
+
+	"postcss-bundle": {
+		packages: [
+			'postcss','autoprefixer','atcss','cssnano','precss','rucksack-css','postcss-utilities',
+			'postcss-cli','postcss-layout','precss','postcss-preset-env'
+		]
+	},
+
+	"remark-bundle": {
+		packages: [
+			'unified','unified-stream','remark-parse',
+			// remark --------------------------------------------
+			'remark-capitalize','remark-code-blocks','remark-code-frontmatter','remark-code-import',
+			'remark-collapse','remark-definition-list','remark-directive','remark-embed-images','remark-extended-table',
+			'remark-gfm','remark-html','remark-mdx','remark-pdf','remark-sectionize','remark-toc','remark-directive',
+			// rehype --------------------------------------------
+			'remark-rehype','rehype-remark','rehype-stringify','rehype-parse','rehype-cli','hast',
+			'rehype-dom','rehype-highlight','lowlight',//'rehype-prism','refractor',
+			'rehype-toc','rehype-url-inspector','rehype-truncate','rehype-add-classes','rehype-autolink-headings',
+			'rehype-components','rehype-concat-css-style','rehype-external-links','rehype-inline',
+			'rehype-minify-css-style','rehype-minify-javascript-script','rehype-partials','rehype-prism-plus',
+			'rehype-remove-comments','rehype-section','rehype-slug','rehype-template',''
+		]
+	},
+
+	"metalsmith-bundle": {
+		packages: [
+			'metalsmith','metalsmith-debug','micromatch',
+			'@metalsmith/collections','@metalsmith/layouts','@metalsmith/markdown','@metalsmith/permalinks',
+			'metalsmith-asciidoctor','metalsmith-auto-collections','metalsmith-clean-css','clean-css',
+			'metalsmith-code-highlight','metalsmith-concat','metalsmith-data-loader','@metalsmith/drafts',
+			'metalsmith-html-minifier','metalsmith-inline-css','metalsmith-markdownit','metalsmith-pagination',
+			'metalsmith-with-postcss','metalsmith-slug','metalsmith-stylus','@metalsmith/table-of-contents',
+			'metalsmith-in-place','@metalsmith/default-values','@metalsmith/remove','@metalsmith/excerpts',
+			'metalsmith-taxonomy','metalsmith-uglify',''
+		]
+	},
+
+	// ----------------------------------------------------------------------------------------
+	// neutrinojs templates
+
+	"neutrinojs-pkg": {
+		subs: ['_neutrinojs-react','_neutrinojs-preact','_neutrinojs-vue','_neutrinojs-web']
+	},
+
+	"_neutrinojs-react": {
+		packages: ['react','react-dom'],
+		devPackages: ['neutrino','@neutrinojs/react','webpack','webpack-cli','webpack-dev-server']
+	},
+
+	"_neutrinojs-preact": {
+		packages: ['preact'],
+		devPackages: ['neutrino','@neutrinojs/preact','webpack','webpack-cli','webpack-dev-server']
+	},
+
+	"_neutrinojs-vue": {
+		packages: ['vue'],
+		devPackages: ['neutrino','@neutrinojs/vue','webpack','webpack-cli','webpack-dev-server']
+	},
+
+	"_neutrinojs-web": {
+		devPackages: ['neutrino','@neutrinojs/web','webpack','webpack-cli','webpack-dev-server']
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	"babeljs-pkg": {
+		subs: ['babeljs-bundle','_babeljs_preset-env','_babeljs_preset-react','_babeljs_transform-jsx']
+	},
+
+	"babeljs-bundle": {
+		devPackages: ['@babel/core','@babel/cli','@babel/preset-env','@babel/preset-react','@babel/preset-typescript',
+			'@babel/preset-flow','@babel/plugin-transform-react-jsx']
+	},
+
+	"_babeljs_preset-env": {
+		packages: ['@babel/preset-env']
+	},
+
+	"_babeljs_preset-react": {
+		packages: ['@babel/preset-react']
+	},
+
+	"_babeljs_transform-jsx": {
+		packages: ['@babel/plugin-transform-react-jsx']
+	},
+
+	// ----------------------------------------------------------------------------------------
 
 }
 
 Object.assign(
 	module.exports,
-	require('./packages/libraries'),
-	require('./packages/compilers'),
 	require('./packages/apps'),
-	require('./packages/templates')
 );

@@ -97,7 +97,7 @@ class Fetcher {
 
         if (project.postCommand) {
             process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
-            exec(`${ project.postCommand }`);
+            this.exec(`${ project.postCommand }`);
         }
 
         if (project.postCommands) {

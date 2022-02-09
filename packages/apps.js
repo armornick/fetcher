@@ -9,6 +9,14 @@ module.exports = {
 		postCommand: 'vue create -d vue-skel'
 	},
 
+	'vue-bundle': {
+		packages: [
+			'vue','vue-loader','vue-template-compiler',
+			'vue-router','vuex',
+			'stylus-loader','stylus','postcss-loader','pug-plain-loader','pug',
+		]
+	},
+
 	'angular-app': {
 		package: '@angular/cli',
 		global: true,
@@ -16,14 +24,14 @@ module.exports = {
 		postCommand: 'ng new angular-skel'
 	},
 
-	reactApp: {
+	'react-app': {
 		package: 'create-react-app',
 		global: true,
 
 		postCommand: 'npx create-react-app react-skel'
 	},
 
-	preactApp: {
+	'preact-app': {
 		package: 'preact-cli',
 		global: true,
 
@@ -128,6 +136,8 @@ module.exports = {
 
 		postCommand: 'create-forgo-app forgo-skel'
 	},
+
+	// ----------------------------------------------------------------------------------------
 
 	"vite-pkg": {
 		subs: ['vite-bundle','vite-vanilla','vite-vanilla-ts','vite-vue','vite-react',
