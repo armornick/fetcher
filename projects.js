@@ -1,18 +1,15 @@
 module.exports = {
 	
 	defaults: [
+		// 'angularjs-bundle',
 		// 'misc-libs','css-libs','express-bundle',
-		// 'webpack-bundle',
-		// 'remark-bundle',
-		//'postcss-bundle',
-		// 'hyperhtml-bundle',
-		// 'metalsmith-bundle',
-		'neutrinojs-pkg',
-		// 'docsify-app',
-		// 'babeljs-pkg',"parcel-pkg",
+		// 'webpack-bundle','remark-bundle','postcss-bundle','hyperhtml-bundle',
+		// 'metalsmith-bundle','neutrinojs-pkg','docsify-app','babeljs-pkg',"parcel-pkg",
 		// 'vue-app','vue-bundle','react-app','preact-app','svelte-app','npx-react-app',
 		// 'tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app','nuxt-bundle',
-		// 'zero-server-app','parcel-app','parcel-bundle',
+		// 'zero-server-app','parcel-app','parcel-bundle','rollup-pkg',
+		// 'vite-starters','vite-bundle','windicss-bundle',
+		'tailwind-pkg',
 	],
 	isolate: true,
 
@@ -53,6 +50,17 @@ module.exports = {
 			'pug','ejs','hbs','nunjucks',
 			'poet',
 			' @feathersjs/feathers','@feathersjs/express','@feathersjs/socketio','@feathersjs/cli',
+		]
+	},
+
+	"angularjs-bundle": {
+		packages: [
+			'angular','angular-route','angular-animate','angular-aria','angular-messages','@uirouter/angularjs',
+			'angular-file-upload','angular-filter','ng-tasty','ng-infinite-scroll','angular-masonry','ng-csv',
+			'ui-select','ng-notify','ng-sweet-alert','angular-sticky-plugin','angular-moment','moment','ngstorage',
+			'ng-table','angular-ui-grid','angular-material','angular-ui-layout',"n3-charts",'d3@3','angular-chart.js',
+			'tc-angular-chartjs','chart.js',
+			'babel-plugin-angularjs-annotate','ng-annotate-loader','babel-plugin-annotate-ng','babel-plugin-angular-inline-template',
 		]
 	},
 
@@ -109,6 +117,154 @@ module.exports = {
 			'metalsmith-with-postcss','metalsmith-slug','metalsmith-stylus','@metalsmith/table-of-contents',
 			'metalsmith-in-place','@metalsmith/default-values','@metalsmith/remove','@metalsmith/excerpts',
 			'metalsmith-taxonomy','metalsmith-uglify',''
+		]
+	},
+
+	'windicss-bundle': {
+		devPackages: [
+			'svelte-windicss-preprocess','windicss','rollup-plugin-windicss','windicss-webpack-plugin',
+		],
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	'tailwind-pkg': {
+		subs: [
+			'tailwind-single','tailwind-postcss-single','tailwind-bundle',
+			'_windstrap_single','_flowbite_single','_kutty_single','_sailui_single','_daisyui_single','_a17t_single',
+			'_material-tailwind_single','_tw-elements_single',
+			'merakiui-local','tailwindlayout-local','hyperui-local','tailmin-local',
+		]
+	},
+
+	'tailwind-single': {
+		devPackages: ['tailwindcss']
+	},
+
+	'tailwind-postcss-single': {
+		devPackages: ['tailwindcss','postcss','autoprefixer']
+	},
+
+	'tailwind-bundle': {
+		devPackages: [
+			'@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars',
+		]
+	},
+
+	'_windstrap_single': {
+		packages: ['windstrap']
+	},
+
+	'_flowbite_single': {
+		packages: ['flowbite']
+	},
+
+	'_kutty_single': {
+		packages: ['kutty']
+	},
+
+	'_sailui_single': {
+		packages: ['sailui']
+	},
+	
+	'_daisyui_single': {
+		packages: ['daisyui']
+	},
+
+	'_a17t_single': {
+		packages: ['a17t']
+	},
+
+	'_material-tailwind_single': {
+		packages: ['@material-tailwind/react']
+	},
+
+	'_tw-elements_single': {
+		packages: ['tw-elements']
+	},
+
+	'merakiui-local': {
+		npx: 'degit https://github.com/merakiui/merakiui merakiui-local',
+		install: 'merakiui-local',
+	},
+
+	'tailwindlayout-local': {
+		npx: 'degit https://github.com/lalokalabs/tailwindlayout tailwindlayout-local',
+		install: 'tailwindlayout-local',
+	},
+
+	'hyperui-local': {
+		npx: 'degit https://github.com/markmead/hyperui hyperui-local',
+		install: 'hyperui-local',
+	},
+
+	'tailmin-local': {
+		npx: 'degit https://github.com/otezz/tailmin tailmin-local',
+		install: 'tailmin-local',
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	'rollup-pkg': {
+		subs: ['rollup-starter','rollup-bundle']
+	},
+
+	'rollup-starter': {
+		npx: 'degit "rollup/rollup-starter-app" rollup-app-skel',
+		install: 'rollup-app-skel'
+	},
+
+	'rollup-bundle': {
+		packages: [
+			'@rollup/plugin-babel','@rollup/plugin-node-resolve','@rollup/plugin-commonjs','@rollup/plugin-alias',
+			'@rollup/plugin-dsv','@rollup/plugin-json','@rollup/plugin-sucrase','@rollup/plugin-yaml',
+			'rollup-plugin-postcss','rollup-plugin-riot','@riotjs/compiler','rollup-plugin-svelte','svelte',
+			'rollup-plugin-terser','rollup-plugin-pug','rollup-plugin-pug-html',
+		],
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	'vite-starters': {
+		subs: ['vite-vanilla-starter','vite-vue-starter','vite-react-starter','vite-preact-starter','vite-lit-starter','vite-svelte-starter'],
+		topCache: true,
+	},
+
+	'vite-vanilla-starter': {
+		npx: 'create-vite@latest vite-vanilla-skel --template vanilla',
+		install: 'vite-vanilla-skel',
+	},
+
+	'vite-vue-starter': {
+		npx: 'create-vite@latest vite-vue-skel --template vue',
+		install: 'vite-vue-skel',
+	},
+
+	'vite-react-starter': {
+		npx: 'create-vite@latest vite-react-skel --template react',
+		install: 'vite-react-skel',
+	},
+
+	'vite-preact-starter': {
+		npx: 'create-vite@latest vite-preact-skel --template preact',
+		install: 'vite-preact-skel',
+	},
+
+	'vite-lit-starter': {
+		npx: 'create-vite@latest vite-lit-skel --template lit',
+		install: 'vite-lit-skel',
+	},
+
+	'vite-svelte-starter': {
+		npx: 'create-vite@latest vite-svelte-skel --template svelte',
+		install: 'vite-svelte-skel',
+	},
+
+	'vite-bundle': {
+		packages: [
+			'vite-plugin-windicss','@originjs/vite-plugin-content',
+			'@vitejs/plugin-vue','vite-plugin-pages','@sveltejs/vite-plugin-svelte',
+			'vite-plugin-solid','babel-preset-solid',
 		]
 	},
 

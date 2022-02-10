@@ -142,54 +142,5 @@ module.exports = {
 		postCommand: 'create-forgo-app forgo-skel'
 	},
 
-	// ----------------------------------------------------------------------------------------
-
-	"vite-pkg": {
-		subs: ['vite-bundle','vite-vanilla','vite-vanilla-ts','vite-vue','vite-react',
-			'vite-preact','vite-lit','vite-svelte'],
-		topCache: true,
-	},
-
-	"vite-bundle": {
-		packages: [
-			'create-vite@latest',
-			'@vitejs/plugin-vue','@vitejs/plugin-vue-jsx','@vitejs/plugin-react',
-		],
-	},
-
-	'vite-vanilla': {
-		npx: 'create-vite@latest vite-vanilla-skel --template vanilla',
-		install: 'vite-vanilla-skel'
-	},
-
-	'vite-vanilla-ts': {
-		npx: 'create-vite@latest vite-vanilla-ts-skel --template vanilla-ts',
-		install: 'vite-vanilla-ts-skel'
-	},
-
-	'vite-vue': {
-		npx: 'create-vite@latest vite-vue-skel --template vue',
-		install: 'vite-vue-skel'
-	},
-
-	'vite-react': {
-		npx: 'create-vite@latest vite-react-skel --template react',
-		install: 'vite-react-skel'
-	},
-
-	'vite-preact': {
-		npx: 'create-vite@latest vite-preact-skel --template preact',
-		install: 'vite-preact-skel'
-	},
-
-	'vite-lit': {
-		npx: 'create-vite@latest vite-lit-skel --template lit',
-		install: 'vite-lit-skel'
-	},
-
-	'vite-svelte': {
-		npx: 'create-vite@latest vite-svelte-skel --template svelte',
-		install: 'vite-svelte-skel'
-	},
 
 }
