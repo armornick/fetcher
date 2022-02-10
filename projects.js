@@ -9,7 +9,8 @@ module.exports = {
 		// 'tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app','nuxt-bundle',
 		// 'zero-server-app','parcel-app','parcel-bundle','rollup-pkg',
 		// 'vite-starters','vite-bundle','windicss-bundle',
-		'tailwind-pkg',
+		// 'tailwind-pkg','tailwind-ui-kits',
+		'_npm-run-all_single',
 	],
 	isolate: true,
 
@@ -62,6 +63,10 @@ module.exports = {
 			'tc-angular-chartjs','chart.js',
 			'babel-plugin-angularjs-annotate','ng-annotate-loader','babel-plugin-annotate-ng','babel-plugin-angular-inline-template',
 		]
+	},
+
+	'_npm-run-all_single': {
+		packages: ['npm-run-all']
 	},
 
 	// ----------------------------------------------------------------------------------------
@@ -133,7 +138,6 @@ module.exports = {
 			'tailwind-single','tailwind-postcss-single','tailwind-bundle',
 			'_windstrap_single','_flowbite_single','_kutty_single','_sailui_single','_daisyui_single','_a17t_single',
 			'_material-tailwind_single','_tw-elements_single',
-			'merakiui-local','tailwindlayout-local','hyperui-local','tailmin-local',
 		]
 	},
 
@@ -181,6 +185,12 @@ module.exports = {
 
 	'_tw-elements_single': {
 		packages: ['tw-elements']
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	'tailwind-ui-kits': {
+		subs: ['merakiui-local','tailwindlayout-local','hyperui-local','tailmin-local',]
 	},
 
 	'merakiui-local': {
