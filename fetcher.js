@@ -27,7 +27,9 @@ class Fetcher {
         topCache = project.topCache || topCache;
         
         if (this.isRealProject(project)) {
-            this.prepareDirectory(name, project.isolate || this.isolate, topCache);
+            const needsInit = (project.packages || project.devPackages || project.package 
+		        || project.depends) && (!project.global);
+            this.prepareDirectory(name, needsInit, project.isolate || this.isolate, topCache);
             this.performInstall(project);
         } else {
             this.moveToDir(name);
@@ -57,7 +59,7 @@ class Fetcher {
         process.chdir('..');
     }
 
-    prepareDirectory (dirname, isolate, topCache) {
+    prepareDirectory (dirname, needsInit, isolate, topCache) {
         this.moveToDir(dirname);
 
         if (isolate) {
@@ -68,7 +70,9 @@ class Fetcher {
             this.setupPrefixDir(prefixDir);
         }
     
-        this.exec('npm init -f');
+        if (needsInit) {
+            this.exec('npm init -y');
+        }
     }
 
     performInstall(project) {
