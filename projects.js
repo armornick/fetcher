@@ -10,7 +10,8 @@ module.exports = {
 		// 'zero-server-app','parcel-app','parcel-bundle','rollup-pkg',
 		// 'vite-starters','vite-bundle','windicss-bundle',
 		// 'tailwind-pkg','tailwind-ui-kits',
-		'_npm-run-all_single',
+		// '_ko-jsx_single','_toastify-js_single',
+		'preact-bundle','solidjs-bundle','infernojs-bundle',
 	],
 	isolate: true,
 
@@ -65,8 +66,30 @@ module.exports = {
 		]
 	},
 
-	'_npm-run-all_single': {
-		packages: ['npm-run-all']
+	"_ko-jsx_single": {
+		packages: ["ko-jsx","babel-plugin-jsx-dom-expressions"]
+	},
+
+	"_toastify-js_single": {
+		packages: ['toastify-js']
+	},
+
+	"preact-bundle": {
+		packages: [
+			'preact','preact-router','preact-portal','preact-richtextarea','preact-token-input',
+			'preact-virtual-list','preact-layout','preact-helmet','preact-custom-scrollbars',
+		]
+	},
+
+	"solidjs-bundle": {
+		packages: ['solid-js','babel-preset-solid']
+	},
+
+	"infernojs-bundle": {
+		packages: [
+			'inferno','inferno-compat','inferno-router','inferno-server',
+			'babel-plugin-inferno','inferno-hyperscript','inferno-create-element',
+		]
 	},
 
 	// ----------------------------------------------------------------------------------------
@@ -350,7 +373,7 @@ module.exports = {
 
 	"babeljs-bundle": {
 		devPackages: ['@babel/core','@babel/cli','@babel/preset-env','@babel/preset-react','@babel/preset-typescript',
-			'@babel/preset-flow','@babel/plugin-transform-react-jsx']
+			'@babel/preset-flow','@babel/plugin-transform-react-jsx',]
 	},
 
 	"_babeljs_preset-env": {
