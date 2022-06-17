@@ -18,9 +18,16 @@ if (!existsSync(BUILD_DIR)) {
 }
 process.chdir(BUILD_DIR);
 
-let projectsToBuild = projects.defaults;
-projectsToBuild = projectsToBuild.filter(project => project in projects);
+const argv = process.argv.slice(2);
 
+let projectsToBuild;
+if (argv.length > 0) {
+	projectsToBuild = argv;
+} else {
+	projectsToBuild = projects.defaults;
+}
+
+projectsToBuild = projectsToBuild.filter(project => project in projects);
 projectsToBuild.forEach((project) => {
 	console.log(`===== building project ${ project } =====`);
 	fetcher.buildProject(project, projects[project]);
