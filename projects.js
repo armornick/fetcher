@@ -8,12 +8,24 @@ module.exports = {
 		// 'vue-app','vue-bundle','react-app','preact-app','svelte-app','npx-react-app',
 		// 'tiddlywiki','httpServer','next-app','nanogen-app','eleventy-app','nuxt-bundle',
 		// 'zero-server-app','parcel-app','parcel-bundle','rollup-pkg',
-		// 'vite-starters','vite-bundle','windicss-bundle',
-		// 'tailwind-pkg','tailwind-ui-kits',
+		// 'vite-bundle','vite-starters', //'windicss-bundle',
 		// '_ko-jsx_single','_toastify-js_single',
-		'preact-bundle','solidjs-bundle','infernojs-bundle',
+		// 'preact-bundle','solidjs-bundle','infernojs-bundle',
+		// 'nexe-app',
+		// 'misc-pkg-2020-06-09',
+		'hyperhtml-bundle','tagged-templates-bundle',
+		'tailwind-pkg','tailwind-ui-kits',
 	],
 	isolate: true,
+
+	// ----------------------------------------------------------------------------------------
+
+	'misc-pkg-2020-06-09': {
+		subs: [
+			'misc-libs','css-libs','metalsmith-bundle','staticgen-bundle','jstransformer-bundle',
+			'sass-bundle'
+		]
+	},
 
 	// ----------------------------------------------------------------------------------------
 
@@ -40,7 +52,7 @@ module.exports = {
 		packages: [
 			'@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',
 			'animate.css','bootstrap','bulma','chota','materialize-css@next','milligram','spectre.css',
-			'tachyons@4.12.0','tailwindcss','normalize.css','minireset.css','open-props',
+			'tachyons@4.12.0','tailwindcss','normalize.css','minireset.css','open-props','dashvar',
 			'postcss','autoprefixer','postcss-preset-env','precss'
 		]
 	},
@@ -49,7 +61,7 @@ module.exports = {
 		packages: [
 			'express',
 			'body-parser','cookie-parser','multer','serve-index','serve-static',
-			'pug','ejs','hbs','nunjucks',
+			'pug','ejs','hbs','nunjucks','swig-templates',
 			'poet',
 			' @feathersjs/feathers','@feathersjs/express','@feathersjs/socketio','@feathersjs/cli',
 		]
@@ -89,6 +101,13 @@ module.exports = {
 		packages: [
 			'inferno','inferno-compat','inferno-router','inferno-server',
 			'babel-plugin-inferno','inferno-hyperscript','inferno-create-element',
+		]
+	},
+
+	"tagged-templates-bundle": {
+		packages: [
+			'csstag','@emotion/css','@emotion/react','facon','genel','htm',
+			'lighterhtml','hypersimple','haunted',
 		]
 	},
 
@@ -132,7 +151,7 @@ module.exports = {
 	},
 
 	"hyperhtml-bundle": {
-		packages: ['hyperhtml','uhtml','hypersimple','lighterhtml','neverland','haunted','lit-html','lit']
+		packages: ['hyperhtml','uhtml','uce','uland','hypersimple','lighterhtml','neverland','haunted','lit-html','lit']
 	},
 
 	"metalsmith-bundle": {
@@ -152,6 +171,33 @@ module.exports = {
 		devPackages: [
 			'svelte-windicss-preprocess','windicss','rollup-plugin-windicss','windicss-webpack-plugin',
 		],
+	},
+
+	// ----------------------------------------------------------------------------------------
+
+	'staticgen-bundle': {
+		devPackages: [
+			'20ful','hydrogen-cli','nodemon','live-server','npm-run-all','mini-site-generator',
+			'onessg','jstransformer-ejs','jstransformer-swig','spignite',
+			'@sphido/core','@sphido/frontmatter','@sphido/markdown','@sphido/meta','fs-extra','globby',
+		]
+	},
+
+	'jstransformer-bundle': {
+		devPackages: [
+			'jstransformer','jstransformer-asciidoctor','jstransformer-org',
+			'jstransformer-nunjucks','jstransformer-marked','jstransformer-handlebars','jstransformer-md',
+			'jstransformer-livescript','jstransformer-pug','jstransformer-stylus','jstransformer-swig',
+			'jstransformer-less','jstransformer-typescript','jstransformer-ejs'
+		]
+	},
+
+	'sass-bundle': {
+		devPackages: [
+			'sass',
+			'cirrus-ui','iotacss','sierra-library','susy','open-color','shevy','typi','gerillass',
+			'bulma','bootstrap@5.2.0-beta1','bootswatch','foundation-sites',
+		]
 	},
 
 	// ----------------------------------------------------------------------------------------
@@ -259,7 +305,14 @@ module.exports = {
 	// ----------------------------------------------------------------------------------------
 
 	'vite-starters': {
-		subs: ['vite-vanilla-starter','vite-vue-starter','vite-react-starter','vite-preact-starter','vite-lit-starter','vite-svelte-starter'],
+		subs: [
+			'vite-vanilla-starter','vite-vue-starter','vite-react-starter','vite-preact-starter','vite-lit-starter','vite-svelte-starter',
+			'vite-solidjs-starter','vite-solidjs-ts-starter','vite-solidjs-ts-windicss-starter',
+			'vite-solidjs-ts-tailwindcss-starter',
+			'vitawind-starter','vitesse-lite-starter','vite-elm-starter',
+			'vite-mithril-starter','vite-mithril-ts-starter','vite-neutralinojs-starter',
+			'vitawind-skel'
+		],
 		topCache: true,
 	},
 
@@ -291,6 +344,66 @@ module.exports = {
 	'vite-svelte-starter': {
 		npx: 'create-vite@latest vite-svelte-skel --template svelte',
 		install: 'vite-svelte-skel',
+	},
+
+	'vite-solidjs-starter': {
+		npx: 'degit solidjs/templates/js vite-solidjs-starter',
+		install: 'vite-solidjs-starter',
+	},
+
+	'vite-solidjs-ts-starter': {
+		npx: 'degit solidjs/templates/ts vite-solidjs-ts-starter',
+		install: 'vite-solidjs-ts-starter',
+	},
+
+	'vite-solidjs-ts-windicss-starter': {
+		npx: 'degit solidjs/templates/ts-windicss vite-solidjs-ts-windicss-starter',
+		install: 'vite-solidjs-ts-windicss-starter',
+	},
+
+	'vite-solidjs-ts-tailwindcss-starter': {
+		npx: 'degit solidjs/templates/ts-tailwindcss vite-solidjs-ts-tailwindcss-starter',
+		install: 'vite-solidjs-ts-tailwindcss-starter',
+	},
+
+	'vitawind-starter': {
+		npx: 'degit huibizhang/template-vite-vanilla-tailwind-v3 vitawind-starter',
+		install: 'vitawind-starter',
+	},
+
+	'vitesse-lite-starter': {
+		npx: 'degit antfu/vitesse-lite vitesse-lite-starter',
+		install: 'vitesse-lite-starter',
+	},
+
+	'vitailse-starter': {
+		npx: 'degit zynth17/vitailse vitailse-starter',
+		install: 'vitailse-starter',
+	},
+
+	'vite-elm-starter': {
+		npx: 'degit lindsaykwardell/vite-elm-template#main vite-elm-starter',
+		install: 'vite-elm-starter',
+	},
+
+	'vite-mithril-starter': {
+		npx: 'degit ArthurClemens/mithril-vite-starter vite-mithril-starter',
+		install: 'vite-mithril-starter',
+	},
+
+	'vite-mithril-ts-starter': {
+		npx: 'degit ArthurClemens/mithril-ts-vite-starter vite-mithril-ts-starter',
+		install: 'vite-mithril-ts-starter',
+	},
+
+	'vite-neutralinojs-starter': {
+		npx: 'degit yooneskh/vite-neutralinojs-template vite-neutralinojs-starter',
+		install: 'vite-neutralinojs-starter',
+	},
+
+	'vitawind-skel': {
+		npx: 'create-vitawind@next vitawind-skel -- --pure',
+		install: 'vitawind-skel',
 	},
 
 	'vite-bundle': {

@@ -142,5 +142,10 @@ module.exports = {
 		postCommand: 'create-forgo-app forgo-skel'
 	},
 
+	"nexe-app": {
+		package: 'nexe',
+		global: true,
+	},
+
 
 }
