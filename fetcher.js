@@ -16,6 +16,7 @@ class Fetcher {
 
     // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
+    /** @param {import('./types/projects').ProjectMap} config */
     constructor(config) {
         this.isolate = config.isolate;
         this.projects = config;
@@ -23,9 +24,14 @@ class Fetcher {
 
     // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
+    /**
+     * @param {string | import('./types/projects').Project} name
+     * @param {import('./types/projects').Project} project
+     * @param {boolean} [topCache]
+     */
     buildProject(name, project, topCache) {
         topCache = project.topCache || topCache;
-        if (project === name) {
+        if (typeof(name) === 'object') {
             name = project.name;
         }
         
@@ -43,7 +49,7 @@ class Fetcher {
 
         if (project.subs) {
             for (let sub of project.subs) {
-                if (sub in this.projects || (typeof(sub) === 'object')) {
+                if (this.isSubProject(sub)) {
                     let subproject = this.getSubProject(sub);
                     this.buildProject(sub, subproject, topCache);
                 }
@@ -52,7 +58,7 @@ class Fetcher {
 
         if (project.depends) {
             for (let dep of project.depends) {
-                if (dep in projects) {
+                if (this.isSubProject(dep)) {
                     let dependency = this.getSubProject(dep);
                     this.performInstall(dependency);
                 }
@@ -171,6 +177,11 @@ class Fetcher {
 		    || project.depends || project.npx || project.command;
     }
 
+    /**
+     * 
+     * @param {import('./types/projects').Project | string} project 
+     * @returns {import('./types/projects').Project}
+     */
     getSubProject(project) {
         if (typeof(project) === 'string') {
             return this.projects[project];
@@ -183,24 +194,56 @@ class Fetcher {
         }
     }
 
+    /**
+     * 
+     * @param {import('./types/projects').Project | string} project 
+     * @returns {boolean}
+     */
+    isSubProject(project) {
+        if (typeof(project) === 'string') {
+            return project in this.projects;
+        }
+        else if (typeof(project) === 'object') {
+            return true;
+        }
+        else {
+            throw new TypeError(`subproject must be a string or object; received ${project}`);
+        }
+    }
+
     // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
 
+    /**
+     * 
+     * @param {string} cmd 
+     */
     exec(cmd) {
         console.log(cmd);
         execSync(cmd);
     }
 
+    /**
+     * 
+     * @param {string} dirname 
+     */
     forceDir (dirname) {
         if (!existsSync(dirname)) {
             mkdirSync(dirname);
         }
     }
 
+    /**
+     * 
+     * @param {string} dirname 
+     */
     moveToDir(dirname) {
         this.forceDir(dirname);
 	    process.chdir(dirname);
     }
 
+    /**
+     * @param {string} cachePath
+     */
     setupCacheDir (cachePath) {
         cachePath = !path.isAbsolute(cachePath) ? path.resolve(cachePath) : cachePath;
         console.log(`setting '${ cachePath }' as cache directory`);
@@ -208,6 +251,9 @@ class Fetcher {
         process.env.npm_config_cache = cachePath;
     }
 
+    /**
+     * @param {string} dirname
+     */
     setupPrefixDir (dirname) {
         let dirToInstall = !path.isAbsolute(dirname) ? path.join(globalDir, dirname) : dirname;
         console.log(`setting '${ dirToInstall }' as global application directory`);

@@ -6,7 +6,7 @@ const { existsSync, mkdirSync } = require('fs');
 const Fetcher = require('./fetcher');
 
 const BUILD_DIR = 'build';
-const projects = require('./projects')
+const projects = require('./projects');
 
 // ---------------------------------------------------------
 // application code

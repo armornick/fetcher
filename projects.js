@@ -1,3 +1,4 @@
+/** @type {import('./types/projects').ProjectMap} */
 module.exports = {
 	
 	defaults: [
@@ -170,6 +171,10 @@ module.exports = {
 		packages: ['hyperhtml','uhtml','uce','uland','hypersimple','lighterhtml','neverland','haunted','lit-html','lit']
 	},
 
+	"metalsmith-pkg": {
+		subs: ['metalsmith-bundle','metalsmith-starters']
+	},
+
 	"metalsmith-bundle": {
 		packages: [
 			'metalsmith','metalsmith-debug','micromatch',
@@ -180,6 +185,19 @@ module.exports = {
 			'metalsmith-with-postcss','metalsmith-slug','metalsmith-stylus','@metalsmith/table-of-contents',
 			'metalsmith-in-place','@metalsmith/default-values','@metalsmith/remove','@metalsmith/excerpts',
 			'metalsmith-taxonomy','metalsmith-uglify',''
+		]
+	},
+
+	"metalsmith-starters": {
+		topCache: true,
+		subs: [
+			{ name: '_build-tool', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/build-tool', install: 'build-tool' },
+			{ name: '_drafts-plugin', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/drafts-plugin', install: 'drafts-plugin' },
+			{ name: '_jekyll', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/jekyll', install: 'jekyll' },
+			{ name: '_project-scaffolder', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/project-scaffolder', install: 'project-scaffolder' },
+			{ name: '_static-site', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/static-site', install: 'static-site' },
+			{ name: '_wintersmith', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/wintersmith', install: 'wintersmith' },
+			{ name: '_nunjucks-starter', npx: 'degit https://github.com/ryannjohnson/metalsmith-nunjucks-starter nunjucks-starter', install: 'nunjucks-starter' },
 		]
 	},
 
