@@ -25,6 +25,9 @@ class Fetcher {
 
     buildProject(name, project, topCache) {
         topCache = project.topCache || topCache;
+        if (project === name) {
+            name = project.name;
+        }
         
         if (this.isRealProject(project)) {
             const needsInit = (project.packages || project.devPackages || project.package 
@@ -40,8 +43,8 @@ class Fetcher {
 
         if (project.subs) {
             for (let sub of project.subs) {
-                if (sub in this.projects) {
-                    let subproject = this.projects[sub];
+                if (sub in this.projects || (typeof(sub) === 'object')) {
+                    let subproject = this.getSubProject(sub);
                     this.buildProject(sub, subproject, topCache);
                 }
             }
@@ -50,7 +53,7 @@ class Fetcher {
         if (project.depends) {
             for (let dep of project.depends) {
                 if (dep in projects) {
-                    let dependency = projects[dep];
+                    let dependency = this.getSubProject(dep);
                     this.performInstall(dependency);
                 }
             }
@@ -166,6 +169,18 @@ class Fetcher {
     isRealProject(project) {
         return project.packages || project.devPackages || project.package 
 		    || project.depends || project.npx || project.command;
+    }
+
+    getSubProject(project) {
+        if (typeof(project) === 'string') {
+            return this.projects[project];
+        }
+        else if (typeof(project) === 'object') {
+            return project;
+        }
+        else {
+            throw new TypeError(`subproject must be a string or object; received ${project}`);
+        }
     }
 
     // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
