@@ -191,13 +191,13 @@ module.exports = {
 	"metalsmith-starters": {
 		topCache: true,
 		subs: [
-			{ name: '_build-tool', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/build-tool', install: 'build-tool' },
-			{ name: '_drafts-plugin', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/drafts-plugin', install: 'drafts-plugin' },
-			{ name: '_jekyll', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/jekyll', install: 'jekyll' },
-			{ name: '_project-scaffolder', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/project-scaffolder', install: 'project-scaffolder' },
-			{ name: '_static-site', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/static-site', install: 'static-site' },
-			{ name: '_wintersmith', npx: 'degit https://github.com/metalsmith/metalsmith/tree/master/examples/wintersmith', install: 'wintersmith' },
-			{ name: '_nunjucks-starter', npx: 'degit https://github.com/ryannjohnson/metalsmith-nunjucks-starter nunjucks-starter', install: 'nunjucks-starter' },
+			{ name: '_build-tool', npx: 'degit https://github.com/metalsmith/metalsmith/examples/build-tool build-tool', install: 'build-tool' },
+			{ name: '_drafts-plugin', npx: 'degit https://github.com/metalsmith/metalsmith/examples/drafts-plugin drafts-plugin', install: 'drafts-plugin' },
+			{ name: '_jekyll', npx: 'degit https://github.com/metalsmith/metalsmith/examples/jekyll jekyll', install: 'jekyll' },
+			{ name: '_project-scaffolder', npx: 'degit https://github.com/metalsmith/metalsmith/examples/project-scaffolder project-scaffolder', install: 'project-scaffolder' },
+			{ name: '_static-site', npx: 'degit https://github.com/metalsmith/metalsmith/examples/static-site static-site', install: 'static-site' },
+			{ name: '_wintersmith', npx: 'degit https://github.com/metalsmith/metalsmith/examples/wintersmith wintersmith', install: 'wintersmith' },
+			{ name: '_nunjucks-starter', npx: 'degit https://github.com/ryannjohnson/metalsmith-nunjucks-starter nunjucks-starter nunjucks-starter', install: 'nunjucks-starter' },
 		]
 	},
 
