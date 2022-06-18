@@ -78,14 +78,6 @@ module.exports = {
 		]
 	},
 
-	"_ko-jsx_single": {
-		packages: ["ko-jsx","babel-plugin-jsx-dom-expressions"]
-	},
-
-	"_toastify-js_single": {
-		packages: ['toastify-js']
-	},
-
 	"preact-bundle": {
 		packages: [
 			'preact','preact-router','preact-portal','preact-richtextarea','preact-token-input',
@@ -111,6 +103,28 @@ module.exports = {
 		]
 	},
 
+	"material-design-bundle": {
+		topCache: true,
+		subs: [
+			{ name: 'material-tailwind-bundle', packages: ['@material-tailwind/html','@material-tailwind/react',] },
+			{ name: '_material-design-lite', packages: ['material-design-lite','vue-mdl'] },
+			{ name: '_material-components-web', packages: ['material-components-web','vue-mdc','material-design-icons'] },
+			{ name: '_smelte', packages: ['smelte'] },
+			{ name: '_vuetify', packages: ['vuetify'] },
+			{ name: '_react-materialize', packages: ['react-materialize'] },
+			{ name: 'mdbootstrap', packages: ['mdb-cli','mdb-ui-kit','mdb-react-ui-kit','mdb-vue-ui-kit',] },
+			{ name: '_tw-elements', packages: ['tw-elements'] },
+			{ name: '_mdb-webpack-starter', npx: 'degit https://github.com/mdbootstrap/mdb-webpack-starter mdb-webpack-starter', install: 'mdb-webpack-starter' }
+		]
+	},
+
+	'mui-bundle': {
+		packages: [
+			'@mui/material','@emotion/react','@emotion/styled','@mui/icons-material',
+			'@mui/joy','@mui/base','@mui/system',
+		]
+	},
+
 	// ----------------------------------------------------------------------------------------
 
 	'webpack-bundle': {
@@ -128,7 +142,9 @@ module.exports = {
 	"postcss-bundle": {
 		packages: [
 			'postcss','autoprefixer','atcss','cssnano','precss','rucksack-css','postcss-utilities',
-			'postcss-cli','postcss-layout','precss','postcss-preset-env'
+			'postcss-cli','postcss-layout','precss','postcss-preset-env',
+			'postcss-advanced-variables','postcss-bem','postcss-conditionals','postcss-each',
+			'postcss-for','postcss-import','postcss-nested','postcss-sassy-mixins','postcss-simple-vars'
 		]
 	},
 
@@ -222,38 +238,6 @@ module.exports = {
 		devPackages: [
 			'@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars',
 		]
-	},
-
-	'_windstrap_single': {
-		packages: ['windstrap']
-	},
-
-	'_flowbite_single': {
-		packages: ['flowbite']
-	},
-
-	'_kutty_single': {
-		packages: ['kutty']
-	},
-
-	'_sailui_single': {
-		packages: ['sailui']
-	},
-	
-	'_daisyui_single': {
-		packages: ['daisyui']
-	},
-
-	'_a17t_single': {
-		packages: ['a17t']
-	},
-
-	'_material-tailwind_single': {
-		packages: ['@material-tailwind/react']
-	},
-
-	'_tw-elements_single': {
-		packages: ['tw-elements']
 	},
 
 	// ----------------------------------------------------------------------------------------
@@ -489,18 +473,6 @@ module.exports = {
 			'@babel/preset-flow','@babel/plugin-transform-react-jsx',]
 	},
 
-	"_babeljs_preset-env": {
-		packages: ['@babel/preset-env']
-	},
-
-	"_babeljs_preset-react": {
-		packages: ['@babel/preset-react']
-	},
-
-	"_babeljs_transform-jsx": {
-		packages: ['@babel/plugin-transform-react-jsx']
-	},
-
 	// ----------------------------------------------------------------------------------------
 
 }
@@ -508,4 +480,5 @@ module.exports = {
 Object.assign(
 	module.exports,
 	require('./packages/apps'),
+	require('./packages/singles')
 );
