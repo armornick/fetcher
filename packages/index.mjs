@@ -516,24 +516,17 @@ projects.define(
         BasicProject('react_', ['react']),
         BasicProject('react-dom_', ['react-dom']),
         BasicProject('react-bundle', ['react', 'react-dom', 'react-router-dom@6']),
-        AppProject('react-app', 'create-react-app', 'create-react-app '),
-        AppProject('chakra-ui-react', 'create-react-app', 'create-react-app my-app --template @chakra-ui'),
+        AppProject('react-app', 'create-react-app', 'create-react-app react-app-skel'),
+        // AppProject('chakra-ui-react', 'create-react-app', 'create-react-app my-app --template @chakra-ui'),
         BasicProject('chakra-ui-vite', ['@chakra-ui/react','@emotion/react@^11','@emotion/styled@^11','framer-motion@^6']),
         BasicProject('react-components', [
             '@headlessui/react','@material-tailwind/react','mdb-react-ui-kit','flowbite-react','flowbite',
-            '@vechaiui/core','@vechaiui/react','@tailwindcss/forms','tailwind-react-ui','styled-components',
-            'react-bootstrap','bootstrap','react-bulma-components',
+            'styled-components',
         ]),
-    ])
-)
-
-projects.define(
-    ContainerProject('angular-13-bundle', [
-        AppProject('angular-app', '@angular/cli@13', 'ng new angular-skel'),
-        BasicProject('ng-bootstrap_', ['@ng-bootstrap/ng-bootstrap','bootstrap@4.6','@popperjs/core','@angular/localize']),
-        BasicProject('ngneat_dialog_', ['@ngneat/dialog']),
-        BasicProject('ngneat_svgicon_', ['@ngneat/svg-icon']),
-        BasicProject('ngneat_tailwind_', ['@ngneat/tailwind']),
+        BasicProject('tailwind-react-ui_',['tailwind-react-ui']),
+        BasicProject('react-bootstrap_', ['react-bootstrap','bootstrap']),
+        BasicProject('react-bulma_', ['react-bulma-components']),
+        BasicProject('vechaiui_', ['@vechaiui/core','@vechaiui/react','@tailwindcss/forms']),
     ])
 )
 
@@ -552,7 +545,7 @@ projects.define(
 )
 
 projects.define(
-    AppProject('preact-app', 'preact-cli', 'preact create default preact-skel')
+    CommandProject('preact-app', 'preact-cli create default preact-skel')
 )
 
 projects.define(
