@@ -34,78 +34,78 @@ projects.define(
 
 projects.define(
     ContainerProject('css-frameworks', [
-        BasicProject('_bootstrap', ['bootstrap']),
-        BasicProject('_bulma', ['bulma']),
-        BasicProject('_codyhouse-framework', ['codyhouse-framework']),
-        BasicProject('_material-tailwind', ['tailwindcss', '@material-tailwind/html']),
-        BasicProject('_niui', ['niui-npm']),
-        BasicProject('_normalize', ['normalize.css']),
-        BasicProject('_modern-css-reset', ['modern-css-reset']),
-        BasicProject('_minireset', ['minireset.css']),
+        BasicProject('bootstrap_', ['bootstrap']),
+        BasicProject('bulma_', ['bulma']),
+        BasicProject('codyhouse-framework_', ['codyhouse-framework']),
+        BasicProject('material-tailwind_', ['tailwindcss', '@material-tailwind/html']),
+        BasicProject('niui_', ['niui-npm']),
+        BasicProject('normalize_', ['normalize.css']),
+        BasicProject('modern-css-reset_', ['modern-css-reset']),
+        BasicProject('minireset_', ['minireset.css']),
         BasicProject('classless', 
             ['water.css','sakura.css','awsm.css','axist','bamboo.css','holiday.css','markdown-air','marx-css','simpledotcss','picnic']),
-        DegitProject('_classlesscss', 'github:emareg/classlesscss', false),
-        DegitProject('_skeleton', 'github:dhg/Skeleton', false),
-        BasicProject('_purecss', ['purecss']),
-        BasicProject('_foundation', ['foundation-sites']),
-        BasicProject('_primer', ['@primer/css']),
-        BasicProject('_material-components', ['material-components-web']),
+        DegitProject('classlesscss_', 'github:emareg/classlesscss', false),
+        DegitProject('skeleton_', 'github:dhg/Skeleton', false),
+        BasicProject('purecss_', ['purecss']),
+        BasicProject('foundation_', ['foundation-sites']),
+        BasicProject('primer_', ['@primer/css']),
+        BasicProject('material-components_', ['material-components-web']),
     ])
 )
 
 projects.define(
     ContainerProject('bootstrap-bundle', [
-        BasicProject('_bootstrap', ['bootstrap@5.2.0-beta1','@popperjs/core']),
-        BasicProject('_bootswatch', ['bootswatch']),
-        BasicProject('_bootstrap-4', ['bootstrap@4','bootstrap-vue']),
-        BasicProject('_material-kit', ['material-kit']),
+        BasicProject('bootstrap_', ['bootstrap@5.2.0-beta1','@popperjs/core']),
+        BasicProject('bootswatch_', ['bootswatch']),
+        BasicProject('bootstrap-4_', ['bootstrap@4','bootstrap-vue']),
+        BasicProject('material-kit_', ['material-kit']),
         BasicProject('mdbootstrap', ['mdb-ui-kit','mdb-react-ui-kit','mdb-vue-ui-kit'])
     ])
 )
 
 projects.define(
     ContainerProject('icons-bundle', [
-        BasicProject('_bootstrap-icons', ['bootstrap-icons']),
-        BasicProject('_fontawesome', ['@fortawesome/fontawesome-free']),
-        BasicProject('_feather-icons', ['feather-icons']),
-        BasicProject('_octicons', ['@primer/octicons','@primer/styled-octicons','@primer/octicons-react']),
-        BasicProject('_bytesize-icons', ['bytesize-icons']),
-        BasicProject('_ionicons', ['ionicons']),
+        BasicProject('bootstrap-icons_', ['bootstrap-icons']),
+        BasicProject('fontawesome_', ['@fortawesome/fontawesome-free']),
+        BasicProject('feather-icons_', ['feather-icons']),
+        BasicProject('octicons_', ['@primer/octicons','@primer/styled-octicons','@primer/octicons-react']),
+        BasicProject('bytesize-icons_', ['bytesize-icons']),
+        BasicProject('ionicons_', ['ionicons']),
         'svg-icons-bundle',
     ])
 )
 
 projects.define(
     ContainerProject('svg-icons-bundle', [
-        BasicProject('_bootstrap', ['@svg-icons/bootstrap']),
-        // BasicProject('_boxicons-logos', ['@svg-icons/boxicons-logos']),
-        BasicProject('_boxicons-regular', ['@svg-icons/boxicons-regular']),
-        BasicProject('_boxicons-solid', ['@svg-icons/boxicons-solid']),
-        BasicProject('_entypo', ['@svg-icons/entypo']),
-        BasicProject('_entypo-social', ['@svg-icons/entypo-social']),
-        BasicProject('_evaicons-outline', ['@svg-icons/evaicons-outline']),
-        BasicProject('_evaicons-solid', ['@svg-icons/evaicons-solid']),
-        BasicProject('_evil', ['@svg-icons/evil']),
-        BasicProject('_fa-brands', ['@svg-icons/fa-brands']),
-        BasicProject('_fa-regular', ['@svg-icons/fa-regular']),
-        BasicProject('_fa-solid', ['@svg-icons/fa-solid']),
-        BasicProject('_feather', ['@svg-icons/feather']),
-        BasicProject('_foundation', ['@svg-icons/foundation']),
-        BasicProject('_heroicons-outline', ['@svg-icons/heroicons-outline']),
-        BasicProject('_heroicons-solid', ['@svg-icons/heroicons-solid']),
-        BasicProject('_icomoon', ['@svg-icons/icomoon']),
-        BasicProject('_ionicons-outline', ['@svg-icons/ionicons-outline']),
-        BasicProject('_ionicons-sharp', ['@svg-icons/ionicons-sharp']),
-        BasicProject('_ionicons-solid', ['@svg-icons/ionicons-solid']),
-        BasicProject('_material-filled', ['@svg-icons/material-filled']),
-        BasicProject('_material-outlined', ['@svg-icons/material-outlined']),
-        BasicProject('_material-rounded', ['@svg-icons/material-rounded']),
-        BasicProject('_material-sharp', ['@svg-icons/material-sharp']),
-        BasicProject('_octicons', ['@svg-icons/octicons']),
-        BasicProject('_open-iconic', ['@svg-icons/open-iconic']),
-        BasicProject('_simple-icons', ['@svg-icons/simple-icons']),
-        BasicProject('_typicons', ['@svg-icons/typicons']),
-        BasicProject('_zondicons', ['@svg-icons/zondicons']),
+        BasicProject('bootstrap_', ['@svg-icons/bootstrap']),
+        // BasicProject('boxicons-logos_', ['@svg-icons/boxicons-logos']),
+        BasicProject('boxicons-regular_', ['@svg-icons/boxicons-regular']),
+        BasicProject('boxicons-solid_', ['@svg-icons/boxicons-solid']),
+        BasicProject('entypo_', ['@svg-icons/entypo']),
+        BasicProject('entypo-social_', ['@svg-icons/entypo-social']),
+        BasicProject('evaicons-outline_', ['@svg-icons/evaicons-outline']),
+        BasicProject('evaicons-solid_', ['@svg-icons/evaicons-solid']),
+        BasicProject('evil_', ['@svg-icons/evil']),
+        BasicProject('fa-brands_', ['@svg-icons/fa-brands']),
+        BasicProject('fa-regular_', ['@svg-icons/fa-regular']),
+        BasicProject('fa-solid_', ['@svg-icons/fa-solid']),
+        BasicProject('feather_', ['@svg-icons/feather']),
+        BasicProject('foundation_', ['@svg-icons/foundation']),
+        BasicProject('heroicons-outline_', ['@svg-icons/heroicons-outline']),
+        BasicProject('heroicons-solid_', ['@svg-icons/heroicons-solid']),
+        BasicProject('icomoon_', ['@svg-icons/icomoon']),
+        BasicProject('ionicons-outline_', ['@svg-icons/ionicons-outline']),
+        BasicProject('ionicons-sharp_', ['@svg-icons/ionicons-sharp']),
+        BasicProject('ionicons-solid_', ['@svg-icons/ionicons-solid']),
+        BasicProject('material-filled_', ['@svg-icons/material-filled']),
+        BasicProject('material-outlined_', ['@svg-icons/material-outlined']),
+        BasicProject('material-rounded_', ['@svg-icons/material-rounded']),
+        BasicProject('material-sharp_', ['@svg-icons/material-sharp']),
+        BasicProject('octicons_', ['@svg-icons/octicons']),
+        BasicProject('open-iconic_', ['@svg-icons/open-iconic']),
+        BasicProject('simple-icons_', ['@svg-icons/simple-icons']),
+        BasicProject('typicons_', ['@svg-icons/typicons']),
+        BasicProject('zondicons_', ['@svg-icons/zondicons']),
     ])
 )
 
@@ -141,20 +141,20 @@ projects.define(
 projects.define(
     BasicProject('twind-bundle', [
         'twind','@twind/aspect-ratio','@twind/content','@twind/forms','@twind/line-clamp','@twind/typography',
-        '@twind/next','@twind/preact','@twind/wmr','construct-style-sheets-polyfill',
+        '@twind/preact','@twind/wmr','construct-style-sheets-polyfill',
     ])
 )
 
 projects.define(
     ContainerProject('material-design-bundle', [
         BasicProject('material-tailwind-bundle', ['@material-tailwind/html','@material-tailwind/react']),
-        BasicProject('_material-design-lite', ['material-design-lite','vue-mdl']),
-        BasicProject('_smelte', ['smelte']),
-        BasicProject('_vuetify', ['vuetify']),
-        BasicProject('_materialize', ['react-materialize', 'materialize-css@next']),
+        BasicProject('material-design-lite_', ['material-design-lite','vue-mdl']),
+        BasicProject('smelte_', ['smelte']),
+        BasicProject('vuetify_', ['vuetify']),
+        BasicProject('materialize_', ['react-materialize', 'materialize-css@next']),
         BasicProject('mdbootstrap', ['mdb-cli','mdb-ui-kit','mdb-react-ui-kit','mdb-vue-ui-kit']),
-        BasicProject('_tw-elements', ['tw-elements']),
-        DegitProject('_mdb-webpack-starter', 'https://github.com/mdbootstrap/mdb-webpack-starter', 'mdb-webpack-starter'),
+        BasicProject('tw-elements_', ['tw-elements']),
+        DegitProject('mdb-webpack-starter_', 'https://github.com/mdbootstrap/mdb-webpack-starter', 'mdb-webpack-starter'),
         'mui-bundle',
     ])
 )
@@ -190,31 +190,31 @@ projects.define(
         BasicProject('emotion-bundle', ['@emotion/css','@emotion/react','@emotion/styled','@emotion/babel-plugin']),
         BasicProject('jss-bundle', [
             'jss','jss-preset-default','color','react-jss','styled-jss',
-            'aphrodite-jss','vue-jss','jss-simple','normalize-jss','jss-sheet-loader','jss-css','babel-plugin-jss-css',
+            'aphrodite-jss','vue-jss','jss-simple','jss-sheet-loader','jss-css','babel-plugin-jss-css',
             'prejss','babel-plugin-transform-prejss','postjss','prejss-cli','prejss-styles-loader','postcss-js',
         ]),
         BasicProject('styled-components-bundle', ['styled-components','styled-theming','babel-plugin-styled-components']),
         BasicProject('cssx-bundle', ['cssx','cssx-transpiler','cssx-cli','rollup-plugin-cssx']),
         BasicProject('stitches-bundle', ['@stitches/core','@stitches/react']),
-        BasicProject('_twin-macro', ['twin.macro']),
-        BasicProject('_goober', ['goober']),
+        BasicProject('twin-macro_', ['twin.macro']),
+        BasicProject('goober_', ['goober']),
         AppProject('absurd-app', 'absurd'),
-        BasicProject('_tailwind-components', ['babel-plugin-macros','tailwind.macro','babel-plugin-tailwind-components']),
+        BasicProject('tailwind-components_', ['babel-plugin-macros','tailwind.macro','babel-plugin-tailwind-components']),
     ])
 )
 
 projects.define(
     ContainerProject('tailwind-pkg', [
-        BasicProject('_tailwind', ['tailwindcss']),
-        BasicProject('_tailwind-postcss', ['tailwindcss','postcss','autoprefixer']),
+        BasicProject('tailwind_', ['tailwindcss']),
+        BasicProject('tailwind-postcss_', ['tailwindcss','postcss','autoprefixer']),
         BasicProject('tailwind-plugins', ['@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars']),
-        BasicProject('_windstrap', ['windstrap']),
-        BasicProject('_flowbite', ['flowbite']),
-        BasicProject('_kutty', ['kutty']),
-        BasicProject('_sailui', ['sailui']),
-        BasicProject('_daisyui', ['daisyui']),
-        BasicProject('_a17t', ['a17t']),
-        BasicProject('_tw-elements', ['tw-elements']),
+        BasicProject('windstrap_', ['windstrap']),
+        BasicProject('flowbite_', ['flowbite']),
+        BasicProject('kutty_', ['kutty']),
+        BasicProject('sailui_', ['sailui']),
+        BasicProject('daisyui_', ['daisyui']),
+        BasicProject('a17t_', ['a17t']),
+        BasicProject('tw-elements_', ['tw-elements']),
     ])
 )
 
@@ -265,13 +265,13 @@ projects.define(
 
 projects.define(
     ContainerProject('metalsmith-starters', [
-        DegitProject('_build-tool', 'https://github.com/metalsmith/metalsmith/examples/build-tool', 'build-tool'),
-        DegitProject('_drafts-plugin', 'https://github.com/metalsmith/metalsmith/examples/drafts-plugin', 'drafts-plugin'),
-        DegitProject('_jekyll', 'https://github.com/metalsmith/metalsmith/examples/jekyll', 'jekyll'),
-        DegitProject('_project-scaffolder', 'https://github.com/metalsmith/metalsmith/examples/project-scaffolder', 'project-scaffolder'),
-        DegitProject('_static-site', 'https://github.com/metalsmith/metalsmith/examples/static-site', 'static-site'),
-        DegitProject('_wintersmith', 'https://github.com/metalsmith/metalsmith/examples/wintersmith', 'wintersmith'),
-        DegitProject('_nunjucks-starter', 'https://github.com/ryannjohnson/metalsmith-nunjucks-starter', 'nunjucks-starter'),
+        DegitProject('build-tool_', 'https://github.com/metalsmith/metalsmith/examples/build-tool', 'build-tool'),
+        DegitProject('drafts-plugin_', 'https://github.com/metalsmith/metalsmith/examples/drafts-plugin', 'drafts-plugin'),
+        DegitProject('jekyll_', 'https://github.com/metalsmith/metalsmith/examples/jekyll', 'jekyll'),
+        DegitProject('project-scaffolder_', 'https://github.com/metalsmith/metalsmith/examples/project-scaffolder', 'project-scaffolder'),
+        DegitProject('static-site_', 'https://github.com/metalsmith/metalsmith/examples/static-site', 'static-site'),
+        DegitProject('wintersmith_', 'https://github.com/metalsmith/metalsmith/examples/wintersmith', 'wintersmith'),
+        DegitProject('nunjucks-starter_', 'https://github.com/ryannjohnson/metalsmith-nunjucks-starter', 'nunjucks-starter'),
     ])
 )
 
@@ -358,19 +358,19 @@ projects.define(
 
 projects.define(
     ContainerProject('neutrinojs-pkg', [
-        BasicProject('_neutrinojs-react', [
+        BasicProject('neutrinojs-react_', [
             'react','react-dom',
             'neutrino','@neutrinojs/react','webpack','webpack-cli','webpack-dev-server'
         ]),
-        BasicProject('_neutrinojs-preact', [
+        BasicProject('neutrinojs-preact_', [
             'preact',
             'neutrino','@neutrinojs/preact','webpack','webpack-cli','webpack-dev-server'
         ]),
-        BasicProject('_neutrinojs-vue', [
+        BasicProject('neutrinojs-vue_', [
             'vue',
             'neutrino','@neutrinojs/vue','webpack','webpack-cli','webpack-dev-server'
         ]),
-        BasicProject('_neutrinojs-web', [
+        BasicProject('neutrinojs-web_', [
             'neutrino','@neutrinojs/web','webpack','webpack-cli','webpack-dev-server'
         ]),
     ])
@@ -380,15 +380,15 @@ projects.define(
 
 projects.define(
     ContainerProject('parcel-starters', [
-        BasicProject('_parcel_react', ['react','react-dom','react-router-dom@6','parcel']),
-        BasicProject('_parcel_vue', ['vue@3','vue-router@4','parcel','@parcel/transformer-vue']),
-        BasicProject('_parcel_preact', ['preact','parcel','@babel/plugin-transform-react-jsx']),
-        BasicProject('_parcel_inferno', ['inferno','inferno-router','inferno-create-element','parcel','@babel/plugin-transform-react-jsx']),
-        BasicProject('_parcel_solid-js', ['solid-js','parcel','babel-preset-solid']),
-        BasicProject('_parcel_sass', ['parcel', '@parcel/transformer-sass']),
-        BasicProject('_parcel_stylus', ['parcel', '@parcel/transformer-stylus']),
-        BasicProject('_parcel_sugarss', ['parcel', '@parcel/transformer-sugarss']),
-        BasicProject('_parcel_elm', ['parcel', '@parcel/transformer-elm']),
+        BasicProject('parcel_react_', ['react','react-dom','react-router-dom@6','parcel']),
+        BasicProject('parcel_vue_', ['vue@3','vue-router@4','parcel','@parcel/transformer-vue']),
+        BasicProject('parcel_preact_', ['preact','parcel','@babel/plugin-transform-react-jsx']),
+        BasicProject('parcel_inferno_', ['inferno','inferno-router','inferno-create-element','parcel','@babel/plugin-transform-react-jsx']),
+        BasicProject('parcel_solid-js_', ['solid-js','parcel','babel-preset-solid']),
+        BasicProject('parcel_sass_', ['parcel', '@parcel/transformer-sass']),
+        BasicProject('parcel_stylus_', ['parcel', '@parcel/transformer-stylus']),
+        BasicProject('parcel_sugarss_', ['parcel', '@parcel/transformer-sugarss']),
+        BasicProject('parcel_elm_', ['parcel', '@parcel/transformer-elm']),
     ])
 )
 
@@ -405,16 +405,16 @@ projects.define(
 
 projects.define(
     ContainerProject('parcel-singles', [
-        BasicProject('_parcel_cssnano', ['@parcel/optimizer-cssnano']),
-        BasicProject('_parcel_sass', ['@parcel/transformer-sass']),
-        BasicProject('_parcel_stylus', ['@parcel/transformer-stylus']),
-        BasicProject('_parcel_sugarss', ['@parcel/transformer-sugarss']),
-        BasicProject('_parcel_vue', ['@parcel/transformer-vue']),
-        BasicProject('_parcel_toml', ['@parcel/transformer-toml']),
-        BasicProject('_parcel_yaml', ['@parcel/transformer-yaml']),
-        BasicProject('_parcel_pug', ['@parcel/transformer-pug']),
-        BasicProject('_parcel_xml', ['@parcel/transformer-xml']),
-        BasicProject('_parcel_coffeescript', ['@parcel/transformer-coffeescript']),
+        BasicProject('parcel_cssnano_', ['@parcel/optimizer-cssnano']),
+        BasicProject('parcel_sass_', ['@parcel/transformer-sass']),
+        BasicProject('parcel_stylus_', ['@parcel/transformer-stylus']),
+        BasicProject('parcel_sugarss_', ['@parcel/transformer-sugarss']),
+        BasicProject('parcel_vue_', ['@parcel/transformer-vue']),
+        BasicProject('parcel_toml_', ['@parcel/transformer-toml']),
+        BasicProject('parcel_yaml_', ['@parcel/transformer-yaml']),
+        BasicProject('parcel_pug_', ['@parcel/transformer-pug']),
+        BasicProject('parcel_xml_', ['@parcel/transformer-xml']),
+        BasicProject('parcel_coffeescript_', ['@parcel/transformer-coffeescript']),
     ])
 )
 
@@ -445,11 +445,11 @@ projects.define(
 
 projects.define(
     ContainerProject('vue-pkg', [
-        BasicProject('_vue', ['vue']),
-        BasicProject('_petite-vue', ['petite-vue']),
+        BasicProject('vue_', ['vue']),
+        BasicProject('petite-vue_', ['petite-vue']),
         BasicProject('vue-bundle', ['vue@3','vue-router@4','pinia','petite-vue']),
-        BasicProject('_vitepress', ['vitepress','vue']),
-        BasicProject('_vuepress', ['vuepress']),
+        BasicProject('vitepress_', ['vitepress','vue']),
+        BasicProject('vuepress_', ['vuepress']),
         // AppProject('_create-vue_3', 'create-vue@3', 'create-vue -d'),
         // AppProject('_create-vue_2', 'create-vue@2', 'create-vue -d'),
         BasicProject('vue-loaders', ['sass-loader','sass','stylus-loader','stylus','pug','pug-plain-loader']),
@@ -462,8 +462,8 @@ projects.define(
 
 projects.define(
     ContainerProject('react-pkg', [
-        BasicProject('_react', ['react']),
-        BasicProject('_react-dom', ['react-dom']),
+        BasicProject('react_', ['react']),
+        BasicProject('react-dom_', ['react-dom']),
         BasicProject('react-bundle', ['react', 'react-dom', 'react-router-dom@6']),
         AppProject('react-app', 'create-react-app', 'create-react-app '),
         AppProject('chakra-ui-react', 'create-react-app', 'create-react-app my-app --template @chakra-ui'),
@@ -534,5 +534,7 @@ projects.define(
     AppProject('nexe-app', 'nexe')
 )
 
-
+projects.define(
+    AppProject('zx-app', 'zx')
+)
 
