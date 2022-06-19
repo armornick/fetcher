@@ -101,7 +101,10 @@ export default class Fetcher {
         this.setupPrefix();
         this.exec(`npm i -g ${global.package}`);
         if (global.postCommand) {
+            const oldPath = process.env.PATH;
+            process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
             this.exec(global.postCommand);
+            process.env.PATH = oldPath;
         }
     }
 
