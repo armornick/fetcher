@@ -47,15 +47,15 @@ export function SuperProject(name, subProjects) {
  * 
  * @param {string} name 
  * @param {string} url 
- * @param {string} folder 
+ * @param {string | false} folder 
  * @returns {Project}
  */
 export function DegitProject(name, url, folder = name) {
     return {
         name,
         npx: {
-            command: `npx degit ${url} ${folder}`,
-            install: folder,
+            command: `npx degit ${url} ${folder ? folder : ''}`,
+            install: folder ? folder : undefined,
         }
     }
 }

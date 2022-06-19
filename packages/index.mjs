@@ -3,6 +3,8 @@ import { AppProject, BasicProject, CommandProject, ContainerProject, DegitProjec
 const projects = new ProjectList();
 export default projects;
 
+// ----------------------------------------------------------------------------------------
+
 projects.define(
     BasicProject('template-libs', ['mustache','handlebars','nunjucks','hogan.js','pug','ejs'])
 )
@@ -24,9 +26,86 @@ projects.define(
     BasicProject('css-libs', [
         '@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',
         '@emotion/react','@emotion/styled','@emotion/css','@emotion/babel-plugin',
-        'animate.css','bootstrap','bulma','chota','materialize-css@next','milligram','spectre.css',
+        'animate.css','bootstrap','bulma','materialize-css@next','milligram','spectre.css',
         'tachyons@4.12.0','tailwindcss','normalize.css','minireset.css','open-props','dashvar','pollen-css',
         'postcss','autoprefixer','postcss-preset-env',
+    ])
+)
+
+projects.define(
+    ContainerProject('css-frameworks', [
+        BasicProject('_bootstrap', ['bootstrap']),
+        BasicProject('_bulma', ['bulma']),
+        BasicProject('_codyhouse-framework', ['codyhouse-framework']),
+        BasicProject('_material-tailwind', ['tailwindcss', '@material-tailwind/html']),
+        BasicProject('_niui', ['niui-npm']),
+        BasicProject('_normalize', ['normalize.css']),
+        BasicProject('_modern-css-reset', ['modern-css-reset']),
+        BasicProject('_minireset', ['minireset.css']),
+        BasicProject('classless', 
+            ['water.css','sakura.css','awsm.css','axist','bamboo.css','holiday.css','markdown-air','marx-css','simpledotcss','picnic']),
+        DegitProject('_classlesscss', 'github:emareg/classlesscss', false),
+        DegitProject('_skeleton', 'github:dhg/Skeleton', false),
+        BasicProject('_purecss', ['purecss']),
+        BasicProject('_foundation', ['foundation-sites']),
+        BasicProject('_primer', ['@primer/css']),
+        BasicProject('_material-components', ['material-components-web']),
+    ])
+)
+
+projects.define(
+    ContainerProject('bootstrap-bundle', [
+        BasicProject('_bootstrap', ['bootstrap@5.2.0-beta1','@popperjs/core']),
+        BasicProject('_bootswatch', ['bootswatch']),
+        BasicProject('_bootstrap-4', ['bootstrap@4','bootstrap-vue']),
+        BasicProject('_material-kit', ['material-kit']),
+        BasicProject('mdbootstrap', ['mdb-ui-kit','mdb-react-ui-kit','mdb-vue-ui-kit'])
+    ])
+)
+
+projects.define(
+    ContainerProject('icons-bundle', [
+        BasicProject('_bootstrap-icons', ['bootstrap-icons']),
+        BasicProject('_fontawesome', ['@fortawesome/fontawesome-free']),
+        BasicProject('_feather-icons', ['feather-icons']),
+        BasicProject('_octicons', ['@primer/octicons','@primer/styled-octicons','@primer/octicons-react']),
+        BasicProject('_bytesize-icons', ['bytesize-icons']),
+        BasicProject('_ionicons', ['ionicons']),
+        'svg-icons-bundle',
+    ])
+)
+
+projects.define(
+    ContainerProject('svg-icons-bundle', [
+        BasicProject('_bootstrap', ['@svg-icons/bootstrap']),
+        // BasicProject('_boxicons-logos', ['@svg-icons/boxicons-logos']),
+        BasicProject('_boxicons-regular', ['@svg-icons/boxicons-regular']),
+        BasicProject('_boxicons-solid', ['@svg-icons/boxicons-solid']),
+        BasicProject('_entypo', ['@svg-icons/entypo']),
+        BasicProject('_entypo-social', ['@svg-icons/entypo-social']),
+        BasicProject('_evaicons-outline', ['@svg-icons/evaicons-outline']),
+        BasicProject('_evaicons-solid', ['@svg-icons/evaicons-solid']),
+        BasicProject('_evil', ['@svg-icons/evil']),
+        BasicProject('_fa-brands', ['@svg-icons/fa-brands']),
+        BasicProject('_fa-regular', ['@svg-icons/fa-regular']),
+        BasicProject('_fa-solid', ['@svg-icons/fa-solid']),
+        BasicProject('_feather', ['@svg-icons/feather']),
+        BasicProject('_foundation', ['@svg-icons/foundation']),
+        BasicProject('_heroicons-outline', ['@svg-icons/heroicons-outline']),
+        BasicProject('_heroicons-solid', ['@svg-icons/heroicons-solid']),
+        BasicProject('_icomoon', ['@svg-icons/icomoon']),
+        BasicProject('_ionicons-outline', ['@svg-icons/ionicons-outline']),
+        BasicProject('_ionicons-sharp', ['@svg-icons/ionicons-sharp']),
+        BasicProject('_ionicons-solid', ['@svg-icons/ionicons-solid']),
+        BasicProject('_material-filled', ['@svg-icons/material-filled']),
+        BasicProject('_material-outlined', ['@svg-icons/material-outlined']),
+        BasicProject('_material-rounded', ['@svg-icons/material-rounded']),
+        BasicProject('_material-sharp', ['@svg-icons/material-sharp']),
+        BasicProject('_octicons', ['@svg-icons/octicons']),
+        BasicProject('_open-iconic', ['@svg-icons/open-iconic']),
+        BasicProject('_simple-icons', ['@svg-icons/simple-icons']),
+        BasicProject('_typicons', ['@svg-icons/typicons']),
+        BasicProject('_zondicons', ['@svg-icons/zondicons']),
     ])
 )
 
@@ -103,6 +182,24 @@ projects.define(
         'sass',
         'cirrus-ui','iotacss','sierra-library','susy','open-color','shevy','typi','gerillass',
         'bulma','bootstrap@5.2.0-beta1','bootswatch','foundation-sites',
+    ])
+)
+
+projects.define(
+    ContainerProject('css-in-js-bundle', [
+        BasicProject('emotion-bundle', ['@emotion/css','@emotion/react','@emotion/styled','@emotion/babel-plugin']),
+        BasicProject('jss-bundle', [
+            'jss','jss-preset-default','color','react-jss','styled-jss',
+            'aphrodite-jss','vue-jss','jss-simple','normalize-jss','jss-sheet-loader','jss-css','babel-plugin-jss-css',
+            'prejss','babel-plugin-transform-prejss','postjss','prejss-cli','prejss-styles-loader','postcss-js',
+        ]),
+        BasicProject('styled-components-bundle', ['styled-components','styled-theming','babel-plugin-styled-components']),
+        BasicProject('cssx-bundle', ['cssx','cssx-transpiler','cssx-cli','rollup-plugin-cssx']),
+        BasicProject('stitches-bundle', ['@stitches/core','@stitches/react']),
+        BasicProject('_twin-macro', ['twin.macro']),
+        BasicProject('_goober', ['goober']),
+        AppProject('absurd-app', 'absurd'),
+        BasicProject('_tailwind-components', ['babel-plugin-macros','tailwind.macro','babel-plugin-tailwind-components']),
     ])
 )
 
@@ -204,6 +301,13 @@ projects.define(
         '@rollup/plugin-dsv','@rollup/plugin-json','@rollup/plugin-sucrase','@rollup/plugin-yaml',
         'rollup-plugin-postcss','rollup-plugin-riot','@riotjs/compiler','rollup-plugin-svelte','svelte',
         'rollup-plugin-terser','rollup-plugin-pug','rollup-plugin-pug-html',
+    ])
+)
+
+projects.define(
+    ContainerProject('wmr-pkg', [
+        BasicProject('wmr-bundle', ['wmr','create-wmr','@wmrjs/directory-import','@wmrjs/nomodule','@wmrjs/service-worker','preact-iso']),
+        AppProject('wmr-app', 'create-wmr', 'create-wmr wmr-skel'),
     ])
 )
 
@@ -327,11 +431,52 @@ projects.define(
     ])
 )
 
-// ----------------------------------------------------------------------------------------
+projects.define(
+    ContainerProject('vue-cli-bundle', [
+        AppProject('vue-app', '@vue/cli', 'vue create -d vue-skel'),
+        BasicProject('vue-cli-plugins', [
+            '@vue/cli-plugin-babel','@vue/cli-plugin-typescript','@vue/cli-plugin-eslint','@vue/cli-plugin-pwa',
+            '@vue/cli-plugin-vuex','@vue/cli-plugin-router','vue-cli-plugin-vuetify','vue-cli-plugin-buefy',
+            '@inkline/vue-cli-plugin-inkline','vue-cli-plugin-auto-alias','vue-cli-plugin-vuestic-ui'
+        ]),
+        BasicProject('vue-loaders', ['sass-loader','sass','stylus-loader','stylus','pug','pug-plain-loader']),
+    ])
+)
 
 projects.define(
-    AppProject('vue-app', '@vue/cli', 'vue create -d vue-skel')
+    ContainerProject('vue-pkg', [
+        BasicProject('_vue', ['vue']),
+        BasicProject('_petite-vue', ['petite-vue']),
+        BasicProject('vue-bundle', ['vue@3','vue-router@4','pinia','petite-vue']),
+        BasicProject('_vitepress', ['vitepress','vue']),
+        BasicProject('_vuepress', ['vuepress']),
+        // AppProject('_create-vue_3', 'create-vue@3', 'create-vue -d'),
+        // AppProject('_create-vue_2', 'create-vue@2', 'create-vue -d'),
+        BasicProject('vue-loaders', ['sass-loader','sass','stylus-loader','stylus','pug','pug-plain-loader']),
+        BasicProject('vue-components', [
+            '@headlessui/vue','vuestic-ui','naive-ui','vfonts','vuetensils','vue-ari',
+            'element-plus','vue-tailwind','@inkline/inkline','mdb-vue-ui-kit',
+        ]),
+    ])
 )
+
+projects.define(
+    ContainerProject('react-pkg', [
+        BasicProject('_react', ['react']),
+        BasicProject('_react-dom', ['react-dom']),
+        BasicProject('react-bundle', ['react', 'react-dom', 'react-router-dom@6']),
+        AppProject('react-app', 'create-react-app', 'create-react-app '),
+        AppProject('chakra-ui-react', 'create-react-app', 'create-react-app my-app --template @chakra-ui'),
+        BasicProject('chakra-ui-vite', ['@chakra-ui/react','@emotion/react@^11','@emotion/styled@^11','framer-motion@^6']),
+        BasicProject('react-components', [
+            '@headlessui/react','@material-tailwind/react','mdb-react-ui-kit','flowbite-react','flowbite',
+            '@vechaiui/core','@vechaiui/react','@tailwindcss/forms','tailwind-react-ui','styled-components',
+            'react-bootstrap','bootstrap','react-bulma-components',
+        ]),
+    ])
+)
+
+// ----------------------------------------------------------------------------------------
 
 projects.define(
     AppProject('angular-app', '@angular/cli', 'ng new angular-skel')

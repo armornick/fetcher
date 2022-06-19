@@ -8,7 +8,7 @@ declare type Project = {
 
     npx?: { 
         command: string, 
-        install?: string 
+        install?: string, 
     };
 
     global?: {
