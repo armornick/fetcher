@@ -16,9 +16,31 @@ projects.define(
         'html5sortable','csstag','facon','genel','marli','localforage',
         'hyperhtml','uhtml','hypersimple','neverland','hyperhtml-element',
         'inferno','inferno-hyperscript','inferno-create-element','preact','solid-js',
-        'mithril','htm','@types/mithril','alpinejs','marked','stimulus',
+        'mithril','htm','alpinejs','marked','stimulus','gumshoejs','offside-js','',
         'markdown-it','markdown-it-sub','markdown-it-sup','markdown-it-footnote','markdown-it-deflist',
-        'markdown-it-abbr','markdown-it-emoji','markdown-it-container',
+        'markdown-it-abbr','markdown-it-emoji','markdown-it-container','a11y-dialog',
+        'fr-offcanvas','fr-dialogmodal','fr-tabs','fr-tooltip','fr-accordion','fr-bypasslinks',
+        'concurrently','npm-run-all',
+        '@types/mithril','@types/node','@types/lodash','@types/express',
+    ])
+)
+
+projects.define(
+    BasicProject('indexeddb-libs', [
+        'localforage','jsstore','zangodb','dexie','dexie-react-hooks','idb','idb-keyval','lovefield'
+    ])
+)
+
+projects.define(
+    ContainerProject('database-libs', [
+        BasicProject('lowdb_', ['lowdb']),
+        BasicProject('sqlite_', ['sqlite']),
+        BasicProject('sqlite3_', ['sqlite3']),
+        BasicProject('better-sqlite3_', ['better-sqlite3']),
+        BasicProject('sequelize_', ['sequelize']),
+        BasicProject('knex_', ['knex']),
+        BasicProject('typeorm_', ['typeorm']),
+        BasicProject('mikro-orm-sqlite', ['@mikro-orm/core','@mikro-orm/sqlite'])
     ])
 )
 
@@ -181,7 +203,7 @@ projects.define(
     BasicProject('sass-bundle', [
         'sass',
         'cirrus-ui','iotacss','sierra-library','susy','open-color','shevy','typi','gerillass',
-        'bulma','bootstrap@5.2.0-beta1','bootswatch','foundation-sites',
+        'bulma','bootstrap@5.2.0-beta1','bootswatch','foundation-sites','gorko',
     ])
 )
 
@@ -248,6 +270,24 @@ projects.define(
     ])
 )
 
+projects.define(
+    ContainerProject('typescript-pkg', [
+        BasicProject('typescript_', ['typescript']),
+        BasicProject('types_', ['@types/node','@types/mithril','@types/lodash']),
+        BasicProject('webpack_', ['typescript','ts-loader']),
+        BasicProject('babel_', ['@babel/preset-typescript']),
+        BasicProject('parcel_', ['@parcel/transformer-typescript-tsc']),
+        BasicProject('tinyhttp_', [
+            '@tinyhttp/app','@tinyhttp/logger','@tinyhttp/etag','@tinyhttp/cookie','@tinyhttp/cors','@tinyhttp/favicon',
+            '@tinyhttp/jsonp','@tinyhttp/markdown','malibu','ws','tinyws'
+        ]),
+        BasicProject('rxjs_', ['rxjs']),
+        BasicProject('injection_', ['inversify','diod','typed-inject','typedi','reflect-metadata','tsyringe'])
+    ])
+)
+
+
+
 // ----------------------------------------------------------------------------------------
 
 projects.define(
@@ -311,6 +351,13 @@ projects.define(
     ])
 )
 
+projects.define(
+    ContainerProject('nestjs-bundle', [
+        DegitProject('nestjs-typescript-skel', 'github:nestjs/typescript-starter'),
+        DegitProject('nestjs-javascript-skel', 'github:nestjs/javascript-starter'),
+    ])
+)
+
 // ----------------------------------------------------------------------------------------
 
 projects.define(
@@ -350,7 +397,7 @@ projects.define(
         'babel-loader','buble-loader','buble','html-loader','pug-loader','pug@^2.0.0',
         'posthtml-loader','handlebars-loader','handlebars','twig-loader','twig',
         'remark-loader','style-loader','css-loader','postcss-loader','postcss','cssnano',
-        'stylus-loader','stylus',
+        'stylus-loader','stylus','sass','sass-loader',
         'copy-webpack-plugin','html-webpack-plugin','terser-webpack-plugin','mini-css-extract-plugin',
         '@mdx-js/loader'
     ])
@@ -388,7 +435,7 @@ projects.define(
         BasicProject('parcel_sass_', ['parcel', '@parcel/transformer-sass']),
         BasicProject('parcel_stylus_', ['parcel', '@parcel/transformer-stylus']),
         BasicProject('parcel_sugarss_', ['parcel', '@parcel/transformer-sugarss']),
-        BasicProject('parcel_elm_', ['parcel', '@parcel/transformer-elm']),
+        BasicProject('parcel_elm_', ['parcel', 'elm','@parcel/transformer-elm']),
     ])
 )
 
@@ -454,9 +501,13 @@ projects.define(
         // AppProject('_create-vue_2', 'create-vue@2', 'create-vue -d'),
         BasicProject('vue-loaders', ['sass-loader','sass','stylus-loader','stylus','pug','pug-plain-loader']),
         BasicProject('vue-components', [
-            '@headlessui/vue','vuestic-ui','naive-ui','vfonts','vuetensils','vue-ari',
-            'element-plus','vue-tailwind','@inkline/inkline','mdb-vue-ui-kit',
+            '@headlessui/vue','vuestic-ui','naive-ui','vfonts','vue-ari',
+            'element-plus',
         ]),
+        BasicProject('vuetensils_', ['vuetensils']),
+        BasicProject('vue-tailwind_', ['vue-tailwind']),
+        BasicProject('inkline_', ['@inkline/inkline']),
+        BasicProject('mdb-vue-ui-kit_', ['mdb-vue-ui-kit']),
     ])
 )
 
@@ -476,7 +527,21 @@ projects.define(
     ])
 )
 
+projects.define(
+    ContainerProject('angular-13-bundle', [
+        AppProject('angular-app', '@angular/cli@13', 'ng new angular-skel'),
+        BasicProject('ng-bootstrap_', ['@ng-bootstrap/ng-bootstrap','bootstrap@4.6','@popperjs/core','@angular/localize']),
+        BasicProject('ngneat_dialog_', ['@ngneat/dialog']),
+        BasicProject('ngneat_svgicon_', ['@ngneat/svg-icon']),
+        BasicProject('ngneat_tailwind_', ['@ngneat/tailwind']),
+    ])
+)
+
 // ----------------------------------------------------------------------------------------
+
+projects.define(
+    SuperProject('servers-bundle', [ 'http-server_','json-server_','serve_','zero-server-app' ])
+)
 
 projects.define(
     AppProject('angular-app', '@angular/cli', 'ng new angular-skel')
@@ -495,11 +560,19 @@ projects.define(
 )
 
 projects.define(
-    AppProject('tiddlywiki', 'tiddlywiki')
+    AppProject('tiddlywiki_', 'tiddlywiki')
 )
 
 projects.define(
-    AppProject('http-server', 'http-server')
+    AppProject('http-server_', 'http-server')
+)
+
+projects.define(
+    AppProject('json-server_', 'json-server')
+)
+
+projects.define(
+    AppProject('serve_', 'serve')
 )
 
 projects.define(
