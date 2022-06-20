@@ -54,7 +54,7 @@ export function DegitProject(name, url, folder = name) {
     return {
         name,
         npx: {
-            command: `npx degit ${url} ${folder ? folder : ''}`,
+            command: `degit ${url} ${folder ? folder : ''}`,
             install: folder ? folder : undefined,
         }
     }
