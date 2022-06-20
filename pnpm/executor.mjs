@@ -43,7 +43,11 @@ export default class Executor {
             this.exec(`pnpx ${npx.command}`);
             if (npx.install) {
                 process.chdir(npx.install);
-                this.exec('pnpm i');
+                try {
+                    this.exec('pnpm i');
+                } catch (error) {
+                    console.log(error);
+                }
                 process.chdir('..');
             }
         }

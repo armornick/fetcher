@@ -9,9 +9,9 @@ const STORE_PROJECTS = [
 ];
 
 const BUILD_PROJECTS = [
-    // 'parcel-starters',
-    'vite-starters',
-    'metalsmith-starters',
+    'parcel-starters',
+    // 'vite-starters',
+    // 'metalsmith-starters',
 ];
 
 const BUILD_DIR = 'build';
