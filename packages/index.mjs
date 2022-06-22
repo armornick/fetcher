@@ -55,6 +55,19 @@ projects.define(
 )
 
 projects.define(
+    BasicProject('css-libs-2', [
+        // resets
+        'modern-css-reset','normalize.css','modern-normalize','minireset.css',
+        // small css frameworks
+        'purecss','milligram','picnic','chota','@picocss/pico',
+        // 'real' css frameworks
+        'bootstrap@5','bootswatch','bulma','foundation-sites','@primer/css','spectre.css',
+        // css variables
+        'open-props','dashvar','pollen-css',
+    ])
+)
+
+projects.define(
     ContainerProject('css-frameworks', [
         BasicProject('bootstrap_', ['bootstrap']),
         BasicProject('bulma_', ['bulma']),
@@ -150,13 +163,24 @@ projects.define(
 
 projects.define(
     BasicProject('tagged-templates-bundle', [
-        'csstag','@emotion/css','@emotion/react','facon','genel','htm', 'lighterhtml','hypersimple','haunted',
+        'csstag','@emotion/css','@emotion/react','facon','genel','lighterhtml','hypersimple','haunted',
+        'yaml-tag',
+        'htm','babel-plugin-htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
+        'inferno-hyperscript','inferno-create-element','hyperapp',
     ])
 )
 
 projects.define(
     BasicProject('hyperhtml-bundle', [
-        'hyperhtml','uhtml','uce','uland','hypersimple','lighterhtml','neverland','haunted','lit-html','lit'
+        'hyperhtml','uhtml','uce','uland','hypersimple','lighterhtml','neverland','haunted','lit-html','lit',
+        'ube','ube-ssr','uland-ssr','lighterhtml-plus',
+    ])
+)
+
+projects.define(
+    BasicProject('web-component-libs', [
+        'fuco','atomico','uce','lit','lit-html','haunted','petit-vue','x-tag','hybrids',
+        '@socketsupply/tonic','tonic-ssr',''
     ])
 )
 
@@ -222,6 +246,30 @@ projects.define(
         BasicProject('goober_', ['goober']),
         AppProject('absurd-app', 'absurd'),
         BasicProject('tailwind-components_', ['babel-plugin-macros','tailwind.macro','babel-plugin-tailwind-components']),
+    ])
+)
+
+projects.define(
+    ContainerProject('atomic-css-tools', [
+        BasicProject('tailwind_', ['tailwindcss']),
+        BasicProject('tailwind-postcss_', ['tailwindcss','postcss','autoprefixer']),
+        BasicProject('tailwind-plugins', ['@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars']),
+        BasicProject('css-variables', ['open-props','dashvar','pollen-css']),
+        BasicProject('windicss-cli_', ['windicss']),
+        BasicProject('windicss-vite_', ['vite-plugin-windicss','windicss']),
+        BasicProject('windicss-svelte_', ['svelte-windicss-preprocess']),
+        BasicProject('unocss-bundle', [
+            'unocss','@unocss/preset-mini','@unocss/preset-wind','@unocss/preset-attributify','@unocss/preset-icons','@unocss/preset-web-fonts',
+            '@unocss/preset-typography','@unocss/vite',
+        ]),
+        BasicProject('unocss-preset-chroma_', ['unocss-preset-chroma']),
+        'twind-bundle',
+        BasicProject('twin-macro_', ['twin.macro']),
+        BasicProject('goober_', ['goober']),
+        BasicProject('otion_', ['otion']),
+        BasicProject('csstag_', ['csstag','babel-plugin-csstag']),
+        // tachyons technically counts but is old now
+        BasicProject('tachyons_', ['tachyons@4.12.0']),
     ])
 )
 
@@ -361,20 +409,29 @@ projects.define(
 // ----------------------------------------------------------------------------------------
 
 projects.define(
-    ContainerProject('vite-starters', [
+    ContainerProject('vite-starters', ['vite-starters-official', 'vite-starters-community'])
+)
+
+projects.define(
+    ContainerProject('vite-starters-official', [
         CommandProject('vite-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla', 'vite-vanilla-skel'),
         CommandProject('vite-vue-starter', 'create-vite@latest vite-vue-skel --template vue', 'vite-vue-skel'),
         CommandProject('vite-react-starter', 'create-vite@latest vite-react-skel --template react', 'vite-react-skel'),
         CommandProject('vite-preact-starter', 'create-vite@latest vite-preact-skel --template preact', 'vite-preact-skel'),
         CommandProject('vite-lit-starter', 'create-vite@latest vite-lit-skel --template lit', 'vite-lit-skel'),
         CommandProject('vite-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte', 'vite-svelte-skel'),
+    ])
+)
+
+projects.define(
+    ContainerProject('vite-starters-community', [
         DegitProject('vite-solidjs-starter', 'solidjs/templates/js'),
         DegitProject('vite-solidjs-ts-starter', 'solidjs/templates/ts'),
         DegitProject('vite-solidjs-ts-windicss-starter', 'solidjs/templates/ts-windicss'),
         DegitProject('vite-solidjs-ts-tailwindcss-starter', 'solidjs/templates/ts-tailwindcss'),
         DegitProject('vitawind-starter', 'huibizhang/template-vite-vanilla-tailwind-v3'),
         DegitProject('vitesse-lite-starter', 'antfu/vitesse-lite'),
-        DegitProject('vitailse-starter', 'zynth17/vitailse'),
+        // DegitProject('vitailse-starter', 'zynth17/vitailse'),
         DegitProject('vite-elm-starter', 'lindsaykwardell/vite-elm-template#main'),
         DegitProject('vite-mithril-starter', 'ArthurClemens/mithril-vite-starter'),
         DegitProject('vite-mithril-ts-starter', 'ArthurClemens/mithril-ts-vite-starter'),
@@ -385,7 +442,8 @@ projects.define(
     BasicProject('vite-bundle', [
         'vite-plugin-windicss','@originjs/vite-plugin-content',
         '@vitejs/plugin-vue','vite-plugin-pages','@sveltejs/vite-plugin-svelte',
-        'vite-plugin-solid','babel-preset-solid',
+        'vite-plugin-solid','babel-preset-solid','vite-plugin-elm',
+        'vite-plugin-windicss','windicss',
     ])
 )
 
@@ -533,7 +591,27 @@ projects.define(
 // ----------------------------------------------------------------------------------------
 
 projects.define(
+    AppProject('npm_', 'npm')
+)
+
+projects.define(
     SuperProject('servers-bundle', [ 'http-server_','json-server_','serve_','zero-server-app' ])
+)
+
+projects.define(
+    AppProject('http-server_', 'http-server')
+)
+
+projects.define(
+    AppProject('json-server_', 'json-server')
+)
+
+projects.define(
+    AppProject('zero-server-app', 'zero')
+)
+
+projects.define(
+    AppProject('serve_', 'serve')
 )
 
 projects.define(
@@ -557,18 +635,6 @@ projects.define(
 )
 
 projects.define(
-    AppProject('http-server_', 'http-server')
-)
-
-projects.define(
-    AppProject('json-server_', 'json-server')
-)
-
-projects.define(
-    AppProject('serve_', 'serve')
-)
-
-projects.define(
     AppProject('next-app', 'create-next-app', 'create-next-app next-skel')
 )
 
@@ -589,18 +655,10 @@ projects.define(
 )
 
 projects.define(
-    AppProject('zero-server-app', 'zero')
-)
-
-projects.define(
     AppProject('forgo-app', 'create-forgo-app', 'create-forgo-app forgo-skel')
 )
 
 projects.define(
     AppProject('nexe-app', 'nexe')
-)
-
-projects.define(
-    AppProject('zx-app', 'zx')
 )
 
