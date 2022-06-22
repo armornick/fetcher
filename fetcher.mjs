@@ -30,7 +30,7 @@ export default class Fetcher {
      */
     buildProject(name) {
         const project = this.projects.get(name);
-        this.topCache = project.topCache;
+        // this.topCache = project.topCache;
         this.buildProjectImpl(project);
         this.topCache = false;
     }
@@ -41,7 +41,7 @@ export default class Fetcher {
      */
     buildProjectImpl(project) {
         this.moveToDir(project.name);
-        if (project.topCache || !this.topCache) {
+        if ((project.topCache && !this.topCache) || !this.topCache) {
             this.setupCache();
             this.topCache = Boolean(project.topCache);
         }
