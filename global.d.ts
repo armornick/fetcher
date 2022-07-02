@@ -16,5 +16,7 @@ declare type Project = {
         postCommand?: string;
     };
 
+    commands?: string[];
+
     topCache?: boolean;
 };

@@ -106,6 +106,14 @@ export default class Fetcher {
             this.exec(global.postCommand);
             process.env.PATH = oldPath;
         }
+        if (project.commands) {
+            const oldPath = process.env.PATH;
+            process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
+            for (const command of project.commands) {
+                this.exec(command);
+            }
+            process.env.PATH = oldPath;
+        }
     }
 
     /**

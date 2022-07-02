@@ -615,7 +615,10 @@ projects.define(
 )
 
 projects.define(
-    AppProject('angular-app', '@angular/cli', 'ng new angular-skel')
+    AppProject('angular-app', '@angular/cli', [
+        'ng new angular-skel -S --routing',
+        'ng new angular-sass-skel -S --style=scss --routing'
+    ])
 )
 
 projects.define(

@@ -94,7 +94,7 @@ export function CommandProject(name, command, install = false) {
  * 
  * @param {string} name 
  * @param {string} pakage 
- * @param {string | false} postCommand 
+ * @param {string | string[] | false} postCommand 
  * @returns {Project}
  */
 export function AppProject(name, pakage, postCommand = false) {
@@ -102,8 +102,11 @@ export function AppProject(name, pakage, postCommand = false) {
         name,
         global: { package: pakage },
     }
-    if (postCommand) {
+    if (typeof(postCommand) === 'string') {
         project.global.postCommand = postCommand;
+    }
+    else if (Array.isArray(postCommand)) {
+        project.commands = postCommand;
     }
     return project;
 }
