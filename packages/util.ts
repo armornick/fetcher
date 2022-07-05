@@ -39,7 +39,7 @@ export function ContainerProject(name: string, subs: MaybeProject[]): Project {
     return { name, subs, topCache: true };
 }
 
-export function CommandProject(name: string, command: string, install: string|false = false) {
+export function CommandProject(name: string, command: string, install: string|false = false): Project {
     const project = {
         name,
         npx: {

@@ -18,6 +18,12 @@ projects.define((0, util_1.BasicProject)('misc-libs', [
     'concurrently', 'npm-run-all',
     '@types/mithril', '@types/node', '@types/lodash', '@types/express',
 ]));
+projects.define((0, util_1.BasicProject)('misc-libs-2', [
+    '@socketsupply/tonic', 'reefjs', 'lemonadejs', 'petit-vue',
+    'facon', 'genel', 'lighterhtml', 'hypersimple', 'haunted', 'yaml-tag',
+    'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
+    'hyperhtml', 'uhtml', 'uce', 'uland', 'neverland', 'ube', 'ube-ssr', 'uland-ssr', 'lighterhtml-plus',
+]));
 projects.define((0, util_1.BasicProject)('indexeddb-libs', [
     'localforage', 'jsstore', 'zangodb', 'dexie', 'dexie-react-hooks', 'idb', 'idb-keyval', 'lovefield'
 ]));
@@ -64,6 +70,25 @@ projects.define((0, util_1.ContainerProject)('css-frameworks', [
     (0, util_1.BasicProject)('foundation_', ['foundation-sites']),
     (0, util_1.BasicProject)('primer_', ['@primer/css']),
     (0, util_1.BasicProject)('material-components_', ['material-components-web']),
+]));
+projects.define((0, util_1.ContainerProject)('css-frameworks-2', [
+    (0, util_1.BasicProject)('react-bootstrap_', ['react-bootstrap', 'bootstrap', 'react', 'react-dom']),
+    (0, util_1.BasicProject)('bootstrap-vue_', ['bootstrap-vue', 'bootstrap', 'vue']),
+    (0, util_1.BasicProject)('bootstrap-vue_4_', ['bootstrap-vue', 'bootstrap@4', 'vue']),
+    (0, util_1.BasicProject)('react-bulma-components_', ['react-bulma-components', 'react', 'react-dom']),
+    (0, util_1.BasicProject)('buefy_', ['buefy', 'vue']),
+    (0, util_1.BasicProject)('sveltestrap_', ['sveltestrap', 'bootstrap', 'svelte']),
+    (0, util_1.BasicProject)('sveltestrap_4_', ['sveltestrap@4', 'bootstrap@4', 'svelte']),
+    (0, util_1.BasicProject)('preact-material-components_', ['preact-material-components', 'preact']),
+    (0, util_1.BasicProject)('smelte_', ['smelte', 'tailwindcss', 'svelte']),
+    (0, util_1.BasicProject)('flowbite_', ['flowbite', "tailwindcss", 'postcss', 'autoprefixer']),
+    (0, util_1.BasicProject)('flowbite-react_', ['flowbite-react', 'flowbite', "tailwindcss", 'postcss', 'autoprefixer']),
+    (0, util_1.BasicProject)('flowbite-svelte_', ['svelte', 'tailwindcss', 'postcss', 'autoprefixer', 'flowbite-svelte']),
+    (0, util_1.BasicProject)('mui-material_', ['@mui/material', '@emotion/react', '@emotion/styled', 'react', 'react-dom']),
+    (0, util_1.BasicProject)('mui-joy_', ['@mui/joy', '@emotion/react', '@emotion/styled', 'react', 'react-dom']),
+    // BasicProject('agnostic-react_', ['agnostic-react','uuid','react','react-dom']),
+    (0, util_1.BasicProject)('agnostic-vue_', ['agnostic-vue', 'vue']),
+    (0, util_1.BasicProject)('agnostic-svelte_', ['agnostic-svelte', 'svelte']),
 ]));
 projects.define((0, util_1.ContainerProject)('bootstrap-bundle', [
     (0, util_1.BasicProject)('bootstrap_', ['bootstrap@5.2.0-beta1', '@popperjs/core']),
@@ -155,6 +180,14 @@ projects.define((0, util_1.ContainerProject)('material-design-bundle', [
 projects.define((0, util_1.BasicProject)('mui-bundle', [
     '@mui/material', '@emotion/react', '@emotion/styled', '@mui/icons-material',
     '@mui/joy', '@mui/base', '@mui/system',
+]));
+projects.define((0, util_1.ContainerProject)('mdbootstrap-bundle', [
+    (0, util_1.DegitProject)('mdb-ui-kit', 'https://github.com/mdbootstrap/mdb-ui-kit#4.2.0'),
+    (0, util_1.DegitProject)('mdb-vue-ui-kit', 'https://github.com/mdbootstrap/mdb-vue-ui-kit#1.14.0'),
+    (0, util_1.DegitProject)('mdb-react-ui-kit', 'https://github.com/mdbootstrap/mdb-react-ui-kit#4.0.0'),
+    (0, util_1.DegitProject)('mdb-angular-ui-kit', 'https://github.com/mdbootstrap/mdb-angular-ui-kit#2.3.0'),
+    (0, util_1.DegitProject)('tw-elements-starter', 'https://github.com/mdbootstrap/Tailwind-Elements/site'),
+    (0, util_1.DegitProject)('tw-elements-src', 'https://github.com/mdbootstrap/Tailwind-Elements'),
 ]));
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.BasicProject)('postcss-bundle', [
@@ -306,11 +339,19 @@ projects.define((0, util_1.ContainerProject)('vite-starters-official', [
     (0, util_1.CommandProject)('vite-lit-starter', 'create-vite@latest vite-lit-skel --template lit', 'vite-lit-skel'),
     (0, util_1.CommandProject)('vite-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte', 'vite-svelte-skel'),
 ]));
+projects.define((0, util_1.ContainerProject)('vite-starters-typescript', [
+    (0, util_1.CommandProject)('vite-ts-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla-ts', 'vite-vanilla-skel'),
+    (0, util_1.CommandProject)('vite-ts-vue-starter', 'create-vite@latest vite-vue-skel --template vue-ts', 'vite-vue-skel'),
+    (0, util_1.CommandProject)('vite-ts-react-starter', 'create-vite@latest vite-react-skel --template react-ts', 'vite-react-skel'),
+    (0, util_1.CommandProject)('vite-ts-preact-starter', 'create-vite@latest vite-preact-skel --template preact-ts', 'vite-preact-skel'),
+    (0, util_1.CommandProject)('vite-ts-lit-starter', 'create-vite@latest vite-lit-skel --template lit-ts', 'vite-lit-skel'),
+    (0, util_1.CommandProject)('vite-ts-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte-ts', 'vite-svelte-skel'),
+]));
 projects.define((0, util_1.ContainerProject)('vite-starters-community', [
-    (0, util_1.DegitProject)('vite-solidjs-starter', 'solidjs/templates/js'),
-    (0, util_1.DegitProject)('vite-solidjs-ts-starter', 'solidjs/templates/ts'),
-    (0, util_1.DegitProject)('vite-solidjs-ts-windicss-starter', 'solidjs/templates/ts-windicss'),
-    (0, util_1.DegitProject)('vite-solidjs-ts-tailwindcss-starter', 'solidjs/templates/ts-tailwindcss'),
+    // DegitProject('vite-solidjs-starter', 'solidjs/templates/js'),
+    // DegitProject('vite-solidjs-ts-starter', 'solidjs/templates/ts'),
+    // DegitProject('vite-solidjs-ts-windicss-starter', 'solidjs/templates/ts-windicss'),
+    // DegitProject('vite-solidjs-ts-tailwindcss-starter', 'solidjs/templates/ts-tailwindcss'),
     (0, util_1.DegitProject)('vitawind-starter', 'huibizhang/template-vite-vanilla-tailwind-v3'),
     (0, util_1.DegitProject)('vitesse-lite-starter', 'antfu/vitesse-lite'),
     // DegitProject('vitailse-starter', 'zynth17/vitailse'),

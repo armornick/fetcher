@@ -26,6 +26,15 @@ projects.define(
 )
 
 projects.define(
+    BasicProject('misc-libs-2', [
+        '@socketsupply/tonic','reefjs','lemonadejs','petit-vue',
+        'facon','genel','lighterhtml','hypersimple','haunted','yaml-tag',
+        'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
+        'hyperhtml','uhtml','uce','uland','neverland','ube','ube-ssr','uland-ssr','lighterhtml-plus',
+    ])
+)
+
+projects.define(
     BasicProject('indexeddb-libs', [
         'localforage','jsstore','zangodb','dexie','dexie-react-hooks','idb','idb-keyval','lovefield'
     ])
@@ -85,6 +94,28 @@ projects.define(
         BasicProject('foundation_', ['foundation-sites']),
         BasicProject('primer_', ['@primer/css']),
         BasicProject('material-components_', ['material-components-web']),
+    ])
+)
+
+projects.define(
+    ContainerProject('css-frameworks-2', [
+        BasicProject('react-bootstrap_', ['react-bootstrap','bootstrap','react','react-dom']),
+        BasicProject('bootstrap-vue_', ['bootstrap-vue','bootstrap','vue']),
+        BasicProject('bootstrap-vue_4_', ['bootstrap-vue','bootstrap@4','vue']),
+        BasicProject('react-bulma-components_', ['react-bulma-components','react','react-dom']),
+        BasicProject('buefy_', ['buefy','vue']),
+        BasicProject('sveltestrap_', ['sveltestrap','bootstrap','svelte']),
+        BasicProject('sveltestrap_4_', ['sveltestrap@4','bootstrap@4','svelte']),
+        BasicProject('preact-material-components_', ['preact-material-components','preact']),
+        BasicProject('smelte_', ['smelte','tailwindcss','svelte']),
+        BasicProject('flowbite_', ['flowbite',"tailwindcss",'postcss','autoprefixer']),
+        BasicProject('flowbite-react_', ['flowbite-react','flowbite',"tailwindcss",'postcss','autoprefixer']),
+        BasicProject('flowbite-svelte_', ['svelte','tailwindcss','postcss','autoprefixer','flowbite-svelte']),
+        BasicProject('mui-material_', ['@mui/material','@emotion/react','@emotion/styled','react','react-dom']),
+        BasicProject('mui-joy_', ['@mui/joy','@emotion/react','@emotion/styled','react','react-dom']),
+        // BasicProject('agnostic-react_', ['agnostic-react','uuid','react','react-dom']),
+        BasicProject('agnostic-vue_', ['agnostic-vue','vue']),
+        BasicProject('agnostic-svelte_', ['agnostic-svelte','svelte']),
     ])
 )
 
@@ -209,6 +240,17 @@ projects.define(
     BasicProject('mui-bundle', [
         '@mui/material','@emotion/react','@emotion/styled','@mui/icons-material',
         '@mui/joy','@mui/base','@mui/system',
+    ])
+)
+
+projects.define(
+    ContainerProject('mdbootstrap-bundle', [
+        DegitProject('mdb-ui-kit', 'https://github.com/mdbootstrap/mdb-ui-kit#4.2.0'),
+        DegitProject('mdb-vue-ui-kit', 'https://github.com/mdbootstrap/mdb-vue-ui-kit#1.14.0'),
+        DegitProject('mdb-react-ui-kit', 'https://github.com/mdbootstrap/mdb-react-ui-kit#4.0.0'),
+        DegitProject('mdb-angular-ui-kit', 'https://github.com/mdbootstrap/mdb-angular-ui-kit#2.3.0'),
+        DegitProject('tw-elements-starter', 'https://github.com/mdbootstrap/Tailwind-Elements/site'),
+        DegitProject('tw-elements-src', 'https://github.com/mdbootstrap/Tailwind-Elements'),
     ])
 )
 
@@ -424,11 +466,22 @@ projects.define(
 )
 
 projects.define(
+    ContainerProject('vite-starters-typescript', [
+        CommandProject('vite-ts-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla-ts', 'vite-vanilla-skel'),
+        CommandProject('vite-ts-vue-starter', 'create-vite@latest vite-vue-skel --template vue-ts', 'vite-vue-skel'),
+        CommandProject('vite-ts-react-starter', 'create-vite@latest vite-react-skel --template react-ts', 'vite-react-skel'),
+        CommandProject('vite-ts-preact-starter', 'create-vite@latest vite-preact-skel --template preact-ts', 'vite-preact-skel'),
+        CommandProject('vite-ts-lit-starter', 'create-vite@latest vite-lit-skel --template lit-ts', 'vite-lit-skel'),
+        CommandProject('vite-ts-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte-ts', 'vite-svelte-skel'),
+    ])
+)
+
+projects.define(
     ContainerProject('vite-starters-community', [
-        DegitProject('vite-solidjs-starter', 'solidjs/templates/js'),
-        DegitProject('vite-solidjs-ts-starter', 'solidjs/templates/ts'),
-        DegitProject('vite-solidjs-ts-windicss-starter', 'solidjs/templates/ts-windicss'),
-        DegitProject('vite-solidjs-ts-tailwindcss-starter', 'solidjs/templates/ts-tailwindcss'),
+        // DegitProject('vite-solidjs-starter', 'solidjs/templates/js'),
+        // DegitProject('vite-solidjs-ts-starter', 'solidjs/templates/ts'),
+        // DegitProject('vite-solidjs-ts-windicss-starter', 'solidjs/templates/ts-windicss'),
+        // DegitProject('vite-solidjs-ts-tailwindcss-starter', 'solidjs/templates/ts-tailwindcss'),
         DegitProject('vitawind-starter', 'huibizhang/template-vite-vanilla-tailwind-v3'),
         DegitProject('vitesse-lite-starter', 'antfu/vitesse-lite'),
         // DegitProject('vitailse-starter', 'zynth17/vitailse'),
