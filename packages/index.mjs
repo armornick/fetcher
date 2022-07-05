@@ -622,6 +622,13 @@ projects.define(
 )
 
 projects.define(
+    ContainerProject('angular-starters', [
+        DegitProject('bootstrap-starter', 'https://github.com/angular-starters/angular-bootstrap-starter'),
+        DegitProject('material-starter', 'https://github.com/angular-starters/angular-material-starter'),
+    ])
+)
+
+projects.define(
     AppProject('react-app', 'create-react-app', 'create-react-app react-skel')
 )
 
