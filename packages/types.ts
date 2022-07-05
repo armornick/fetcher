@@ -19,6 +19,12 @@ export interface Project {
     commands?: string[];
 
     topCache?: boolean;
+
+    scaffold?: {
+        workDir?: string;
+        init: boolean;
+        commands: string[];
+    }
 }
 
 

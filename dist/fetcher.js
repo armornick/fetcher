@@ -33,6 +33,9 @@ class Fetcher {
         if (project.global) {
             this.performGlobalInstall(project);
         }
+        if (project.scaffold) {
+            this.performScaffold(project);
+        }
         if (project.subs) {
             for (const sub of project.subs) {
                 let project = sub;
@@ -79,6 +82,26 @@ class Fetcher {
                     this.exec(command);
                 }
                 process.env.PATH = oldPath;
+            }
+        }
+    }
+    performScaffold(project) {
+        const scaffold = project.scaffold;
+        if (scaffold) {
+            if (scaffold.workDir) {
+                if (!(0, fs_1.existsSync)(scaffold.workDir)) {
+                    (0, fs_1.mkdirSync)(scaffold.workDir);
+                }
+                process.chdir(scaffold.workDir);
+            }
+            if (scaffold.init) {
+                this.exec('npm init -y');
+            }
+            for (const command of scaffold.commands) {
+                this.exec(command);
+            }
+            if (scaffold.workDir) {
+                process.chdir('..');
             }
         }
     }

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppProject = exports.CommandProject = exports.ContainerProject = exports.DegitProject = exports.SuperProject = exports.BasicProject = exports.ProjectList = void 0;
+exports.ScaffoldProject = exports.AppProject = exports.CommandProject = exports.ContainerProject = exports.DegitProject = exports.SuperProject = exports.BasicProject = exports.ProjectList = void 0;
 class ProjectList {
     constructor() {
         this.map = {};
@@ -13,6 +13,7 @@ class ProjectList {
     }
 }
 exports.ProjectList = ProjectList;
+// -------------------------------------------------------------------
 function BasicProject(name, packages) {
     return { name, packages };
 }
@@ -46,13 +47,6 @@ function CommandProject(name, command, install = false) {
     return project;
 }
 exports.CommandProject = CommandProject;
-/**
- *
- * @param {string} name
- * @param {string} pakage
- * @param {string | string[] | false} postCommand
- * @returns {Project}
- */
 function AppProject(name, pakage, postCommand = false) {
     const project = {
         name,
@@ -65,3 +59,27 @@ function AppProject(name, pakage, postCommand = false) {
     return project;
 }
 exports.AppProject = AppProject;
+function ScaffoldProject(name, { workDir, base, commands }) {
+    let project;
+    if (base) {
+        project = base;
+        project.name = name;
+        project.scaffold = {
+            init: false,
+            commands,
+            workDir,
+        };
+    }
+    else {
+        project = {
+            name,
+            scaffold: {
+                init: true,
+                commands: commands,
+                workDir,
+            },
+        };
+    }
+    return project;
+}
+exports.ScaffoldProject = ScaffoldProject;

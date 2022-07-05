@@ -1,4 +1,8 @@
-import { AppProject, BasicProject, CommandProject, ContainerProject, DegitProject, ProjectList, SuperProject } from "./util";
+import { 
+    AppProject, BasicProject, CommandProject, 
+    ContainerProject, DegitProject, ProjectList, 
+    ScaffoldProject, 
+    SuperProject } from "./util";
 
 const projects = new ProjectList();
 export default projects;
@@ -670,5 +674,15 @@ projects.define(
 
 projects.define(
     AppProject('nexe-app', 'nexe')
+)
+
+projects.define(
+    ScaffoldProject('angular-13-bootstrap', {
+        base: AppProject('', '@angular/cli@13', 'ng new angular-skel -S'),
+        workDir: 'angular-skel',
+        commands: [
+            'ng add @ng-bootstrap/ng-bootstrap --skip-confirmation',
+        ],
+    })
 )
 

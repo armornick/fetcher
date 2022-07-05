@@ -17,6 +17,8 @@ export class ProjectList {
     }
 }
 
+// -------------------------------------------------------------------
+
 export function BasicProject(name: string, packages: string[]): Project {
     return { name, packages };
 }
@@ -50,13 +52,6 @@ export function CommandProject(name: string, command: string, install: string|fa
     return project;
 }
 
-/**
- * 
- * @param {string} name 
- * @param {string} pakage 
- * @param {string | string[] | false} postCommand 
- * @returns {Project}
- */
 export function AppProject(name: string, pakage: string, postCommand: string|string[]|false = false): Project {
     const project: Project = {
         name,
@@ -65,6 +60,36 @@ export function AppProject(name: string, pakage: string, postCommand: string|str
             postCommand: typeof(postCommand) === 'string' ? postCommand : undefined,
         },
         commands: Array.isArray(postCommand) ? postCommand : undefined,
+    }
+    return project;
+}
+
+type ScaffoldArgs = { 
+    workDir?: string;
+    base?: Project;
+    commands: string[];
+};
+
+export function ScaffoldProject(name: string, { workDir, base, commands }: ScaffoldArgs): Project {
+    let project: Project;
+    if (base) {
+        project = base;
+        project.name = name;
+        project.scaffold = {
+            init: false,
+            commands,
+            workDir,
+        };
+    }
+    else {
+        project = {
+            name,
+            scaffold: {
+                init: true,
+                commands: commands,
+                workDir,
+            },
+        };
     }
     return project;
 }
