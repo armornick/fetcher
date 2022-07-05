@@ -1,7 +1,8 @@
 import { execSync } from 'child_process';
 import { existsSync, mkdirSync } from 'fs';
 import * as path from 'path';
-import { ProjectList } from "./packages/util.mjs";
+import { Project } from './packages/types';
+import { ProjectList } from "./packages/util";
 
 
 // const defaults = {
@@ -12,34 +13,21 @@ import { ProjectList } from "./packages/util.mjs";
 
 export default class Fetcher {
 
-    /** @type {boolean} */
+    projects: ProjectList;
     topCache = false;
 
-    /**
-     * 
-     * @param {ProjectList} projects 
-     */
-    constructor(projects) {
-        /** @type {ProjectList} */
+    constructor(projects: ProjectList) {
         this.projects = projects;
     }
 
-    /**
-     * 
-     * @param {string} name 
-     */
-    buildProject(name) {
+    buildProject(name: string) {
         const project = this.projects.get(name);
         // this.topCache = project.topCache;
         this.buildProjectImpl(project);
         this.topCache = false;
     }
 
-    /**
-     * 
-     * @param {Project} project 
-     */
-    buildProjectImpl(project) {
+    buildProjectImpl(project: Project) {
         this.moveToDir(project.name);
         if ((project.topCache && !this.topCache) || !this.topCache) {
             this.setupCache();
@@ -66,61 +54,49 @@ export default class Fetcher {
         process.chdir('..');
     }
 
-    /**
-     * 
-     * @param {string[]} packages 
-     */
-    installPackages(packages) {
+    installPackages(packages: string[]) {
         this.exec('npm init -y');
         for (const item of packages) {
             this.exec(`npm i -S ${item}`);
         }
     }
 
-    /**
-     * 
-     * @param {Project} project 
-     */
-    performNpx(project) {
+    performNpx(project: Project) {
         let npx = project.npx;
-        this.exec(`npx ${npx.command}`);
+        if (npx) {
+            this.exec(`npx ${npx.command}`);
         
-        if (npx.install) {
-            process.chdir(npx.install);
-            this.exec('npm i');
-            process.chdir('..');
-        }
-    }
-
-    /**
-     * 
-     * @param {Project} project 
-     */
-    performGlobalInstall(project) {
-        const global = project.global;
-        this.setupPrefix();
-        this.exec(`npm i -g ${global.package}`);
-        if (global.postCommand) {
-            const oldPath = process.env.PATH;
-            process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
-            this.exec(global.postCommand);
-            process.env.PATH = oldPath;
-        }
-        if (project.commands) {
-            const oldPath = process.env.PATH;
-            process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
-            for (const command of project.commands) {
-                this.exec(command);
+            if (npx.install) {
+                process.chdir(npx.install);
+                this.exec('npm i');
+                process.chdir('..');
             }
-            process.env.PATH = oldPath;
         }
     }
 
-    /**
-     * 
-     * @param {string} dirname 
-     */
-    moveToDir(dirname) {
+    performGlobalInstall(project: Project) {
+        const global = project.global;
+        if (global) {
+            this.setupPrefix();
+            this.exec(`npm i -g ${global.package}`);
+            if (global.postCommand) {
+                const oldPath = process.env.PATH;
+                process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
+                this.exec(global.postCommand);
+                process.env.PATH = oldPath;
+            }
+            if (project.commands) {
+                const oldPath = process.env.PATH;
+                process.env.PATH = `${process.env.npm_config_prefix};${process.env.PATH}`;
+                for (const command of project.commands) {
+                    this.exec(command);
+                }
+                process.env.PATH = oldPath;
+            }
+        }
+    }
+
+    moveToDir(dirname: string) {
         if (existsSync(dirname)) {
             throw new Error(`directory '${dirname}' already exists`);
         }
@@ -128,11 +104,7 @@ export default class Fetcher {
         process.chdir(dirname);
     }
 
-    /**
-     * 
-     * @param {string} cacheDir 
-     */
-    setupCache(cacheDir = '_cache') {
+    setupCache(cacheDir: string = '_cache') {
         if (!existsSync(cacheDir)) {
             mkdirSync(cacheDir);
         }
@@ -141,11 +113,7 @@ export default class Fetcher {
         process.env.npm_config_cache = cachePath;
     }
 
-    /**
-     * 
-     * @param {string} prefixDir 
-     */
-    setupPrefix(prefixDir = '_prefix') {
+    setupPrefix(prefixDir: string = '_prefix') {
         if (!existsSync(prefixDir)) {
             mkdirSync(prefixDir);
         }
@@ -154,11 +122,7 @@ export default class Fetcher {
         process.env.npm_config_prefix = prefixPath;
     }
 
-    /**
-     * 
-     * @param {string} cmd 
-     */
-    exec(cmd) {
+    exec(cmd: string) {
         console.log(`$ ${cmd}`);
         execSync(cmd);
     }

@@ -1,0 +1,20 @@
+{
+  "name": "fetcher",
+  "version": "3.1.0",
+  "author": "armornick",
+  "license": "BSD0",
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "fetch": "node ./dist/fetch.js",
+    "zip-dirs": "node ./tools/zip-directories.mjs"
+  },
+  "bin": {
+    "fetch": "./fetch.mjs",
+    "zip-dirs": "./tools/zip-directories.mjs"
+  }
+}

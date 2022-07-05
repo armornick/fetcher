@@ -1,7 +1,7 @@
 
-declare type MaybeProject = string | Project;
+export type MaybeProject = string | Project;
 
-declare type Project = {
+export interface Project {
     name: string;
     packages?: string[];
     subs?: MaybeProject[];
@@ -19,4 +19,6 @@ declare type Project = {
     commands?: string[];
 
     topCache?: boolean;
-};
+}
+
+

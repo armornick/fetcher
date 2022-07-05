@@ -1,4 +1,4 @@
-import { AppProject, BasicProject, CommandProject, ContainerProject, DegitProject, ProjectList, SuperProject } from "./util.mjs";
+import { AppProject, BasicProject, CommandProject, ContainerProject, DegitProject, ProjectList, SuperProject } from "./util";
 
 const projects = new ProjectList();
 export default projects;
