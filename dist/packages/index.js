@@ -502,3 +502,4 @@ projects.define((0, util_1.AppProject)('wintersmith-app', 'wintersmith', 'winter
 projects.define((0, util_1.AppProject)('cuttlebelle-app', 'cuttlebelle'));
 projects.define((0, util_1.AppProject)('forgo-app', 'create-forgo-app', 'create-forgo-app forgo-skel'));
 projects.define((0, util_1.AppProject)('nexe-app', 'nexe'));
+projects.define((0, util_1.BasicProject)('polished_', ['polished']));

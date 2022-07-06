@@ -725,3 +725,9 @@ projects.define(
     AppProject('nexe-app', 'nexe')
 )
 
+// ----------------------------------------------------------------------------------------
+
+projects.define(
+    BasicProject('polished_', ['polished'])
+)
+
