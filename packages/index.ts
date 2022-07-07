@@ -54,6 +54,17 @@ projects.define(
 )
 
 projects.define(
+    ContainerProject('mock-data-libs', [
+        BasicProject('faker_', ['@faker-js/faker']),
+        BasicProject('chance_', ['chance']),
+        BasicProject('falso_', ['@ngneat/falso']),
+        BasicProject('json-server_', ['json-server']),
+        BasicProject('jsonplaceholder_', ['jsonplaceholder']),
+        BasicProject('miragejs_', ['miragejs']),
+    ])
+)
+
+projects.define(
     BasicProject('css-libs', [
         '@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',
         '@emotion/react','@emotion/styled','@emotion/css','@emotion/babel-plugin',

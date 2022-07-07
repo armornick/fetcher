@@ -37,6 +37,14 @@ projects.define((0, util_1.ContainerProject)('database-libs', [
     (0, util_1.BasicProject)('typeorm_', ['typeorm']),
     (0, util_1.BasicProject)('mikro-orm-sqlite', ['@mikro-orm/core', '@mikro-orm/sqlite'])
 ]));
+projects.define((0, util_1.ContainerProject)('mock-data-libs', [
+    (0, util_1.BasicProject)('faker_', ['@faker-js/faker']),
+    (0, util_1.BasicProject)('chance_', ['chance']),
+    (0, util_1.BasicProject)('falso_', ['@ngneat/falso']),
+    (0, util_1.BasicProject)('json-server_', ['json-server']),
+    (0, util_1.BasicProject)('jsonplaceholder_', ['jsonplaceholder']),
+    (0, util_1.BasicProject)('miragejs_', ['miragejs']),
+]));
 projects.define((0, util_1.BasicProject)('css-libs', [
     '@fortawesome/fontawesome-free', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons',
     '@emotion/react', '@emotion/styled', '@emotion/css', '@emotion/babel-plugin',
@@ -502,4 +510,5 @@ projects.define((0, util_1.AppProject)('wintersmith-app', 'wintersmith', 'winter
 projects.define((0, util_1.AppProject)('cuttlebelle-app', 'cuttlebelle'));
 projects.define((0, util_1.AppProject)('forgo-app', 'create-forgo-app', 'create-forgo-app forgo-skel'));
 projects.define((0, util_1.AppProject)('nexe-app', 'nexe'));
+// ----------------------------------------------------------------------------------------
 projects.define((0, util_1.BasicProject)('polished_', ['polished']));
