@@ -316,10 +316,21 @@ projects.define((0, util_1.ContainerProject)('metalsmith-starters', [
 ]));
 projects.define((0, util_1.SuperProject)('metalsmith-pkg', ['metalsmith-bundle', 'metalsmith-starters']));
 // ----------------------------------------------------------------------------------------
-projects.define((0, util_1.BasicProject)('staticgen-bundle', [
-    '20ful', 'hydrogen-cli', 'nodemon', 'live-server', 'npm-run-all', 'mini-site-generator',
-    'onessg', 'jstransformer-ejs', 'jstransformer-swig', 'spignite',
-    '@sphido/core', '@sphido/frontmatter', '@sphido/markdown', '@sphido/meta', 'fs-extra', 'globby',
+projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
+    (0, util_1.BasicProject)('vuepress_', ['vuepress']),
+    (0, util_1.BasicProject)('vuepress-next_', ['vuepress@next']),
+    (0, util_1.BasicProject)('vitepress_', ['vitepress', 'vue']),
+    (0, util_1.BasicProject)('20ful_', ['20ful']),
+    (0, util_1.BasicProject)('hydrogen-cli_', ['hydrogen-cli']),
+    (0, util_1.BasicProject)('mini-site-generator_', ['mini-site-generator']),
+    (0, util_1.BasicProject)('onessg_', ['onessg']),
+    (0, util_1.BasicProject)('onessg_ejs_', ['onessg', 'jstransformer-ejs']),
+    (0, util_1.BasicProject)('onessg_swig_', ['onessg', 'jstransformer-swig']),
+    (0, util_1.BasicProject)('spignite_', ['spignite']),
+    (0, util_1.BasicProject)('sphido_', ['@sphido/core', '@sphido/frontmatter', '@sphido/markdown', '@sphido/meta']),
+    (0, util_1.AppProject)('nanogen-app', 'nanogen'),
+    (0, util_1.AppProject)('eleventy-app', '@11ty/eleventy'),
+    (0, util_1.BasicProject)('saber_', ['saber']),
 ]));
 projects.define((0, util_1.SuperProject)('rollup-pkg', ['rollup-starter', 'rollup-bundle']));
 projects.define((0, util_1.DegitProject)('rollup-starter', 'rollup/rollup-starter-app'));
@@ -372,6 +383,29 @@ projects.define((0, util_1.BasicProject)('vite-bundle', [
     '@vitejs/plugin-vue', 'vite-plugin-pages', '@sveltejs/vite-plugin-svelte',
     'vite-plugin-solid', 'babel-preset-solid', 'vite-plugin-elm',
     'vite-plugin-windicss', 'windicss',
+]));
+projects.define((0, util_1.ContainerProject)('astro-starters', [
+    (0, util_1.DegitProject)('astro-basics-skel', 'github:withastro/astro/examples/basics'),
+    (0, util_1.DegitProject)('astro-blog-skel', 'github:withastro/astro/examples/blog'),
+    (0, util_1.DegitProject)('astro-docs-skel', 'github:withastro/astro/examples/docs'),
+    (0, util_1.DegitProject)('astro-minimal-skel', 'github:withastro/astro/examples/minimal'),
+    (0, util_1.DegitProject)('astro-tailwindcss-skel', 'github:withastro/astro/examples/with-tailwindcss'),
+    (0, util_1.DegitProject)('astro-mdx-skel', 'github:withastro/astro/examples/with-mdx'),
+    (0, util_1.DegitProject)('astro-alpine-skel', 'github:withastro/astro/examples/framework-alpine'),
+    (0, util_1.DegitProject)('astro-lit-skel', 'github:withastro/astro/examples/framework-lit'),
+    (0, util_1.DegitProject)('astro-preact-skel', 'github:withastro/astro/examples/framework-preact'),
+    (0, util_1.DegitProject)('astro-react-skel', 'github:withastro/astro/examples/framework-react'),
+    (0, util_1.DegitProject)('astro-svelte-skel', 'github:withastro/astro/examples/framework-svelte'),
+    (0, util_1.DegitProject)('astro-vue-skel', 'github:withastro/astro/examples/framework-vue'),
+]));
+projects.define((0, util_1.BasicProject)('astro-bundle', [
+    '@astrojs/tailwind',
+    '@astrojs/preact', 'preact',
+    '@astrojs/vue', 'vue',
+    '@astrojs/svelte', 'svelte',
+    '@astrojs/react', 'react', 'react-dom',
+    '@astrojs/lit', 'lit', '@webcomponents/template-shadowroot',
+    '@astrojs/mdx',
 ]));
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.BasicProject)('webpack-bundle', [
@@ -512,3 +546,5 @@ projects.define((0, util_1.AppProject)('forgo-app', 'create-forgo-app', 'create-
 projects.define((0, util_1.AppProject)('nexe-app', 'nexe'));
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.BasicProject)('polished_', ['polished']));
+projects.define((0, util_1.BasicProject)('ficusjs_', ['ficusjs']));
+projects.define((0, util_1.BasicProject)('npm_', ['npm']));

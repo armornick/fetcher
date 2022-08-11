@@ -421,10 +421,21 @@ projects.define(SuperProject('metalsmith-pkg', ['metalsmith-bundle', 'metalsmith
 // ----------------------------------------------------------------------------------------
 
 projects.define(
-    BasicProject('staticgen-bundle', [
-        '20ful','hydrogen-cli','nodemon','live-server','npm-run-all','mini-site-generator',
-        'onessg','jstransformer-ejs','jstransformer-swig','spignite',
-        '@sphido/core','@sphido/frontmatter','@sphido/markdown','@sphido/meta','fs-extra','globby',
+    ContainerProject('staticgen-bundle', [
+        BasicProject('vuepress_', ['vuepress']),
+        BasicProject('vuepress-next_', ['vuepress@next']),
+        BasicProject('vitepress_', ['vitepress','vue']),
+        BasicProject('20ful_', ['20ful']),
+        BasicProject('hydrogen-cli_', ['hydrogen-cli']),
+        BasicProject('mini-site-generator_', ['mini-site-generator']),
+        BasicProject('onessg_', ['onessg']),
+        BasicProject('onessg_ejs_', ['onessg','jstransformer-ejs']),
+        BasicProject('onessg_swig_', ['onessg','jstransformer-swig']),
+        BasicProject('spignite_', ['spignite']),
+        BasicProject('sphido_', ['@sphido/core','@sphido/frontmatter','@sphido/markdown','@sphido/meta']),
+        AppProject('nanogen-app', 'nanogen'),
+        AppProject('eleventy-app', '@11ty/eleventy'),
+        BasicProject('saber_', ['saber']),
     ])
 )
 
@@ -508,6 +519,35 @@ projects.define(
         '@vitejs/plugin-vue','vite-plugin-pages','@sveltejs/vite-plugin-svelte',
         'vite-plugin-solid','babel-preset-solid','vite-plugin-elm',
         'vite-plugin-windicss','windicss',
+    ])
+)
+
+projects.define(
+    ContainerProject('astro-starters', [
+        DegitProject('astro-basics-skel', 'github:withastro/astro/examples/basics'),
+        DegitProject('astro-blog-skel', 'github:withastro/astro/examples/blog'),
+        DegitProject('astro-docs-skel', 'github:withastro/astro/examples/docs'),
+        DegitProject('astro-minimal-skel', 'github:withastro/astro/examples/minimal'),
+        DegitProject('astro-tailwindcss-skel', 'github:withastro/astro/examples/with-tailwindcss'),
+        DegitProject('astro-mdx-skel', 'github:withastro/astro/examples/with-mdx'),
+        DegitProject('astro-alpine-skel', 'github:withastro/astro/examples/framework-alpine'),
+        DegitProject('astro-lit-skel', 'github:withastro/astro/examples/framework-lit'),
+        DegitProject('astro-preact-skel', 'github:withastro/astro/examples/framework-preact'),
+        DegitProject('astro-react-skel', 'github:withastro/astro/examples/framework-react'),
+        DegitProject('astro-svelte-skel', 'github:withastro/astro/examples/framework-svelte'),
+        DegitProject('astro-vue-skel', 'github:withastro/astro/examples/framework-vue'),
+    ])
+)
+
+projects.define(
+    BasicProject('astro-bundle', [
+        '@astrojs/tailwind',
+        '@astrojs/preact','preact',
+        '@astrojs/vue','vue',
+        '@astrojs/svelte','svelte',
+        '@astrojs/react','react','react-dom',
+        '@astrojs/lit','lit','@webcomponents/template-shadowroot',
+        '@astrojs/mdx',
     ])
 )
 
@@ -740,5 +780,13 @@ projects.define(
 
 projects.define(
     BasicProject('polished_', ['polished'])
+)
+
+projects.define(
+    BasicProject('ficusjs_', ['ficusjs'])
+)
+
+projects.define(
+    BasicProject('npm_', ['npm'])
 )
 
