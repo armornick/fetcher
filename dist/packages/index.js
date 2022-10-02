@@ -7,9 +7,11 @@ exports.default = projects;
 const packages2_1 = require("./indexes/packages2");
 const css_frameworks_1 = require("./indexes/css-frameworks");
 const vite_1 = require("./indexes/vite");
+const bundles_1 = require("./indexes/bundles");
 projects.index('packages2', packages2_1.default);
 projects.index('css', css_frameworks_1.default);
 projects.index('vite', vite_1.default);
+projects.index('bundles', bundles_1.default);
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.BasicProject)('npm_', ['npm']));
 // ----------------------------------------------------------------------------------------
@@ -31,6 +33,20 @@ projects.define((0, util_1.BasicProject)('misc-libs-2', [
     'facon', 'genel', 'lighterhtml', 'hypersimple', 'haunted', 'yaml-tag',
     'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
     'hyperhtml', 'uhtml', 'uce', 'uland', 'neverland', 'ube', 'ube-ssr', 'uland-ssr', 'lighterhtml-plus',
+]));
+projects.define((0, util_1.BasicProject)('tagged-templates-bundle', [
+    'csstag', '@emotion/css', '@emotion/react', 'facon', 'genel', 'lighterhtml', 'hypersimple', 'haunted',
+    'yaml-tag',
+    'htm', 'babel-plugin-htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
+    'inferno-hyperscript', 'inferno-create-element', 'hyperapp',
+]));
+projects.define((0, util_1.BasicProject)('hyperhtml-bundle', [
+    'hyperhtml', 'uhtml', 'uce', 'uland', 'hypersimple', 'lighterhtml', 'neverland', 'haunted', 'lit-html', 'lit',
+    'ube', 'ube-ssr', 'uland-ssr', 'lighterhtml-plus',
+]));
+projects.define((0, util_1.BasicProject)('web-component-libs', [
+    'fuco', 'atomico', 'uce', 'lit', 'lit-html', 'haunted', 'petit-vue', 'x-tag', 'hybrids',
+    '@socketsupply/tonic', 'tonic-ssr', ''
 ]));
 projects.define((0, util_1.ContainerProject)('mock-data-libs', [
     (0, util_1.BasicProject)('faker_', ['@faker-js/faker']),
@@ -178,33 +194,4 @@ projects.define((0, util_1.DegitProject)('svelte-app', 'sveltejs/template', 'sve
 projects.define((0, util_1.AppProject)('next-app', 'create-next-app', 'create-next-app next-skel'));
 projects.define((0, util_1.AppProject)('nanogen-app', 'nanogen'));
 projects.define((0, util_1.AppProject)('eleventy-app', '@11ty/eleventy'));
-// ----------------------------------------------------------------------------------------
-projects.define((0, util_1.ContainerProject)('frontend-libs-1', [
-    (0, util_1.BasicProject)('lemonadejs_', ['lemonadejs']),
-    (0, util_1.BasicProject)('lemonadejs_vite_', ['vite', 'lemonadejs']),
-    (0, util_1.BasicProject)('lemonadejs_tailwindcss_vite_', ['vite', 'tailwindcss postcss autoprefixer', 'lemonadejs']),
-    (0, util_1.BasicProject)('reefjs_', ['reefjs']),
-    (0, util_1.BasicProject)('reefjs_vite_', ['vite', 'reefjs']),
-    (0, util_1.BasicProject)('reefjs_tailwindcss_vite_', ['vite', 'tailwindcss postcss autoprefixer', 'reefjs']),
-    (0, util_1.BasicProject)('ficusjs_', ['ficusjs']),
-    (0, util_1.BasicProject)('ficusjs_vite_', ['vite', 'ficusjs']),
-    (0, util_1.BasicProject)('ficusjs_tailwindcss_vite_', ['vite', 'tailwindcss postcss autoprefixer', 'ficusjs']),
-    (0, util_1.BasicProject)('stimulus_vite_', ['vite', '@hotwired/stimulus']),
-    (0, util_1.BasicProject)('stimulus_tailwindcss_vite_', ['vite', 'tailwindcss postcss autoprefixer', '@hotwired/stimulus']),
-    (0, util_1.BasicProject)('turbo_vite_', ['vite', '@hotwired/stimulus @hotwired/turbo']),
-    (0, util_1.BasicProject)('turbo_tailwindcss_vite_', ['vite', 'tailwindcss postcss autoprefixer', '@hotwired/stimulus @hotwired/turbo']),
-    (0, util_1.BasicProject)('docsify_', ['docsify-cli']),
-    (0, util_1.BasicProject)('vitepress_', ['vitepress vue']),
-    (0, util_1.BasicProject)('lit_', ['lit']),
-    (0, util_1.BasicProject)('lit_vite_', ['vite', 'lit']),
-    (0, util_1.DegitProject)('inferno-boilerplate', 'infernojs/inferno-boilerplate'),
-    (0, util_1.BasicProject)('vite-vue-starter', ['vite vue @vitejs/plugin-vue']),
-    (0, util_1.BasicProject)('vite-vue-starter_tailwind', ['vite vue @vitejs/plugin-vue tailwindcss postcss autoprefixer']),
-    (0, util_1.BasicProject)('vite-react-starter', ['vite react react-dom @vitejs/plugin-react @types/react @types/react-dom']),
-    (0, util_1.BasicProject)('vite-react-starter_tailwind', ['vite react react-dom @vitejs/plugin-react @types/react @types/react-dom tailwindcss postcss autoprefixer']),
-    (0, util_1.BasicProject)('vite-preact-starter', ['vite preact @preact/preset-vite']),
-    (0, util_1.BasicProject)('vite-preact-starter_tailwind', ['vite preact @preact/preset-vite tailwindcss postcss autoprefixer']),
-    (0, util_1.BasicProject)('vite-svelte-starter', ['vite svelte @sveltejs/vite-plugin-svelte']),
-    (0, util_1.BasicProject)('vite-svelte-starter_tailwind', ['vite svelte @sveltejs/vite-plugin-svelte tailwindcss postcss autoprefixer']),
-]));
 // ----------------------------------------------------------------------------------------

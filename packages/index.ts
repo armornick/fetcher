@@ -8,10 +8,12 @@ export default projects;
 import packages2 from "./indexes/packages2";
 import cssFrameworks from "./indexes/css-frameworks";
 import vite from './indexes/vite';
+import bundles from './indexes/bundles';
 
 projects.index('packages2', packages2);
 projects.index('css', cssFrameworks);
 projects.index('vite', vite);
+projects.index('bundles', bundles);
 
 // ----------------------------------------------------------------------------------------
 
@@ -43,6 +45,29 @@ projects.define(
         'facon','genel','lighterhtml','hypersimple','haunted','yaml-tag',
         'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
         'hyperhtml','uhtml','uce','uland','neverland','ube','ube-ssr','uland-ssr','lighterhtml-plus',
+    ])
+)
+
+projects.define(
+    BasicProject('tagged-templates-bundle', [
+        'csstag','@emotion/css','@emotion/react','facon','genel','lighterhtml','hypersimple','haunted',
+        'yaml-tag',
+        'htm','babel-plugin-htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
+        'inferno-hyperscript','inferno-create-element','hyperapp',
+    ])
+)
+
+projects.define(
+    BasicProject('hyperhtml-bundle', [
+        'hyperhtml','uhtml','uce','uland','hypersimple','lighterhtml','neverland','haunted','lit-html','lit',
+        'ube','ube-ssr','uland-ssr','lighterhtml-plus',
+    ])
+)
+
+projects.define(
+    BasicProject('web-component-libs', [
+        'fuco','atomico','uce','lit','lit-html','haunted','petit-vue','x-tag','hybrids',
+        '@socketsupply/tonic','tonic-ssr',''
     ])
 )
 
@@ -266,39 +291,6 @@ projects.define(
     AppProject('eleventy-app', '@11ty/eleventy')
 )
 
-
-// ----------------------------------------------------------------------------------------
-
-projects.define(
-    ContainerProject('frontend-libs-1', [
-        BasicProject('lemonadejs_', ['lemonadejs']),
-        BasicProject('lemonadejs_vite_', ['vite', 'lemonadejs']),
-        BasicProject('lemonadejs_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer', 'lemonadejs']),
-        BasicProject('reefjs_', ['reefjs']),
-        BasicProject('reefjs_vite_', ['vite', 'reefjs']),
-        BasicProject('reefjs_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','reefjs']),
-        BasicProject('ficusjs_', ['ficusjs']),
-        BasicProject('ficusjs_vite_', ['vite', 'ficusjs']),
-        BasicProject('ficusjs_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','ficusjs']),
-        BasicProject('stimulus_vite_', ['vite', '@hotwired/stimulus']),
-        BasicProject('stimulus_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','@hotwired/stimulus']),
-        BasicProject('turbo_vite_', ['vite', '@hotwired/stimulus @hotwired/turbo']),
-        BasicProject('turbo_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','@hotwired/stimulus @hotwired/turbo']),
-        BasicProject('docsify_', ['docsify-cli']),
-        BasicProject('vitepress_', ['vitepress vue']),
-        BasicProject('lit_', ['lit']),
-        BasicProject('lit_vite_', ['vite', 'lit']),
-        DegitProject('inferno-boilerplate', 'infernojs/inferno-boilerplate'),
-        BasicProject('vite-vue-starter', ['vite vue @vitejs/plugin-vue']),
-        BasicProject('vite-vue-starter_tailwind', ['vite vue @vitejs/plugin-vue tailwindcss postcss autoprefixer']),
-        BasicProject('vite-react-starter', ['vite react react-dom @vitejs/plugin-react @types/react @types/react-dom']),
-        BasicProject('vite-react-starter_tailwind', ['vite react react-dom @vitejs/plugin-react @types/react @types/react-dom tailwindcss postcss autoprefixer']),
-        BasicProject('vite-preact-starter', ['vite preact @preact/preset-vite']),
-        BasicProject('vite-preact-starter_tailwind', ['vite preact @preact/preset-vite tailwindcss postcss autoprefixer']),
-        BasicProject('vite-svelte-starter', ['vite svelte @sveltejs/vite-plugin-svelte']),
-        BasicProject('vite-svelte-starter_tailwind', ['vite svelte @sveltejs/vite-plugin-svelte tailwindcss postcss autoprefixer']),
-    ])
-)
 
 // ----------------------------------------------------------------------------------------
 

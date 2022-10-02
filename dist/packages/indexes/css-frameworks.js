@@ -49,20 +49,6 @@ function default_1(projects) {
         'preact', 'preact-router', 'preact-portal', 'preact-richtextarea', 'preact-token-input',
         'preact-virtual-list', 'preact-layout', 'preact-helmet', 'preact-custom-scrollbars',
     ]));
-    projects.define((0, util_1.BasicProject)('tagged-templates-bundle', [
-        'csstag', '@emotion/css', '@emotion/react', 'facon', 'genel', 'lighterhtml', 'hypersimple', 'haunted',
-        'yaml-tag',
-        'htm', 'babel-plugin-htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
-        'inferno-hyperscript', 'inferno-create-element', 'hyperapp',
-    ]));
-    projects.define((0, util_1.BasicProject)('hyperhtml-bundle', [
-        'hyperhtml', 'uhtml', 'uce', 'uland', 'hypersimple', 'lighterhtml', 'neverland', 'haunted', 'lit-html', 'lit',
-        'ube', 'ube-ssr', 'uland-ssr', 'lighterhtml-plus',
-    ]));
-    projects.define((0, util_1.BasicProject)('web-component-libs', [
-        'fuco', 'atomico', 'uce', 'lit', 'lit-html', 'haunted', 'petit-vue', 'x-tag', 'hybrids',
-        '@socketsupply/tonic', 'tonic-ssr', ''
-    ]));
     projects.define((0, util_1.BasicProject)('twind-bundle', [
         'twind', '@twind/aspect-ratio', '@twind/content', '@twind/forms', '@twind/line-clamp', '@twind/typography',
         '@twind/preact', '@twind/wmr', 'construct-style-sheets-polyfill',

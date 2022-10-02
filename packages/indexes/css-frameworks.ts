@@ -63,29 +63,6 @@ export default function (projects:ProjectList) {
     )
     
     projects.define(
-        BasicProject('tagged-templates-bundle', [
-            'csstag','@emotion/css','@emotion/react','facon','genel','lighterhtml','hypersimple','haunted',
-            'yaml-tag',
-            'htm','babel-plugin-htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
-            'inferno-hyperscript','inferno-create-element','hyperapp',
-        ])
-    )
-    
-    projects.define(
-        BasicProject('hyperhtml-bundle', [
-            'hyperhtml','uhtml','uce','uland','hypersimple','lighterhtml','neverland','haunted','lit-html','lit',
-            'ube','ube-ssr','uland-ssr','lighterhtml-plus',
-        ])
-    )
-    
-    projects.define(
-        BasicProject('web-component-libs', [
-            'fuco','atomico','uce','lit','lit-html','haunted','petit-vue','x-tag','hybrids',
-            '@socketsupply/tonic','tonic-ssr',''
-        ])
-    )
-    
-    projects.define(
         BasicProject('twind-bundle', [
             'twind','@twind/aspect-ratio','@twind/content','@twind/forms','@twind/line-clamp','@twind/typography',
             '@twind/preact','@twind/wmr','construct-style-sheets-polyfill',
