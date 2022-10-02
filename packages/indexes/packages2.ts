@@ -1,4 +1,4 @@
-import { AppProject, BasicProject, CommandProject, ContainerProject, DegitProject, ProjectList, SuperProject } from "./util";
+import { AppProject, BasicProject, CommandProject, ContainerProject, DegitProject, ProjectList, SuperProject } from "../util";
 
 export default function (projects:ProjectList) {
     
@@ -230,6 +230,73 @@ export default function (projects:ProjectList) {
         ContainerProject('angular-starters', [
             DegitProject('bootstrap-starter', 'https://github.com/angular-starters/angular-bootstrap-starter'),
             DegitProject('material-starter', 'https://github.com/angular-starters/angular-material-starter'),
+        ])
+    )
+    
+    projects.define(
+        ContainerProject('wmr-pkg', [
+            BasicProject('wmr-bundle', ['wmr','create-wmr','@wmrjs/directory-import','@wmrjs/nomodule','@wmrjs/service-worker','preact-iso']),
+            AppProject('wmr-app', 'create-wmr', 'create-wmr wmr-skel'),
+        ])
+    )
+
+    projects.define(
+        AppProject('wintersmith-app', 'wintersmith', 'wintersmith new wintersmith-skel')
+    )
+    
+    projects.define(
+        AppProject('cuttlebelle-app', 'cuttlebelle')
+    )
+    
+    projects.define(
+        AppProject('forgo-app', 'create-forgo-app', 'create-forgo-app forgo-skel')
+    )
+    
+    projects.define(
+        AppProject('nexe-app', 'nexe')
+    )
+
+    projects.define(
+        AppProject('tiddlywiki_', 'tiddlywiki')
+    )
+
+    projects.define(
+        BasicProject('polished_', ['polished'])
+    )
+    
+    projects.define(
+        BasicProject('ficusjs_', ['ficusjs'])
+    )
+
+    projects.define(
+        ContainerProject('material-design-bundle', [
+            BasicProject('material-tailwind-bundle', ['@material-tailwind/html','@material-tailwind/react']),
+            BasicProject('material-design-lite_', ['material-design-lite','vue-mdl']),
+            BasicProject('smelte_', ['smelte']),
+            BasicProject('vuetify_', ['vuetify']),
+            BasicProject('materialize_', ['react-materialize', 'materialize-css@next']),
+            BasicProject('mdbootstrap', ['mdb-cli','mdb-ui-kit','mdb-react-ui-kit','mdb-vue-ui-kit']),
+            BasicProject('tw-elements_', ['tw-elements']),
+            DegitProject('mdb-webpack-starter_', 'https://github.com/mdbootstrap/mdb-webpack-starter', 'mdb-webpack-starter'),
+            'mui-bundle',
+        ])
+    )
+    
+    projects.define(
+        BasicProject('mui-bundle', [
+            '@mui/material','@emotion/react','@emotion/styled','@mui/icons-material',
+            '@mui/joy','@mui/base','@mui/system',
+        ])
+    )
+    
+    projects.define(
+        ContainerProject('mdbootstrap-bundle', [
+            DegitProject('mdb-ui-kit', 'https://github.com/mdbootstrap/mdb-ui-kit#4.2.0'),
+            DegitProject('mdb-vue-ui-kit', 'https://github.com/mdbootstrap/mdb-vue-ui-kit#1.14.0'),
+            DegitProject('mdb-react-ui-kit', 'https://github.com/mdbootstrap/mdb-react-ui-kit#4.0.0'),
+            DegitProject('mdb-angular-ui-kit', 'https://github.com/mdbootstrap/mdb-angular-ui-kit#2.3.0'),
+            DegitProject('tw-elements-starter', 'https://github.com/mdbootstrap/Tailwind-Elements/site'),
+            DegitProject('tw-elements-src', 'https://github.com/mdbootstrap/Tailwind-Elements'),
         ])
     )
 

@@ -23,6 +23,12 @@ if (!projectsToBuild || projectsToBuild.length === 0) {
     process.exit();
 }
 for (const project of projectsToBuild) {
+    if (project.startsWith(':')) {
+        const index = project.slice(1);
+        console.log(`===== adding index ${index} =====`);
+        fetcher.addIndex(index);
+        continue;
+    }
     console.log(`===== building project ${project} =====`);
     fetcher.buildProject(project);
     console.log('==========\n');

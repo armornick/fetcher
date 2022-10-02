@@ -12,6 +12,9 @@ class Fetcher {
         this.topCache = false;
         this.projects = projects;
     }
+    addIndex(name) {
+        this.projects.addIndex(name);
+    }
     buildProject(name) {
         const project = this.projects.get(name);
         // this.topCache = project.topCache;

@@ -1,10 +1,13 @@
 import { MaybeProject, Project } from './types';
 
 type ProjectMap = {[name: string]: Project};
+type PackageIndex = (projects:ProjectList) => void;
+type PackageIndexMap = {[name: string]: PackageIndex};
 
 export class ProjectList {
     
     map: ProjectMap = {};
+    indexes: PackageIndexMap = {};
 
     defaults?: string[];
 
@@ -14,6 +17,17 @@ export class ProjectList {
 
     define(project: Project) {
         this.map[project.name] = project;
+    }
+
+    index(name: string, index:PackageIndex) {
+        this.indexes[name] = index;
+    }
+
+    addIndex(name: string) {
+        if (name in this.indexes) {
+            const index = this.indexes[name];
+            index(this);
+        }
     }
 }
 

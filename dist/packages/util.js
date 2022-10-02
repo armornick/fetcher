@@ -4,12 +4,22 @@ exports.AppProject = exports.CommandProject = exports.ContainerProject = exports
 class ProjectList {
     constructor() {
         this.map = {};
+        this.indexes = {};
     }
     get(name) {
         return this.map[name];
     }
     define(project) {
         this.map[project.name] = project;
+    }
+    index(name, index) {
+        this.indexes[name] = index;
+    }
+    addIndex(name) {
+        if (name in this.indexes) {
+            const index = this.indexes[name];
+            index(this);
+        }
     }
 }
 exports.ProjectList = ProjectList;

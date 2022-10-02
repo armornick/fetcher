@@ -20,6 +20,10 @@ export default class Fetcher {
         this.projects = projects;
     }
 
+    addIndex(name: string) {
+        this.projects.addIndex(name);
+    }
+
     buildProject(name: string) {
         const project = this.projects.get(name);
         // this.topCache = project.topCache;
