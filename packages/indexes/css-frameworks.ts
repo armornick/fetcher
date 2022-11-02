@@ -47,7 +47,7 @@ export default function (projects:ProjectList) {
     
     projects.define(
         ContainerProject('bootstrap-bundle', [
-            BasicProject('bootstrap_', ['bootstrap@5.2.0-beta1','@popperjs/core']),
+            BasicProject('bootstrap_', ['bootstrap@5.2.1','@popperjs/core']),
             BasicProject('bootswatch_', ['bootswatch']),
             BasicProject('bootstrap-4_', ['bootstrap@4','bootstrap-vue']),
             BasicProject('material-kit_', ['material-kit']),
@@ -84,7 +84,7 @@ export default function (projects:ProjectList) {
         BasicProject('sass-bundle', [
             'sass',
             'cirrus-ui','iotacss','sierra-library','susy','open-color','shevy','typi','gerillass',
-            'bulma','bootstrap@5.2.0-beta1','bootswatch','foundation-sites','gorko',
+            'bulma','bootstrap@5.2.1','bootswatch','foundation-sites','gorko',
         ])
     )
     

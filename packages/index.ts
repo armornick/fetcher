@@ -30,12 +30,13 @@ projects.define(
         'html5sortable','csstag','facon','genel','marli','localforage',
         'hyperhtml','uhtml','hypersimple','neverland','hyperhtml-element',
         'inferno','inferno-hyperscript','inferno-create-element','preact','solid-js',
-        'mithril','htm','alpinejs','marked','stimulus','gumshoejs','offside-js','',
+        'mithril','htm','alpinejs','marked','@types/marked','stimulus','gumshoejs','offside-js','',
         'markdown-it','markdown-it-sub','markdown-it-sup','markdown-it-footnote','markdown-it-deflist',
         'markdown-it-abbr','markdown-it-emoji','markdown-it-container','a11y-dialog',
         'fr-offcanvas','fr-dialogmodal','fr-tabs','fr-tooltip','fr-accordion','fr-bypasslinks',
-        'concurrently','npm-run-all',
+        'concurrently','npm-run-all','globby',
         '@types/mithril','@types/node','@types/lodash','@types/express',
+        'asciidoctor','ejs','nunjucks','pug','hamljs',
     ])
 )
 
@@ -45,6 +46,23 @@ projects.define(
         'facon','genel','lighterhtml','hypersimple','haunted','yaml-tag',
         'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
         'hyperhtml','uhtml','uce','uland','neverland','ube','ube-ssr','uland-ssr','lighterhtml-plus',
+    ])
+)
+
+projects.define(
+    ContainerProject('misc-libs-3', [
+        BasicProject('daisyui_', ['daisyui']),
+        BasicProject('lit_', ['lit']),
+        BasicProject('flowbite_', ['flowbite']),
+        BasicProject('headlessui_vue', ['@headlessui/vue']),
+        BasicProject('headlessui_react', ['@headlessui/react']),
+        BasicProject('tinybase_', ['tinybase']),
+        BasicProject('pixelarticons_', ['pixelarticons']),
+        BasicProject('markdoc_', ['@markdoc/markdoc']),
+        BasicProject('preact-libs', ['preact preact-router preact-helmet']),
+        BasicProject('vue-libs', ['vue@3 vue-router@4 petit-vue']),
+        BasicProject('react-libs', ['react react-dom react-router-dom']),
+        'mock-data-libs',
     ])
 )
 
@@ -82,6 +100,8 @@ projects.define(
     ])
 )
 
+// ----------------------------------------------------------------------------------------
+
 projects.define(
     BasicProject('css-libs', [
         '@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',
@@ -104,6 +124,20 @@ projects.define(
         'open-props','dashvar','pollen-css',
     ])
 )
+
+projects.define(
+    ContainerProject('css-tools', [
+        BasicProject('sass_', ['sass']),
+        BasicProject('gorko_', ['sass gorko']),
+        BasicProject('codyframe_', ['sass','codyhouse-framework']),
+        BasicProject('bootstrap_', ['bootstrap@5']),
+        BasicProject('bootstrap_sass_', ['sass','bootstrap@5']),
+        BasicProject('stylus_', ['stylus']),
+        BasicProject('less_', ['less']),
+    ])
+)
+
+// ----------------------------------------------------------------------------------------
 
 projects.define(
     ContainerProject('typescript-pkg', [
@@ -162,14 +196,21 @@ projects.define(
 )
 
 projects.define(
-    BasicProject('astro-bundle', [
-        '@astrojs/tailwind',
-        '@astrojs/preact','preact',
-        '@astrojs/vue','vue',
-        '@astrojs/svelte','svelte',
-        '@astrojs/react','react','react-dom',
-        '@astrojs/lit','lit','@webcomponents/template-shadowroot',
-        '@astrojs/mdx',
+    ContainerProject('astro-bundle', [
+        BasicProject('astro_', ['astro']),
+        BasicProject('astro_tailwind', ['astro @astrojs/tailwind tailwindcss']),
+        BasicProject('astro_vue_', ['astro @astrojs/vue vue vue-router@4']),
+        BasicProject('astro_vue_tailwind', ['astro @astrojs/vue vue vue-router@4 @astrojs/tailwind tailwindcss']),
+        BasicProject('astro_svelte_', ['astro @astrojs/svelte svelte']),
+        BasicProject('astro_svelte_tailwind', ['astro @astrojs/svelte svelte @astrojs/tailwind tailwindcss']),
+        BasicProject('astro_react_', ['astro @astrojs/react react react-dom react-router-dom']),
+        BasicProject('astro_react_tailwind', ['astro @astrojs/react react react-dom react-router-dom @astrojs/tailwind tailwindcss']),
+        BasicProject('astro_preact_', ['astro @astrojs/preact preact-router preact-helmet']),
+        BasicProject('astro_preact_tailwind', ['astro @astrojs/preact preact-router preact-helmet @astrojs/tailwind tailwindcss']),
+        BasicProject('astro_alpinejs_', ['astro @astrojs/alpinejs alpinejs @types/alpinejs']),
+        BasicProject('astro_alpinejs_tailwind', ['astro @astrojs/alpinejs alpinejs @types/alpinejs @astrojs/tailwind tailwindcss']),
+        BasicProject('astro_lit_', ['astro @astrojs/lit lit @webcomponents/template-shadowroot']),
+        // BasicProject('astro_lit_tailwind', ['astro @astrojs/lit lit @webcomponents/template-shadowroot @astrojs/tailwind tailwindcss']),
     ])
 )
 
@@ -234,14 +275,16 @@ projects.define(
         BasicProject('tailwind-react-ui_',['tailwind-react-ui']),
         BasicProject('react-bootstrap_', ['react-bootstrap','bootstrap']),
         BasicProject('react-bulma_', ['react-bulma-components']),
-        BasicProject('vechaiui_', ['@vechaiui/core','@vechaiui/react','@tailwindcss/forms']),
+        // BasicProject('vechaiui_', ['@vechaiui/core','@vechaiui/react','@tailwindcss/forms']),
     ])
 )
 
 // ----------------------------------------------------------------------------------------
 
 projects.define(
-    SuperProject('servers-bundle', [ 'http-server_','json-server_','serve_','zero-server-app' ])
+    ContainerProject('servers-bundle', [ 
+        'http-server_','json-server_','serve_','zero-server-app','live-server_'
+    ])
 )
 
 projects.define(
@@ -258,6 +301,10 @@ projects.define(
 
 projects.define(
     AppProject('serve_', 'serve')
+)
+
+projects.define(
+    AppProject('live-server_', 'live-server')
 )
 
 projects.define(

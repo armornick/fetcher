@@ -3,59 +3,12 @@ import { AppProject, BasicProject, CommandProject, ContainerProject, DegitProjec
 export default function (projects:ProjectList) {
 
     projects.define(
-        ContainerProject('cache-bundle-1', [
-            BasicProject('onessg_', ['onessg jstransformer-ejs jstransformer-pug']),
-            BasicProject('sphido_', ['@sphido/core @sphido/frontmatter @sindresorhus/slugify']),
-            BasicProject('20ful_', ['20ful']),
-            BasicProject('eleventy_', ['@11ty/eleventy']),
-
-            BasicProject('tools_', ['npm-run-all concurrently serve marked pug stylus asciidoctor']),
-            BasicProject('tailwind_', ['tailwindcss postcss autoprefixer']),
-            BasicProject('twin-macro_', ['twin.macro']),
-            BasicProject('twind-bundle', [
-                'twind','@twind/aspect-ratio','@twind/content','@twind/forms','@twind/line-clamp','@twind/typography','@twind/preact'
-            ]),
-            
-            'misc-libs','css-libs','css-libs-2','astro-bundle','json-server_',
-            'hyperhtml-bundle','web-component-libs','tagged-templates-bundle',
-
-            CommandProject('vite-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla', 'vite-vanilla-skel'),
-            CommandProject('vite-vue-starter', 'create-vite@latest vite-vue-skel --template vue', 'vite-vue-skel'),
-            CommandProject('vite-react-starter', 'create-vite@latest vite-react-skel --template react', 'vite-react-skel'),
-            CommandProject('vite-preact-starter', 'create-vite@latest vite-preact-skel --template preact', 'vite-preact-skel'),
-            CommandProject('vite-lit-starter', 'create-vite@latest vite-lit-skel --template lit', 'vite-lit-skel'),
-            CommandProject('vite-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte', 'vite-svelte-skel'),
-        ])
-    )
-
-    projects.define(
-        ContainerProject('frontend-bundle-1', [
-            BasicProject('lemonadejs_', ['lemonadejs']),
-            BasicProject('lemonadejs_vite_', ['vite', 'lemonadejs']),
-            BasicProject('lemonadejs_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer', 'lemonadejs']),
-            BasicProject('reefjs_', ['reefjs']),
-            BasicProject('reefjs_vite_', ['vite', 'reefjs']),
-            BasicProject('reefjs_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','reefjs']),
-            BasicProject('ficusjs_', ['ficusjs']),
-            BasicProject('ficusjs_vite_', ['vite', 'ficusjs']),
-            BasicProject('ficusjs_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','ficusjs']),
-            BasicProject('stimulus_vite_', ['vite', '@hotwired/stimulus']),
-            BasicProject('stimulus_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','@hotwired/stimulus']),
-            BasicProject('turbo_vite_', ['vite', '@hotwired/stimulus @hotwired/turbo']),
-            BasicProject('turbo_tailwindcss_vite_', ['vite','tailwindcss postcss autoprefixer','@hotwired/stimulus @hotwired/turbo']),
-            BasicProject('docsify_', ['docsify-cli']),
-            BasicProject('vitepress_', ['vitepress vue']),
-            BasicProject('lit_', ['lit']),
-            BasicProject('lit_vite_', ['vite', 'lit']),
-            DegitProject('inferno-boilerplate', 'infernojs/inferno-boilerplate'),
-            BasicProject('vite-vue-starter', ['vite vue @vitejs/plugin-vue']),
-            BasicProject('vite-vue-starter_tailwind', ['vite vue @vitejs/plugin-vue tailwindcss postcss autoprefixer']),
-            BasicProject('vite-react-starter', ['vite react react-dom @vitejs/plugin-react @types/react @types/react-dom']),
-            BasicProject('vite-react-starter_tailwind', ['vite react react-dom @vitejs/plugin-react @types/react @types/react-dom tailwindcss postcss autoprefixer']),
-            BasicProject('vite-preact-starter', ['vite preact @preact/preset-vite']),
-            BasicProject('vite-preact-starter_tailwind', ['vite preact @preact/preset-vite tailwindcss postcss autoprefixer']),
-            BasicProject('vite-svelte-starter', ['vite svelte @sveltejs/vite-plugin-svelte']),
-            BasicProject('vite-svelte-starter_tailwind', ['vite svelte @sveltejs/vite-plugin-svelte tailwindcss postcss autoprefixer']),
+        ContainerProject('cache-bundle', [
+            'misc-libs','misc-libs-2','misc-libs-3',
+            'tagged-templates-bundle','hyperhtml-bundle','web-component-libs',
+            'css-libs','css-libs-2','css-tools',
+            'vue-pkg','react-pkg',
+            'servers-bundle',
         ])
     )
 
@@ -109,18 +62,6 @@ export default function (projects:ProjectList) {
 
     projects.define(
         ContainerProject('frontend-bundle-3', [
-            BasicProject('onessg_tailwind', ['concurrently serve onessg jstransformer-ejs tailwindcss postcss autoprefixer']),
-            BasicProject('onessg_sass', ['concurrently serve onessg jstransformer-ejs sass']),
-            BasicProject('onessg_gorko', ['concurrently serve onessg jstransformer-ejs sass gorko']),
-            BasicProject('onessg_codyframe', ['concurrently serve onessg jstransformer-ejs sass codyhouse-framework']),
-            BasicProject('onessg_bootstrap', ['concurrently serve onessg jstransformer-ejs sass bootstrap@5.2.1']),
-
-            BasicProject('onessg_pug_tailwind', ['concurrently serve onessg jstransformer-pug tailwindcss postcss autoprefixer']),
-            BasicProject('onessg_pug_sass', ['concurrently serve onessg jstransformer-pug sass']),
-            BasicProject('onessg_pug_gorko', ['concurrently serve onessg jstransformer-pug sass gorko']),
-            BasicProject('onessg_pug_codyframe', ['concurrently serve onessg jstransformer-pug sass codyhouse-framework']),
-            BasicProject('onessg_pug_bootstrap', ['concurrently serve onessg jstransformer-pug sass bootstrap@5.2.1']),
-            
             BasicProject('20ful_', ['20ful']),
 
             BasicProject('eleventy_', ['@11ty/eleventy']),
@@ -151,6 +92,68 @@ export default function (projects:ProjectList) {
 
             BasicProject('sphido_stylus', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked pug stylus']),
             BasicProject('sphido_stylus_asciidoc', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked pug asciidoctor stylus']),
+        ])
+    )
+
+    projects.define(
+        ContainerProject('staticgen-bundle', [
+            BasicProject('20ful_', ['20ful']),
+
+            BasicProject('eleventy_', ['@11ty/eleventy']),
+            BasicProject('eleventy_tailwind', ['@11ty/eleventy npm-run-all tailwindcss']),
+            BasicProject('eleventy_sass', ['@11ty/eleventy npm-run-all sass']),
+            BasicProject('eleventy_gorko', ['@11ty/eleventy npm-run-all sass gorko']),
+            BasicProject('eleventy_codyframe', ['@11ty/eleventy npm-run-all sass codyhouse-framework']),
+            BasicProject('eleventy_bootstrap', ['@11ty/eleventy npm-run-all sass bootstrap@5.2.1']),
+
+            BasicProject('astro_', ['astro']),
+            BasicProject('astro_tailwind', ['astro @astrojs/tailwind tailwindcss']),
+            BasicProject('astro_vue_', ['astro @astrojs/vue vue vue-router@4']),
+            BasicProject('astro_vue_tailwind', ['astro @astrojs/vue vue vue-router@4 @astrojs/tailwind tailwindcss']),
+            BasicProject('astro_svelte_', ['astro @astrojs/svelte svelte']),
+            BasicProject('astro_svelte_tailwind', ['astro @astrojs/svelte svelte @astrojs/tailwind tailwindcss']),
+            BasicProject('astro_react_', ['astro @astrojs/react react react-dom react-router-dom']),
+            BasicProject('astro_react_tailwind', ['astro @astrojs/react react react-dom react-router-dom @astrojs/tailwind tailwindcss']),
+            BasicProject('astro_preact_', ['astro @astrojs/preact preact-router preact-helmet']),
+            BasicProject('astro_preact_tailwind', ['astro @astrojs/preact preact-router preact-helmet @astrojs/tailwind tailwindcss']),
+            BasicProject('astro_alpinejs_', ['astro @astrojs/alpinejs alpinejs @types/alpinejs']),
+            BasicProject('astro_alpinejs_tailwind', ['astro @astrojs/alpinejs alpinejs @types/alpinejs @astrojs/tailwind tailwindcss']),
+            BasicProject('astro_lit_', ['astro @astrojs/lit lit @webcomponents/template-shadowroot']),
+            BasicProject('astro_lit_tailwind', ['astro @astrojs/lit lit @webcomponents/template-shadowroot @astrojs/tailwind tailwindcss']),
+        ])
+    )
+
+    projects.define(
+        ContainerProject('parcel-bundle', [
+            BasicProject('parcel_', ['parcel']),
+            BasicProject('parcel_tailwind', ['parcel postcss tailwindcss autoprefixer']),
+            BasicProject('parcel_sass', ['parcel @parcel/transformer-sass']),
+            BasicProject('parcel_react_', ['parcel react react-dom react-router-dom']),
+            BasicProject('parcel_react_tailwind_', ['parcel react react-dom react-router-dom postcss tailwindcss autoprefixer']),
+            BasicProject('parcel_react_sass', ['parcel react react-dom react-router-dom @parcel/transformer-sass']),
+            BasicProject('parcel_preact_', ['parcel preact preact-router preact-helmet']),
+            BasicProject('parcel_preact_tailwind_', ['parcel preact preact-router preact-helmet postcss tailwindcss autoprefixer']),
+            BasicProject('parcel_preact_sass', ['parcel preact preact-router preact-helmet @parcel/transformer-sass']),
+            BasicProject('parcel_vue_', ['parcel @parcel/transformer-vue vue vue-router@4']),
+            BasicProject('parcel_vue_tailwind_', ['parcel @parcel/transformer-vue vue vue-router@4 postcss tailwindcss autoprefixer']),
+            BasicProject('parcel_vue_sass', ['parcel @parcel/transformer-vue vue vue-router@4 @parcel/transformer-sass']),
+        ])
+    )
+
+    projects.define(
+        ContainerProject('parcel_pug-bundle', [
+            BasicProject('parcel_', ['parcel @parcel/transformer-pug pug']),
+            BasicProject('parcel_tailwind', ['parcel postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
+            BasicProject('parcel_sass', ['parcel @parcel/transformer-sass @parcel/transformer-pug pug']),
+            BasicProject('parcel_react_', ['parcel react react-dom react-router-dom @parcel/transformer-pug pug']),
+            BasicProject('parcel_react_tailwind_', ['parcel react react-dom react-router-dom postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
+            BasicProject('parcel_react_sass', ['parcel react react-dom react-router-dom @parcel/transformer-sass @parcel/transformer-pug pug']),
+            BasicProject('parcel_preact_', ['parcel preact preact-router preact-helmet @parcel/transformer-pug pug']),
+            BasicProject('parcel_preact_tailwind_', ['parcel preact preact-router preact-helmet postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
+            BasicProject('parcel_preact_sass', ['parcel preact preact-router preact-helmet @parcel/transformer-sass @parcel/transformer-pug pug']),
+            BasicProject('parcel_vue_', ['parcel @parcel/transformer-vue vue vue-router@4 @parcel/transformer-pug pug']),
+            BasicProject('parcel_vue_tailwind_', ['parcel @parcel/transformer-vue vue vue-router@4 postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
+            BasicProject('parcel_vue_sass', ['parcel @parcel/transformer-vue vue vue-router@4 @parcel/transformer-sass @parcel/transformer-pug pug']),
         ])
     )
 

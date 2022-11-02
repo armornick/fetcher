@@ -39,7 +39,7 @@ function default_1(projects) {
         (0, util_1.BasicProject)('agnostic-svelte_', ['agnostic-svelte', 'svelte']),
     ]));
     projects.define((0, util_1.ContainerProject)('bootstrap-bundle', [
-        (0, util_1.BasicProject)('bootstrap_', ['bootstrap@5.2.0-beta1', '@popperjs/core']),
+        (0, util_1.BasicProject)('bootstrap_', ['bootstrap@5.2.1', '@popperjs/core']),
         (0, util_1.BasicProject)('bootswatch_', ['bootswatch']),
         (0, util_1.BasicProject)('bootstrap-4_', ['bootstrap@4', 'bootstrap-vue']),
         (0, util_1.BasicProject)('material-kit_', ['material-kit']),
@@ -63,7 +63,7 @@ function default_1(projects) {
     projects.define((0, util_1.BasicProject)('sass-bundle', [
         'sass',
         'cirrus-ui', 'iotacss', 'sierra-library', 'susy', 'open-color', 'shevy', 'typi', 'gerillass',
-        'bulma', 'bootstrap@5.2.0-beta1', 'bootswatch', 'foundation-sites', 'gorko',
+        'bulma', 'bootstrap@5.2.1', 'bootswatch', 'foundation-sites', 'gorko',
     ]));
     projects.define((0, util_1.ContainerProject)('css-in-js-bundle', [
         (0, util_1.BasicProject)('emotion-bundle', ['@emotion/css', '@emotion/react', '@emotion/styled', '@emotion/babel-plugin']),
