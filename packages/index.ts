@@ -29,7 +29,7 @@ projects.define(
         'd3','chart.js','moment','dayjs','underscore','sweetalert','sweetalert2','reveal.js',
         'html5sortable','csstag','facon','genel','marli','localforage',
         'hyperhtml','uhtml','hypersimple','neverland','hyperhtml-element',
-        'inferno','inferno-hyperscript','inferno-create-element','preact','solid-js',
+        'inferno','inferno-hyperscript','inferno-create-element','preact','preact-custom-element',
         'mithril','htm','alpinejs','marked','@types/marked','stimulus','gumshoejs','offside-js','',
         'markdown-it','markdown-it-sub','markdown-it-sup','markdown-it-footnote','markdown-it-deflist',
         'markdown-it-abbr','markdown-it-emoji','markdown-it-container','a11y-dialog',
@@ -37,11 +37,6 @@ projects.define(
         'concurrently','npm-run-all','globby',
         '@types/mithril','@types/node','@types/lodash','@types/express',
         'asciidoctor','ejs','nunjucks','pug','hamljs',
-    ])
-)
-
-projects.define(
-    BasicProject('misc-libs-2', [
         '@socketsupply/tonic','reefjs','lemonadejs','petit-vue',
         'facon','genel','lighterhtml','hypersimple','haunted','yaml-tag',
         'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
@@ -171,7 +166,20 @@ projects.define(
         BasicProject('sphido_', ['@sphido/core','@sphido/frontmatter','@sphido/markdown','@sphido/meta']),
         AppProject('nanogen-app', 'nanogen'),
         AppProject('eleventy-app', '@11ty/eleventy'),
-        BasicProject('saber_', ['saber']),
+        BasicProject('harp_', ['harp']),
+        BasicProject('sergey_', ['sergey']),
+        BasicProject('greenwood_', ['@greenwood/cli']),
+    ])
+)
+
+projects.define(
+    BasicProject('parcel-bundle', [
+        'parcel','@parcel/resolver-glob','@parcel/optimizer-cssnano',
+        '@parcel/transformer-svg-react','@parcel/transformer-typescript-tsc','@parcel/transformer-coffeescript',
+        '@parcel/transformer-sass','@parcel/transformer-stylus','@parcel/transformer-less','@parcel/transformer-sugarss',
+        '@parcel/transformer-vue',
+        '@parcel/transformer-toml','@parcel/transformer-yaml','@parcel/transformer-pug','@parcel/transformer-mdx',
+        '@parcel/transformer-xml',
     ])
 )
 

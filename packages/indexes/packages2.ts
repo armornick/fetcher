@@ -201,17 +201,6 @@ export default function (projects:ProjectList) {
     )
 
     projects.define(
-        BasicProject('parcel-bundle', [
-            'parcel','@parcel/resolver-glob','@parcel/optimizer-cssnano',
-            '@parcel/transformer-svg-react','@parcel/transformer-typescript-tsc','@parcel/transformer-coffeescript',
-            '@parcel/transformer-sass','@parcel/transformer-stylus','@parcel/transformer-less','@parcel/transformer-sugarss',
-            '@parcel/transformer-vue',
-            '@parcel/transformer-toml','@parcel/transformer-yaml','@parcel/transformer-pug','@parcel/transformer-mdx',
-            '@parcel/transformer-xml',
-        ])
-    )
-
-    projects.define(
         ContainerProject('parcel-singles', [
             BasicProject('parcel_cssnano_', ['@parcel/optimizer-cssnano']),
             BasicProject('parcel_sass_', ['@parcel/transformer-sass']),

@@ -150,14 +150,6 @@ function default_1(projects) {
         (0, util_1.BasicProject)('parcel_sugarss_', ['parcel', '@parcel/transformer-sugarss']),
         (0, util_1.BasicProject)('parcel_elm_', ['parcel', 'elm', '@parcel/transformer-elm']),
     ]));
-    projects.define((0, util_1.BasicProject)('parcel-bundle', [
-        'parcel', '@parcel/resolver-glob', '@parcel/optimizer-cssnano',
-        '@parcel/transformer-svg-react', '@parcel/transformer-typescript-tsc', '@parcel/transformer-coffeescript',
-        '@parcel/transformer-sass', '@parcel/transformer-stylus', '@parcel/transformer-less', '@parcel/transformer-sugarss',
-        '@parcel/transformer-vue',
-        '@parcel/transformer-toml', '@parcel/transformer-yaml', '@parcel/transformer-pug', '@parcel/transformer-mdx',
-        '@parcel/transformer-xml',
-    ]));
     projects.define((0, util_1.ContainerProject)('parcel-singles', [
         (0, util_1.BasicProject)('parcel_cssnano_', ['@parcel/optimizer-cssnano']),
         (0, util_1.BasicProject)('parcel_sass_', ['@parcel/transformer-sass']),

@@ -20,7 +20,7 @@ projects.define((0, util_1.BasicProject)('misc-libs', [
     'd3', 'chart.js', 'moment', 'dayjs', 'underscore', 'sweetalert', 'sweetalert2', 'reveal.js',
     'html5sortable', 'csstag', 'facon', 'genel', 'marli', 'localforage',
     'hyperhtml', 'uhtml', 'hypersimple', 'neverland', 'hyperhtml-element',
-    'inferno', 'inferno-hyperscript', 'inferno-create-element', 'preact', 'solid-js',
+    'inferno', 'inferno-hyperscript', 'inferno-create-element', 'preact', 'preact-custom-element',
     'mithril', 'htm', 'alpinejs', 'marked', '@types/marked', 'stimulus', 'gumshoejs', 'offside-js', '',
     'markdown-it', 'markdown-it-sub', 'markdown-it-sup', 'markdown-it-footnote', 'markdown-it-deflist',
     'markdown-it-abbr', 'markdown-it-emoji', 'markdown-it-container', 'a11y-dialog',
@@ -28,8 +28,6 @@ projects.define((0, util_1.BasicProject)('misc-libs', [
     'concurrently', 'npm-run-all', 'globby',
     '@types/mithril', '@types/node', '@types/lodash', '@types/express',
     'asciidoctor', 'ejs', 'nunjucks', 'pug', 'hamljs',
-]));
-projects.define((0, util_1.BasicProject)('misc-libs-2', [
     '@socketsupply/tonic', 'reefjs', 'lemonadejs', 'petit-vue',
     'facon', 'genel', 'lighterhtml', 'hypersimple', 'haunted', 'yaml-tag',
     'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
@@ -126,7 +124,17 @@ projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
     (0, util_1.BasicProject)('sphido_', ['@sphido/core', '@sphido/frontmatter', '@sphido/markdown', '@sphido/meta']),
     (0, util_1.AppProject)('nanogen-app', 'nanogen'),
     (0, util_1.AppProject)('eleventy-app', '@11ty/eleventy'),
-    (0, util_1.BasicProject)('saber_', ['saber']),
+    (0, util_1.BasicProject)('harp_', ['harp']),
+    (0, util_1.BasicProject)('sergey_', ['sergey']),
+    (0, util_1.BasicProject)('greenwood_', ['@greenwood/cli']),
+]));
+projects.define((0, util_1.BasicProject)('parcel-bundle', [
+    'parcel', '@parcel/resolver-glob', '@parcel/optimizer-cssnano',
+    '@parcel/transformer-svg-react', '@parcel/transformer-typescript-tsc', '@parcel/transformer-coffeescript',
+    '@parcel/transformer-sass', '@parcel/transformer-stylus', '@parcel/transformer-less', '@parcel/transformer-sugarss',
+    '@parcel/transformer-vue',
+    '@parcel/transformer-toml', '@parcel/transformer-yaml', '@parcel/transformer-pug', '@parcel/transformer-mdx',
+    '@parcel/transformer-xml',
 ]));
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.ContainerProject)('astro-starters', [

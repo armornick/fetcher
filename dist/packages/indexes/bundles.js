@@ -3,11 +3,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../util");
 function default_1(projects) {
     projects.define((0, util_1.ContainerProject)('cache-bundle', [
-        'misc-libs', 'misc-libs-2', 'misc-libs-3',
+        'misc-libs', 'misc-libs-3',
         'tagged-templates-bundle', 'hyperhtml-bundle', 'web-component-libs',
-        'css-libs', 'css-libs-2', 'css-tools',
-        'vue-pkg', 'react-pkg',
-        'servers-bundle',
+        'css-libs', 'css-libs-2', 'css-tools', 'css-in-js-bundle', 'atomic-css-tools',
+        // 'vue-pkg','react-pkg',
+        // 'servers-bundle',
+        'vite-starters-official', 'parcel-bundle', 'staticgen-bundle',
+    ]));
+    projects.define((0, util_1.ContainerProject)('cache-bundle-2', [
+        'misc-libs', 'misc-libs-3', 'typescript-pkg',
+        'tagged-templates-bundle', 'hyperhtml-bundle', 'web-component-libs',
+        'css-libs', 'css-libs-2', 'css-tools', 'postcss-bundle',
+        'css-in-js-bundle', 'atomic-css-tools', 'sass-bundle',
+        'vue-pkg', 'react-pkg', 'astro-bundle', 'astro-starters',
+        'servers-bundle', 'express-bundle',
+        'vite-starters-official', 'parcel-bundle', 'staticgen-bundle',
     ]));
     projects.define((0, util_1.ContainerProject)('frontend-bundle-2', [
         (0, util_1.BasicProject)('tailwind_serve_', ['serve concurrently tailwindcss postcss autoprefixer']),
@@ -75,56 +85,15 @@ function default_1(projects) {
         (0, util_1.BasicProject)('sphido_stylus', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked pug stylus']),
         (0, util_1.BasicProject)('sphido_stylus_asciidoc', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked pug asciidoctor stylus']),
     ]));
-    projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
-        (0, util_1.BasicProject)('20ful_', ['20ful']),
-        (0, util_1.BasicProject)('eleventy_', ['@11ty/eleventy']),
-        (0, util_1.BasicProject)('eleventy_tailwind', ['@11ty/eleventy npm-run-all tailwindcss']),
-        (0, util_1.BasicProject)('eleventy_sass', ['@11ty/eleventy npm-run-all sass']),
-        (0, util_1.BasicProject)('eleventy_gorko', ['@11ty/eleventy npm-run-all sass gorko']),
-        (0, util_1.BasicProject)('eleventy_codyframe', ['@11ty/eleventy npm-run-all sass codyhouse-framework']),
-        (0, util_1.BasicProject)('eleventy_bootstrap', ['@11ty/eleventy npm-run-all sass bootstrap@5.2.1']),
-        (0, util_1.BasicProject)('astro_', ['astro']),
-        (0, util_1.BasicProject)('astro_tailwind', ['astro @astrojs/tailwind tailwindcss']),
-        (0, util_1.BasicProject)('astro_vue_', ['astro @astrojs/vue vue vue-router@4']),
-        (0, util_1.BasicProject)('astro_vue_tailwind', ['astro @astrojs/vue vue vue-router@4 @astrojs/tailwind tailwindcss']),
-        (0, util_1.BasicProject)('astro_svelte_', ['astro @astrojs/svelte svelte']),
-        (0, util_1.BasicProject)('astro_svelte_tailwind', ['astro @astrojs/svelte svelte @astrojs/tailwind tailwindcss']),
-        (0, util_1.BasicProject)('astro_react_', ['astro @astrojs/react react react-dom react-router-dom']),
-        (0, util_1.BasicProject)('astro_react_tailwind', ['astro @astrojs/react react react-dom react-router-dom @astrojs/tailwind tailwindcss']),
-        (0, util_1.BasicProject)('astro_preact_', ['astro @astrojs/preact preact-router preact-helmet']),
-        (0, util_1.BasicProject)('astro_preact_tailwind', ['astro @astrojs/preact preact-router preact-helmet @astrojs/tailwind tailwindcss']),
-        (0, util_1.BasicProject)('astro_alpinejs_', ['astro @astrojs/alpinejs alpinejs @types/alpinejs']),
-        (0, util_1.BasicProject)('astro_alpinejs_tailwind', ['astro @astrojs/alpinejs alpinejs @types/alpinejs @astrojs/tailwind tailwindcss']),
-        (0, util_1.BasicProject)('astro_lit_', ['astro @astrojs/lit lit @webcomponents/template-shadowroot']),
-        (0, util_1.BasicProject)('astro_lit_tailwind', ['astro @astrojs/lit lit @webcomponents/template-shadowroot @astrojs/tailwind tailwindcss']),
-    ]));
-    projects.define((0, util_1.ContainerProject)('parcel-bundle', [
-        (0, util_1.BasicProject)('parcel_', ['parcel']),
-        (0, util_1.BasicProject)('parcel_tailwind', ['parcel postcss tailwindcss autoprefixer']),
-        (0, util_1.BasicProject)('parcel_sass', ['parcel @parcel/transformer-sass']),
-        (0, util_1.BasicProject)('parcel_react_', ['parcel react react-dom react-router-dom']),
-        (0, util_1.BasicProject)('parcel_react_tailwind_', ['parcel react react-dom react-router-dom postcss tailwindcss autoprefixer']),
-        (0, util_1.BasicProject)('parcel_react_sass', ['parcel react react-dom react-router-dom @parcel/transformer-sass']),
-        (0, util_1.BasicProject)('parcel_preact_', ['parcel preact preact-router preact-helmet']),
-        (0, util_1.BasicProject)('parcel_preact_tailwind_', ['parcel preact preact-router preact-helmet postcss tailwindcss autoprefixer']),
-        (0, util_1.BasicProject)('parcel_preact_sass', ['parcel preact preact-router preact-helmet @parcel/transformer-sass']),
-        (0, util_1.BasicProject)('parcel_vue_', ['parcel @parcel/transformer-vue vue vue-router@4']),
-        (0, util_1.BasicProject)('parcel_vue_tailwind_', ['parcel @parcel/transformer-vue vue vue-router@4 postcss tailwindcss autoprefixer']),
-        (0, util_1.BasicProject)('parcel_vue_sass', ['parcel @parcel/transformer-vue vue vue-router@4 @parcel/transformer-sass']),
-    ]));
-    projects.define((0, util_1.ContainerProject)('parcel_pug-bundle', [
-        (0, util_1.BasicProject)('parcel_', ['parcel @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_tailwind', ['parcel postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_sass', ['parcel @parcel/transformer-sass @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_react_', ['parcel react react-dom react-router-dom @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_react_tailwind_', ['parcel react react-dom react-router-dom postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_react_sass', ['parcel react react-dom react-router-dom @parcel/transformer-sass @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_preact_', ['parcel preact preact-router preact-helmet @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_preact_tailwind_', ['parcel preact preact-router preact-helmet postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_preact_sass', ['parcel preact preact-router preact-helmet @parcel/transformer-sass @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_vue_', ['parcel @parcel/transformer-vue vue vue-router@4 @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_vue_tailwind_', ['parcel @parcel/transformer-vue vue vue-router@4 postcss tailwindcss autoprefixer @parcel/transformer-pug pug']),
-        (0, util_1.BasicProject)('parcel_vue_sass', ['parcel @parcel/transformer-vue vue vue-router@4 @parcel/transformer-sass @parcel/transformer-pug pug']),
-    ]));
+    // projects.define(
+    //     ContainerProject('staticgen-bundle', [
+    //         BasicProject('20ful_', ['20ful']),
+    //         BasicProject('eleventy_', ['@11ty/eleventy']),
+    //         BasicProject('astro_', ['astro']),
+    //         BasicProject('greenwood_', ['@greenwood/cli']),
+    //         BasicProject('vuepress_', ['vuepress']),
+    //         BasicProject('vitepress_', ['vitepress vue']),
+    //     ])
+    // )
 }
 exports.default = default_1;

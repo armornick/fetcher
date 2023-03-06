@@ -28,6 +28,12 @@ export class ProjectList {
             const index = this.indexes[name];
             index(this);
         }
+        else if (name === 'all') {
+            const indexes = Object.keys(this.indexes);
+            for (const index of indexes) {
+                this.addIndex(index);
+            }
+        }
     }
 }
 
