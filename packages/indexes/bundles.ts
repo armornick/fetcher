@@ -8,19 +8,21 @@ export default function (projects:ProjectList) {
             'tagged-templates-bundle','hyperhtml-bundle','web-component-libs',
             'css-libs','css-libs-2','css-tools','css-in-js-bundle','atomic-css-tools',
             // 'vue-pkg','react-pkg',
-            // 'servers-bundle',
-            'vite-starters-official','parcel-bundle','staticgen-bundle',
+            'servers-bundle',
+            'vite-starters-official',
+            'parcel-bundle',
+            'staticgen-bundle',
         ])
     )
 
     projects.define(
         ContainerProject('cache-bundle-2', [
             'misc-libs','misc-libs-3','typescript-pkg',
-            'tagged-templates-bundle','hyperhtml-bundle','web-component-libs',
+            'tagged-templates-bundle','web-component-libs',
             'css-libs','css-libs-2','css-tools','postcss-bundle',
             'css-in-js-bundle','atomic-css-tools','sass-bundle',
             'vue-pkg','react-pkg','astro-bundle','astro-starters',
-            'servers-bundle','express-bundle',
+            'servers-bundle', 'express-bundle',
             'vite-starters-official','parcel-bundle','staticgen-bundle',
         ])
     )
