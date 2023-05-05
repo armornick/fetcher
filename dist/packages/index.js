@@ -18,20 +18,17 @@ projects.define((0, util_1.BasicProject)('npm_', ['npm']));
 projects.define((0, util_1.BasicProject)('misc-libs', [
     'lowdb', 'page', 'axios', 'highlight.js', 'prismjs', 'masonry-layout', 'lodash', 'rxjs',
     'd3', 'chart.js', 'moment', 'dayjs', 'underscore', 'sweetalert', 'sweetalert2', 'reveal.js',
-    'html5sortable', 'csstag', 'facon', 'genel', 'marli', 'localforage',
-    'hyperhtml', 'uhtml', 'hypersimple', 'neverland', 'hyperhtml-element',
+    'html5sortable', 'csstag', 'facon', 'genel', 'marli', 'localforage', 'date-fns',
     'inferno', 'inferno-hyperscript', 'inferno-create-element', 'preact', 'preact-custom-element',
     'mithril', 'htm', 'alpinejs', 'marked', '@types/marked', 'stimulus', 'gumshoejs', 'offside-js', '',
     'markdown-it', 'markdown-it-sub', 'markdown-it-sup', 'markdown-it-footnote', 'markdown-it-deflist',
     'markdown-it-abbr', 'markdown-it-emoji', 'markdown-it-container', 'a11y-dialog',
     'fr-offcanvas', 'fr-dialogmodal', 'fr-tabs', 'fr-tooltip', 'fr-accordion', 'fr-bypasslinks',
-    'concurrently', 'npm-run-all', 'globby',
+    'concurrently', 'npm-run-all', 'globby', 'facon', 'genel', 'yaml-tag',
     '@types/mithril', '@types/node', '@types/lodash', '@types/express',
-    'asciidoctor', 'ejs', 'nunjucks', 'pug', 'hamljs',
+    'asciidoctor', 'ejs', 'nunjucks', 'pug', 'hamljs', '@shoelace-style/shoelace',
     '@socketsupply/tonic', 'reefjs', 'lemonadejs', 'petit-vue',
-    'facon', 'genel', 'lighterhtml', 'hypersimple', 'haunted', 'yaml-tag',
     'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
-    'hyperhtml', 'uhtml', 'uce', 'uland', 'neverland', 'ube', 'ube-ssr', 'uland-ssr', 'lighterhtml-plus',
 ]));
 projects.define((0, util_1.ContainerProject)('misc-libs-3', [
     (0, util_1.BasicProject)('daisyui_', ['daisyui']),
@@ -45,7 +42,18 @@ projects.define((0, util_1.ContainerProject)('misc-libs-3', [
     (0, util_1.BasicProject)('preact-libs', ['preact preact-router preact-helmet']),
     (0, util_1.BasicProject)('vue-libs', ['vue@3 vue-router@4 petit-vue']),
     (0, util_1.BasicProject)('react-libs', ['react react-dom react-router-dom']),
+    (0, util_1.BasicProject)('sqlite3_', ['sqlite3']),
+    (0, util_1.BasicProject)('better-sqlite3_', ['better-sqlite3']),
     'mock-data-libs',
+]));
+projects.define((0, util_1.BasicProject)('bentojs_', [
+    '@bentoproject/accordion', '@bentoproject/base-carousel', '@bentoproject/date-countdown',
+    '@bentoproject/date-display', '@bentoproject/embedly-card', '@bentoproject/fit-text',
+    '@bentoproject/inline-gallery', '@bentoproject/instagram', '@bentoproject/jwplayer',
+    '@bentoproject/lightbox', '@bentoproject/lightbox-gallery', '@bentoproject/mathml',
+    '@bentoproject/selector', '@bentoproject/sidebar', '@bentoproject/social-share',
+    '@bentoproject/soundcloud', '@bentoproject/stream-gallery', '@bentoproject/timeago',
+    '@bentoproject/youtube',
 ]));
 projects.define((0, util_1.BasicProject)('tagged-templates-bundle', [
     'csstag', '@emotion/css', '@emotion/react', 'facon', 'genel', 'lighterhtml', 'hypersimple', 'haunted',

@@ -3,12 +3,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../util");
 function default_1(projects) {
     projects.define((0, util_1.ContainerProject)('cache-bundle', [
-        'misc-libs', 'misc-libs-3',
-        'tagged-templates-bundle', 'hyperhtml-bundle', 'web-component-libs',
-        'css-libs', 'css-libs-2', 'css-tools', 'css-in-js-bundle', 'atomic-css-tools',
+        'misc-libs', 'misc-libs-3', 'bentojs_',
+        'tagged-templates-bundle', 'web-component-libs',
+        'css-libs', 'css-libs-2', 'css-tools',
+        'css-in-js-bundle', 'atomic-css-tools', 'sass-bundle',
         // 'vue-pkg','react-pkg',
         'servers-bundle',
-        'vite-starters-official',
+        'vite-starters-official', 'vite-bundle',
         'parcel-bundle',
         'staticgen-bundle',
     ]));
@@ -87,15 +88,29 @@ function default_1(projects) {
         (0, util_1.BasicProject)('sphido_stylus', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked pug stylus']),
         (0, util_1.BasicProject)('sphido_stylus_asciidoc', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked pug asciidoctor stylus']),
     ]));
-    // projects.define(
-    //     ContainerProject('staticgen-bundle', [
-    //         BasicProject('20ful_', ['20ful']),
-    //         BasicProject('eleventy_', ['@11ty/eleventy']),
-    //         BasicProject('astro_', ['astro']),
-    //         BasicProject('greenwood_', ['@greenwood/cli']),
-    //         BasicProject('vuepress_', ['vuepress']),
-    //         BasicProject('vitepress_', ['vitepress vue']),
-    //     ])
-    // )
+    projects.define((0, util_1.ContainerProject)('solidjs-starters', [
+        (0, util_1.DegitProject)('solidstart-bare-skel', 'github:solidjs/solid-start/examples/bare'),
+        (0, util_1.DegitProject)('solidstart-hackernews-skel', 'github:solidjs/solid-start/examples/hackernews'),
+        (0, util_1.DegitProject)('solidstart-with-mdx-skel', 'github:solidjs/solid-start/examples/with-mdx'),
+        (0, util_1.DegitProject)('solidstart-with-tailwindcss-skel', 'github:solidjs/solid-start/examples/with-tailwindcss'),
+    ]));
+    projects.define((0, util_1.ContainerProject)('vite-plugin-ssr-starters', [
+        (0, util_1.DegitProject)('vite-plugin-ssr_vue_', 'github:brillout/vite-plugin-ssr/examples/vue'),
+        (0, util_1.DegitProject)('vite-plugin-ssr_react_', 'github:brillout/vite-plugin-ssr/examples/react'),
+        (0, util_1.DegitProject)('vite-plugin-ssr_react-full_', 'github:brillout/vite-plugin-ssr/examples/react-full'),
+        (0, util_1.DegitProject)('vite-plugin-ssr_preact-server-routing_', 'github:brillout/vite-plugin-ssr/examples/preact-server-routing'),
+        (0, util_1.DegitProject)('vite-plugin-ssr_preact-client-routing_', 'github:brillout/vite-plugin-ssr/examples/preact-client-routing'),
+        (0, util_1.DegitProject)('vite-plugin-ssr_layouts-vue_', 'github:brillout/vite-plugin-ssr/examples/layouts-vue'),
+        (0, util_1.DegitProject)('vite-plugin-ssr_layouts-react_', 'github:brillout/vite-plugin-ssr/examples/layouts-react'),
+        (0, util_1.DegitProject)('vite-plugin-ssr_vanilla-v1_', 'github:brillout/vite-plugin-ssr/examples/vanilla-v1'),
+    ]));
+    projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
+        (0, util_1.BasicProject)('eleventy_', ['@11ty/eleventy']),
+        (0, util_1.BasicProject)('vitepress_', ['vitepress vue']),
+        (0, util_1.BasicProject)('20ful_', ['20ful']),
+        (0, util_1.DegitProject)('tropical_', 'https://github.com/bensmithett/tropical'),
+        'solidjs-starters',
+        'vite-plugin-ssr-starters',
+    ]));
 }
 exports.default = default_1;

@@ -4,12 +4,13 @@ export default function (projects:ProjectList) {
 
     projects.define(
         ContainerProject('cache-bundle', [
-            'misc-libs','misc-libs-3',
-            'tagged-templates-bundle','hyperhtml-bundle','web-component-libs',
-            'css-libs','css-libs-2','css-tools','css-in-js-bundle','atomic-css-tools',
+            'misc-libs','misc-libs-3','bentojs_',
+            'tagged-templates-bundle','web-component-libs',
+            'css-libs','css-libs-2','css-tools',
+            'css-in-js-bundle','atomic-css-tools','sass-bundle',
             // 'vue-pkg','react-pkg',
             'servers-bundle',
-            'vite-starters-official',
+            'vite-starters-official','vite-bundle',
             'parcel-bundle',
             'staticgen-bundle',
         ])
@@ -110,16 +111,38 @@ export default function (projects:ProjectList) {
         ])
     )
 
-    // projects.define(
-    //     ContainerProject('staticgen-bundle', [
-    //         BasicProject('20ful_', ['20ful']),
-    //         BasicProject('eleventy_', ['@11ty/eleventy']),
-    //         BasicProject('astro_', ['astro']),
-    //         BasicProject('greenwood_', ['@greenwood/cli']),
-    //         BasicProject('vuepress_', ['vuepress']),
-    //         BasicProject('vitepress_', ['vitepress vue']),
-    //     ])
-    // )
+    projects.define(
+        ContainerProject('solidjs-starters', [
+            DegitProject('solidstart-bare-skel', 'github:solidjs/solid-start/examples/bare'),
+            DegitProject('solidstart-hackernews-skel', 'github:solidjs/solid-start/examples/hackernews'),
+            DegitProject('solidstart-with-mdx-skel', 'github:solidjs/solid-start/examples/with-mdx'),
+            DegitProject('solidstart-with-tailwindcss-skel', 'github:solidjs/solid-start/examples/with-tailwindcss'),
+        ])
+    )
+
+    projects.define(
+        ContainerProject('vite-plugin-ssr-starters', [
+            DegitProject('vite-plugin-ssr_vue_', 'github:brillout/vite-plugin-ssr/examples/vue'),
+            DegitProject('vite-plugin-ssr_react_', 'github:brillout/vite-plugin-ssr/examples/react'),
+            DegitProject('vite-plugin-ssr_react-full_', 'github:brillout/vite-plugin-ssr/examples/react-full'),
+            DegitProject('vite-plugin-ssr_preact-server-routing_', 'github:brillout/vite-plugin-ssr/examples/preact-server-routing'),
+            DegitProject('vite-plugin-ssr_preact-client-routing_', 'github:brillout/vite-plugin-ssr/examples/preact-client-routing'),
+            DegitProject('vite-plugin-ssr_layouts-vue_', 'github:brillout/vite-plugin-ssr/examples/layouts-vue'),
+            DegitProject('vite-plugin-ssr_layouts-react_', 'github:brillout/vite-plugin-ssr/examples/layouts-react'),
+            DegitProject('vite-plugin-ssr_vanilla-v1_', 'github:brillout/vite-plugin-ssr/examples/vanilla-v1'),
+        ])
+    )
+
+    projects.define(
+        ContainerProject('staticgen-bundle', [
+            BasicProject('eleventy_', ['@11ty/eleventy']),
+            BasicProject('vitepress_', ['vitepress vue']),
+            BasicProject('20ful_', ['20ful']),
+            DegitProject('tropical_', 'https://github.com/bensmithett/tropical'),
+            'solidjs-starters',
+            'vite-plugin-ssr-starters',
+        ])
+    )
 
 }
 
