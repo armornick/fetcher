@@ -1,4 +1,24 @@
-import { MaybeProject, Project } from './types';
+export type MaybeProject = string | Project;
+
+export interface Project {
+    name: string;
+    packages?: string[];
+    subs?: MaybeProject[];
+
+    npx?: { 
+        command: string, 
+        install?: string, 
+    };
+
+    global?: {
+        package: string;
+        postCommand?: string;
+    };
+
+    commands?: string[];
+
+    topCache?: boolean;
+}
 
 type ProjectMap = {[name: string]: Project};
 type PackageIndex = (projects:ProjectList) => void;

@@ -1,8 +1,7 @@
 import { execSync } from 'child_process';
 import { existsSync, mkdirSync } from 'fs';
 import * as path from 'path';
-import { Project } from './packages/types';
-import { ProjectList } from "./packages/util";
+import { ProjectList, Project } from "./packages/util";
 
 
 // const defaults = {
