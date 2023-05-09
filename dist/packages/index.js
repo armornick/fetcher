@@ -29,6 +29,7 @@ projects.define((0, util_1.BasicProject)('misc-libs', [
     'asciidoctor', 'ejs', 'nunjucks', 'pug', 'hamljs', '@shoelace-style/shoelace',
     '@socketsupply/tonic', 'reefjs', 'lemonadejs', 'petit-vue',
     'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
+    'lit', 'lit-html', 'goober', 'ultramatter', 'gray-matter',
 ]));
 projects.define((0, util_1.ContainerProject)('misc-libs-3', [
     (0, util_1.BasicProject)('daisyui_', ['daisyui']),
@@ -37,13 +38,16 @@ projects.define((0, util_1.ContainerProject)('misc-libs-3', [
     (0, util_1.BasicProject)('headlessui_vue', ['@headlessui/vue']),
     (0, util_1.BasicProject)('headlessui_react', ['@headlessui/react']),
     (0, util_1.BasicProject)('tinybase_', ['tinybase']),
+    (0, util_1.BasicProject)('firebase_', ['firebase']),
     (0, util_1.BasicProject)('pixelarticons_', ['pixelarticons']),
     (0, util_1.BasicProject)('markdoc_', ['@markdoc/markdoc']),
+    (0, util_1.BasicProject)('nano-jsx_', ['nano-jsx']),
     (0, util_1.BasicProject)('preact-libs', ['preact preact-router preact-helmet']),
     (0, util_1.BasicProject)('vue-libs', ['vue@3 vue-router@4 petit-vue']),
     (0, util_1.BasicProject)('react-libs', ['react react-dom react-router-dom']),
-    (0, util_1.BasicProject)('sqlite3_', ['sqlite3']),
-    (0, util_1.BasicProject)('better-sqlite3_', ['better-sqlite3']),
+    (0, util_1.BasicProject)('solidjs-libs', ['solid-js solid-styled-components solid-element @solidjs/router ']),
+    // BasicProject('sqlite3_', ['sqlite3']),
+    // BasicProject('better-sqlite3_', ['better-sqlite3']),
     'mock-data-libs',
 ]));
 projects.define((0, util_1.BasicProject)('bentojs_', [
@@ -67,7 +71,7 @@ projects.define((0, util_1.BasicProject)('hyperhtml-bundle', [
 ]));
 projects.define((0, util_1.BasicProject)('web-component-libs', [
     'fuco', 'atomico', 'uce', 'lit', 'lit-html', 'haunted', 'petit-vue', 'x-tag', 'hybrids',
-    '@socketsupply/tonic', 'tonic-ssr', ''
+    '@socketsupply/tonic', 'tonic-ssr',
 ]));
 projects.define((0, util_1.ContainerProject)('mock-data-libs', [
     (0, util_1.BasicProject)('faker_', ['@faker-js/faker']),
@@ -229,7 +233,7 @@ projects.define((0, util_1.ContainerProject)('react-pkg', [
 ]));
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.ContainerProject)('servers-bundle', [
-    'http-server_', 'json-server_', 'serve_', 'zero-server-app', 'live-server_'
+    'http-server_', 'json-server_', 'serve_', 'live-server_'
 ]));
 projects.define((0, util_1.AppProject)('http-server_', 'http-server'));
 projects.define((0, util_1.AppProject)('json-server_', 'json-server'));

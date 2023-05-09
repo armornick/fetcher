@@ -38,6 +38,7 @@ projects.define(
         'asciidoctor','ejs','nunjucks','pug','hamljs','@shoelace-style/shoelace',
         '@socketsupply/tonic','reefjs','lemonadejs','petit-vue',
         'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
+        'lit','lit-html','goober','ultramatter','gray-matter',
     ])
 )
 
@@ -49,13 +50,16 @@ projects.define(
         BasicProject('headlessui_vue', ['@headlessui/vue']),
         BasicProject('headlessui_react', ['@headlessui/react']),
         BasicProject('tinybase_', ['tinybase']),
+        BasicProject('firebase_', ['firebase']),
         BasicProject('pixelarticons_', ['pixelarticons']),
         BasicProject('markdoc_', ['@markdoc/markdoc']),
+        BasicProject('nano-jsx_', ['nano-jsx']),
         BasicProject('preact-libs', ['preact preact-router preact-helmet']),
         BasicProject('vue-libs', ['vue@3 vue-router@4 petit-vue']),
         BasicProject('react-libs', ['react react-dom react-router-dom']),
-        BasicProject('sqlite3_', ['sqlite3']),
-        BasicProject('better-sqlite3_', ['better-sqlite3']),
+        BasicProject('solidjs-libs', ['solid-js solid-styled-components solid-element @solidjs/router ']),
+        // BasicProject('sqlite3_', ['sqlite3']),
+        // BasicProject('better-sqlite3_', ['better-sqlite3']),
         'mock-data-libs',
     ])
 )
@@ -91,7 +95,7 @@ projects.define(
 projects.define(
     BasicProject('web-component-libs', [
         'fuco','atomico','uce','lit','lit-html','haunted','petit-vue','x-tag','hybrids',
-        '@socketsupply/tonic','tonic-ssr',''
+        '@socketsupply/tonic','tonic-ssr',
     ])
 )
 
@@ -302,7 +306,7 @@ projects.define(
 
 projects.define(
     ContainerProject('servers-bundle', [ 
-        'http-server_','json-server_','serve_','zero-server-app','live-server_'
+        'http-server_','json-server_','serve_','live-server_'
     ])
 )
 

@@ -5,11 +5,11 @@ export default function (projects:ProjectList) {
     projects.define(
         ContainerProject('cache-bundle', [
             'misc-libs','misc-libs-3','bentojs_',
-            'tagged-templates-bundle','web-component-libs',
-            'css-libs','css-libs-2','css-tools',
-            'css-in-js-bundle','atomic-css-tools','sass-bundle',
+            // 'tagged-templates-bundle','web-component-libs',
+            'css-libs','css-libs-2','css-tools','sass-bundle',
+            // 'css-in-js-bundle','atomic-css-tools',
             // 'vue-pkg','react-pkg',
-            'servers-bundle',
+            'servers-bundle','express-bundle',
             'vite-starters-official','vite-bundle',
             'parcel-bundle',
             'staticgen-bundle',
@@ -138,7 +138,8 @@ export default function (projects:ProjectList) {
             BasicProject('eleventy_', ['@11ty/eleventy']),
             BasicProject('vitepress_', ['vitepress vue']),
             BasicProject('20ful_', ['20ful']),
-            DegitProject('tropical_', 'https://github.com/bensmithett/tropical'),
+            DegitProject('tropical-skel', 'https://github.com/bensmithett/tropical'),
+            DegitProject('nanojsx-skel', 'nanojsx/template'),
             'solidjs-starters',
             'vite-plugin-ssr-starters',
         ])
