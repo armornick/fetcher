@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const util_1 = require("../util");
 function default_1(projects) {
     projects.define((0, util_1.ContainerProject)('cache-bundle', [
+        'npm_',
         'misc-libs', 'misc-libs-3', 'bentojs_',
         // 'tagged-templates-bundle','web-component-libs',
         'css-libs', 'css-libs-2', 'css-tools', 'sass-bundle',
@@ -14,6 +15,7 @@ function default_1(projects) {
         'staticgen-bundle',
     ]));
     projects.define((0, util_1.ContainerProject)('cache-bundle-2', [
+        'npm_',
         'misc-libs', 'misc-libs-3', 'typescript-pkg',
         'tagged-templates-bundle', 'web-component-libs',
         'css-libs', 'css-libs-2', 'css-tools', 'postcss-bundle',
@@ -110,7 +112,7 @@ function default_1(projects) {
         (0, util_1.BasicProject)('20ful_', ['20ful']),
         (0, util_1.DegitProject)('tropical-skel', 'https://github.com/bensmithett/tropical'),
         (0, util_1.DegitProject)('nanojsx-skel', 'nanojsx/template'),
-        'solidjs-starters',
+        // 'solidjs-starters',
         'vite-plugin-ssr-starters',
     ]));
 }

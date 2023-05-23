@@ -4,6 +4,7 @@ export default function (projects:ProjectList) {
 
     projects.define(
         ContainerProject('cache-bundle', [
+            'npm_',
             'misc-libs','misc-libs-3','bentojs_',
             // 'tagged-templates-bundle','web-component-libs',
             'css-libs','css-libs-2','css-tools','sass-bundle',
@@ -18,6 +19,7 @@ export default function (projects:ProjectList) {
 
     projects.define(
         ContainerProject('cache-bundle-2', [
+            'npm_',
             'misc-libs','misc-libs-3','typescript-pkg',
             'tagged-templates-bundle','web-component-libs',
             'css-libs','css-libs-2','css-tools','postcss-bundle',
@@ -140,7 +142,7 @@ export default function (projects:ProjectList) {
             BasicProject('20ful_', ['20ful']),
             DegitProject('tropical-skel', 'https://github.com/bensmithett/tropical'),
             DegitProject('nanojsx-skel', 'nanojsx/template'),
-            'solidjs-starters',
+            // 'solidjs-starters',
             'vite-plugin-ssr-starters',
         ])
     )
