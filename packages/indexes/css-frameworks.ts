@@ -105,13 +105,18 @@ export default function (projects:ProjectList) {
             BasicProject('tailwind-components_', ['babel-plugin-macros','tailwind.macro','babel-plugin-tailwind-components']),
         ])
     )
+
+    projects.define(ContainerProject('atomic-css-tools-small', [
+        BasicProject('tailwind_', ['tailwindcss']),
+        BasicProject('tailwind-postcss_', ['tailwindcss','postcss','autoprefixer']),
+        BasicProject('tailwind-plugins', ['@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars']),
+        BasicProject('css-variables', ['open-props','dashvar','pollen-css']),
+        'twind-bundle',
+    ]))
     
     projects.define(
         ContainerProject('atomic-css-tools', [
-            BasicProject('tailwind_', ['tailwindcss']),
-            BasicProject('tailwind-postcss_', ['tailwindcss','postcss','autoprefixer']),
-            BasicProject('tailwind-plugins', ['@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars']),
-            BasicProject('css-variables', ['open-props','dashvar','pollen-css']),
+            'atomic-css-tools-small',
             BasicProject('windicss-cli_', ['windicss']),
             BasicProject('windicss-vite_', ['vite-plugin-windicss','windicss']),
             BasicProject('windicss-svelte_', ['svelte-windicss-preprocess']),
@@ -120,7 +125,6 @@ export default function (projects:ProjectList) {
                 '@unocss/preset-typography','@unocss/vite',
             ]),
             BasicProject('unocss-preset-chroma_', ['unocss-preset-chroma']),
-            'twind-bundle',
             BasicProject('twin-macro_', ['twin.macro']),
             BasicProject('goober_', ['goober']),
             BasicProject('otion_', ['otion']),

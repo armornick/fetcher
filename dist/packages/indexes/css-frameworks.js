@@ -80,11 +80,15 @@ function default_1(projects) {
         (0, util_1.AppProject)('absurd-app', 'absurd'),
         (0, util_1.BasicProject)('tailwind-components_', ['babel-plugin-macros', 'tailwind.macro', 'babel-plugin-tailwind-components']),
     ]));
-    projects.define((0, util_1.ContainerProject)('atomic-css-tools', [
+    projects.define((0, util_1.ContainerProject)('atomic-css-tools-small', [
         (0, util_1.BasicProject)('tailwind_', ['tailwindcss']),
         (0, util_1.BasicProject)('tailwind-postcss_', ['tailwindcss', 'postcss', 'autoprefixer']),
         (0, util_1.BasicProject)('tailwind-plugins', ['@tailwindcss/typography', '@tailwindcss/forms', '@tailwindcss/line-clamp', 'tailwind-color-vars']),
         (0, util_1.BasicProject)('css-variables', ['open-props', 'dashvar', 'pollen-css']),
+        'twind-bundle',
+    ]));
+    projects.define((0, util_1.ContainerProject)('atomic-css-tools', [
+        'atomic-css-tools-small',
         (0, util_1.BasicProject)('windicss-cli_', ['windicss']),
         (0, util_1.BasicProject)('windicss-vite_', ['vite-plugin-windicss', 'windicss']),
         (0, util_1.BasicProject)('windicss-svelte_', ['svelte-windicss-preprocess']),
@@ -93,7 +97,6 @@ function default_1(projects) {
             '@unocss/preset-typography', '@unocss/vite',
         ]),
         (0, util_1.BasicProject)('unocss-preset-chroma_', ['unocss-preset-chroma']),
-        'twind-bundle',
         (0, util_1.BasicProject)('twin-macro_', ['twin.macro']),
         (0, util_1.BasicProject)('goober_', ['goober']),
         (0, util_1.BasicProject)('otion_', ['otion']),

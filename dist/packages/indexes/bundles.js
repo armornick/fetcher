@@ -7,6 +7,7 @@ function default_1(projects) {
         'misc-libs', 'misc-libs-3', 'bentojs_',
         // 'tagged-templates-bundle','web-component-libs',
         'css-libs', 'css-libs-2', 'css-tools', 'sass-bundle',
+        'atomic-css-tools-small',
         // 'css-in-js-bundle','atomic-css-tools',
         // 'vue-pkg','react-pkg',
         'servers-bundle', 'express-bundle',
