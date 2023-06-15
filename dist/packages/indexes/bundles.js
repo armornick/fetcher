@@ -7,7 +7,7 @@ function default_1(projects) {
         'misc-libs', 'misc-libs-3', 'bentojs_',
         // 'tagged-templates-bundle','web-component-libs',
         'css-libs', 'css-libs-2', 'css-tools', 'sass-bundle',
-        'atomic-css-tools-small',
+        'atomic-css-tools-small', 'tailwind-pkg',
         // 'css-in-js-bundle','atomic-css-tools',
         // 'vue-pkg','react-pkg',
         'servers-bundle', 'express-bundle',
@@ -112,9 +112,10 @@ function default_1(projects) {
         (0, util_1.BasicProject)('vitepress_', ['vitepress vue']),
         (0, util_1.BasicProject)('20ful_', ['20ful']),
         (0, util_1.DegitProject)('tropical-skel', 'https://github.com/bensmithett/tropical'),
-        (0, util_1.DegitProject)('nanojsx-skel', 'nanojsx/template'),
+        // DegitProject('nanojsx-skel', 'nanojsx/template'),
         // 'solidjs-starters',
-        'vite-plugin-ssr-starters',
+        // 'vite-plugin-ssr-starters',
+        'metalsmith-pkg',
     ]));
 }
 exports.default = default_1;

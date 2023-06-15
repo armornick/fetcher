@@ -99,6 +99,11 @@ function default_1(projects) {
         (0, util_1.DegitProject)('static-site_', 'https://github.com/metalsmith/metalsmith/examples/static-site', 'static-site'),
         (0, util_1.DegitProject)('wintersmith_', 'https://github.com/metalsmith/metalsmith/examples/wintersmith', 'wintersmith'),
         (0, util_1.DegitProject)('nunjucks-starter_', 'https://github.com/ryannjohnson/metalsmith-nunjucks-starter', 'nunjucks-starter'),
+        (0, util_1.DegitProject)('startbootstrap-clean-blog_', 'https://github.com/metalsmith/startbootstrap-clean-blog', 'startbootstrap-clean-blog'),
+        (0, util_1.DegitProject)('metalsmith-bare-bones-starter_', 'https://github.com/wernerglinka/metalsmith-bare-bones-starter', 'metalsmith-bare-bones-starter'),
+        (0, util_1.DegitProject)('metalsmith-blog-starter_', 'https://github.com/wernerglinka/metalsmith-blog-starter', 'metalsmith-blog-starter'),
+        (0, util_1.DegitProject)('metalsmith-company-starter_', 'https://github.com/wernerglinka/metalsmith-company-starter', 'metalsmith-company-starter'),
+        (0, util_1.DegitProject)('metalsmith-starter-resume_', 'https://github.com/webketje/metalsmith-starter-resume', 'metalsmith-starter-resume'),
     ]));
     projects.define((0, util_1.SuperProject)('metalsmith-pkg', ['metalsmith-bundle', 'metalsmith-starters']));
     projects.define((0, util_1.SuperProject)('rollup-pkg', ['rollup-starter', 'rollup-bundle']));

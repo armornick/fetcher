@@ -115,6 +115,7 @@ function default_1(projects) {
         (0, util_1.BasicProject)('daisyui_', ['daisyui']),
         (0, util_1.BasicProject)('a17t_', ['a17t']),
         (0, util_1.BasicProject)('tw-elements_', ['tw-elements']),
+        (0, util_1.BasicProject)('vue-tailwind_', ['vue-tailwind']),
     ]));
     projects.define((0, util_1.ContainerProject)('tailwind-ui-kits', [
         (0, util_1.DegitProject)('merakiui-local', 'github:merakiui/merakiui'),

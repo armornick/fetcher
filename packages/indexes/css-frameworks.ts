@@ -146,6 +146,7 @@ export default function (projects:ProjectList) {
             BasicProject('daisyui_', ['daisyui']),
             BasicProject('a17t_', ['a17t']),
             BasicProject('tw-elements_', ['tw-elements']),
+            BasicProject('vue-tailwind_', ['vue-tailwind']),
         ])
     )
     

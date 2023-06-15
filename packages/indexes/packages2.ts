@@ -125,6 +125,12 @@ export default function (projects:ProjectList) {
             DegitProject('static-site_', 'https://github.com/metalsmith/metalsmith/examples/static-site', 'static-site'),
             DegitProject('wintersmith_', 'https://github.com/metalsmith/metalsmith/examples/wintersmith', 'wintersmith'),
             DegitProject('nunjucks-starter_', 'https://github.com/ryannjohnson/metalsmith-nunjucks-starter', 'nunjucks-starter'),
+
+            DegitProject('startbootstrap-clean-blog_', 'https://github.com/metalsmith/startbootstrap-clean-blog', 'startbootstrap-clean-blog'),
+            DegitProject('metalsmith-bare-bones-starter_', 'https://github.com/wernerglinka/metalsmith-bare-bones-starter', 'metalsmith-bare-bones-starter'),
+            DegitProject('metalsmith-blog-starter_', 'https://github.com/wernerglinka/metalsmith-blog-starter', 'metalsmith-blog-starter'),
+            DegitProject('metalsmith-company-starter_', 'https://github.com/wernerglinka/metalsmith-company-starter', 'metalsmith-company-starter'),
+            DegitProject('metalsmith-starter-resume_', 'https://github.com/webketje/metalsmith-starter-resume', 'metalsmith-starter-resume'),
         ])
     )
     

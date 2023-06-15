@@ -8,7 +8,7 @@ export default function (projects:ProjectList) {
             'misc-libs','misc-libs-3','bentojs_',
             // 'tagged-templates-bundle','web-component-libs',
             'css-libs','css-libs-2','css-tools','sass-bundle',
-            'atomic-css-tools-small',
+            'atomic-css-tools-small','tailwind-pkg',
             // 'css-in-js-bundle','atomic-css-tools',
             // 'vue-pkg','react-pkg',
             'servers-bundle','express-bundle',
@@ -88,7 +88,7 @@ export default function (projects:ProjectList) {
             BasicProject('eleventy_sass', ['@11ty/eleventy npm-run-all sass']),
             BasicProject('eleventy_gorko', ['@11ty/eleventy npm-run-all sass gorko']),
             BasicProject('eleventy_codyframe', ['@11ty/eleventy npm-run-all sass codyhouse-framework']),
-            BasicProject('eleventy_bootstrap', ['@11ty/eleventy npm-run-all sass bootstrap@5.2.1']),
+            BasicProject('eleventy_bootstrap', ['@11ty/eleventy npm-run-all sass bootstrap@5']),
 
             BasicProject('sphido_', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked']),
             BasicProject('sphido_tailwind', ['serve @sphido/core @sphido/frontmatter @sindresorhus/slugify marked tailwindcss']),
@@ -142,9 +142,10 @@ export default function (projects:ProjectList) {
             BasicProject('vitepress_', ['vitepress vue']),
             BasicProject('20ful_', ['20ful']),
             DegitProject('tropical-skel', 'https://github.com/bensmithett/tropical'),
-            DegitProject('nanojsx-skel', 'nanojsx/template'),
+            // DegitProject('nanojsx-skel', 'nanojsx/template'),
             // 'solidjs-starters',
-            'vite-plugin-ssr-starters',
+            // 'vite-plugin-ssr-starters',
+            'metalsmith-pkg',
         ])
     )
 
