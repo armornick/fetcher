@@ -4,58 +4,32 @@ const util_1 = require("./util");
 const projects = new util_1.ProjectList();
 exports.default = projects;
 // ----------------------------------------------------------------------------------------
-const packages2_1 = require("./indexes/packages2");
-const css_frameworks_1 = require("./indexes/css-frameworks");
-const vite_1 = require("./indexes/vite");
-const bundles_1 = require("./indexes/bundles");
-projects.index('packages2', packages2_1.default);
-projects.index('css', css_frameworks_1.default);
-projects.index('vite', vite_1.default);
-projects.index('bundles', bundles_1.default);
-// ----------------------------------------------------------------------------------------
 projects.define((0, util_1.BasicProject)('npm_', ['npm']));
 // ----------------------------------------------------------------------------------------
-projects.define((0, util_1.BasicProject)('misc-libs', [
-    'lowdb', 'page', 'axios', 'highlight.js', 'prismjs', 'masonry-layout', 'lodash', 'rxjs',
-    'd3', 'chart.js', 'moment', 'dayjs', 'underscore', 'sweetalert', 'sweetalert2', 'reveal.js',
+projects.define((0, util_1.ContainerProject)('cache-bundle', [
+    'npm_',
+    'frontend-libs', 'template-libs', 'tagged-templates-bundle', 'mock-data-libs',
+    'preact-bundle', 'vite-starters-official',
+    'css-frameworks', 'css-libs', 'css-libs-2', 'sass-bundle', 'atomic-css-tools',
+    'tailwind-bundle',
+    'staticgen-bundle', 'servers-bundle',
+]));
+// ----------------------------------------------------------------------------------------
+projects.define((0, util_1.BasicProject)('frontend-libs', [
+    'axios', 'highlight.js', 'prismjs', 'masonry-layout', 'lodash', 'rxjs',
+    'd3', 'chart.js', 'moment', 'dayjs', 'underscore', 'reveal.js',
     'html5sortable', 'csstag', 'facon', 'genel', 'marli', 'localforage', 'date-fns',
     'inferno', 'inferno-hyperscript', 'inferno-create-element', 'preact', 'preact-custom-element',
-    'mithril', 'htm', 'alpinejs', 'marked', '@types/marked', 'stimulus', 'gumshoejs', 'offside-js',
+    'htm', 'alpinejs', 'marked', '@types/marked', 'stimulus', 'gumshoejs', 'offside-js',
     'markdown-it', 'markdown-it-sub', 'markdown-it-sup', 'markdown-it-footnote', 'markdown-it-deflist',
     'markdown-it-abbr', 'markdown-it-emoji', 'markdown-it-container', 'a11y-dialog',
-    // 'fr-offcanvas','fr-dialogmodal','fr-tabs','fr-tooltip','fr-accordion','fr-bypasslinks',
     'concurrently', 'npm-run-all', 'globby', 'facon', 'genel', 'yaml-tag',
-    '@types/mithril', '@types/node', '@types/lodash', '@types/express',
+    '@types/node', '@types/lodash', '@types/express',
     'asciidoctor', 'ejs', 'nunjucks', 'pug', 'hamljs', '@shoelace-style/shoelace',
     '@socketsupply/tonic', 'reefjs', 'lemonadejs', 'petit-vue',
     'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
     'lit', 'lit-html', 'goober', 'ultramatter', 'gray-matter',
     'textile-js', 'stextile',
-]));
-projects.define((0, util_1.ContainerProject)('misc-libs-3', [
-    (0, util_1.BasicProject)('daisyui_', ['daisyui']),
-    (0, util_1.BasicProject)('lit_', ['lit']),
-    (0, util_1.BasicProject)('flowbite_', ['flowbite']),
-    (0, util_1.BasicProject)('headlessui_vue', ['@headlessui/vue']),
-    (0, util_1.BasicProject)('headlessui_react', ['@headlessui/react']),
-    (0, util_1.BasicProject)('tinybase_', ['tinybase']),
-    (0, util_1.BasicProject)('firebase_', ['firebase']),
-    // BasicProject('supabase_', ['@supabase/supabase-js']),
-    (0, util_1.BasicProject)('pocketbase_', ['pocketbase']),
-    (0, util_1.BasicProject)('pixelarticons_', ['pixelarticons']),
-    (0, util_1.BasicProject)('markdoc_', ['@markdoc/markdoc']),
-    (0, util_1.BasicProject)('nano-jsx_', ['nano-jsx']),
-    (0, util_1.BasicProject)('preact-libs', ['preact preact-router preact-helmet preact-render-to-string']),
-    (0, util_1.BasicProject)('vue-libs', ['vue@3 vue-router@4 petit-vue']),
-    (0, util_1.BasicProject)('react-libs', ['react react-dom react-router-dom']),
-    (0, util_1.BasicProject)('solidjs-libs', ['solid-js solid-styled-components solid-element @solidjs/router ']),
-    // BasicProject('sqlite3_', ['sqlite3']),
-    // BasicProject('better-sqlite3_', ['better-sqlite3']),
-    (0, util_1.BasicProject)('color_', ['color', '@types/color']),
-    (0, util_1.BasicProject)('culori_', ['culori', '@types/culori']),
-    (0, util_1.BasicProject)('colorjsio_', ['colorjs.io']),
-    (0, util_1.BasicProject)('pouchdb_', ['pouchdb']),
-    'mock-data-libs',
 ]));
 projects.define((0, util_1.BasicProject)('bentojs_', [
     '@bentoproject/accordion', '@bentoproject/base-carousel', '@bentoproject/date-countdown',
@@ -72,13 +46,9 @@ projects.define((0, util_1.BasicProject)('tagged-templates-bundle', [
     'htm', 'babel-plugin-htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
     'inferno-hyperscript', 'inferno-create-element', 'hyperapp',
 ]));
-projects.define((0, util_1.BasicProject)('hyperhtml-bundle', [
-    'hyperhtml', 'uhtml', 'uce', 'uland', 'hypersimple', 'lighterhtml', 'neverland', 'haunted', 'lit-html', 'lit',
-    'ube', 'ube-ssr', 'uland-ssr', 'lighterhtml-plus',
-]));
 projects.define((0, util_1.BasicProject)('web-component-libs', [
-    'fuco', 'atomico', 'uce', 'lit', 'lit-html', 'haunted', 'petit-vue', 'x-tag', 'hybrids',
-    '@socketsupply/tonic', 'tonic-ssr',
+    'fuco', 'atomico', 'lit', 'lit-html', 'haunted', 'petit-vue', 'x-tag', 'hybrids',
+    '@socketsupply/tonic', 'tonic-ssr', 'alpinejs',
 ]));
 projects.define((0, util_1.ContainerProject)('mock-data-libs', [
     (0, util_1.BasicProject)('faker_', ['@faker-js/faker']),
@@ -88,13 +58,54 @@ projects.define((0, util_1.ContainerProject)('mock-data-libs', [
     (0, util_1.BasicProject)('jsonplaceholder_', ['jsonplaceholder']),
     (0, util_1.BasicProject)('miragejs_', ['miragejs']),
 ]));
+projects.define((0, util_1.BasicProject)('template-libs', ['mustache', 'handlebars', 'nunjucks', 'hogan.js', 'pug', 'ejs']));
+projects.define((0, util_1.BasicProject)('indexeddb-libs', [
+    'localforage', 'jsstore', 'zangodb', 'dexie', 'dexie-react-hooks', 'idb', 'idb-keyval', 'lovefield'
+]));
+projects.define((0, util_1.BasicProject)('preact-bundle', [
+    'preact', 'preact-router', 'preact-portal', 'preact-richtextarea', 'preact-token-input',
+    'preact-virtual-list', 'preact-layout', 'preact-helmet', 'preact-custom-scrollbars',
+]));
+projects.define((0, util_1.ContainerProject)('vite-starters', ['vite-starters-official', 'vite-starters-community']));
+projects.define((0, util_1.ContainerProject)('vite-starters-official', [
+    (0, util_1.CommandProject)('vite-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla', 'vite-vanilla-skel'),
+    (0, util_1.CommandProject)('vite-vue-starter', 'create-vite@latest vite-vue-skel --template vue', 'vite-vue-skel'),
+    (0, util_1.CommandProject)('vite-react-starter', 'create-vite@latest vite-react-skel --template react', 'vite-react-skel'),
+    (0, util_1.CommandProject)('vite-preact-starter', 'create-vite@latest vite-preact-skel --template preact', 'vite-preact-skel'),
+    (0, util_1.CommandProject)('vite-lit-starter', 'create-vite@latest vite-lit-skel --template lit', 'vite-lit-skel'),
+    (0, util_1.CommandProject)('vite-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte', 'vite-svelte-skel'),
+]));
+projects.define((0, util_1.ContainerProject)('vite-starters-typescript', [
+    (0, util_1.CommandProject)('vite-ts-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla-ts', 'vite-vanilla-skel'),
+    (0, util_1.CommandProject)('vite-ts-vue-starter', 'create-vite@latest vite-vue-skel --template vue-ts', 'vite-vue-skel'),
+    (0, util_1.CommandProject)('vite-ts-react-starter', 'create-vite@latest vite-react-skel --template react-ts', 'vite-react-skel'),
+    (0, util_1.CommandProject)('vite-ts-preact-starter', 'create-vite@latest vite-preact-skel --template preact-ts', 'vite-preact-skel'),
+    (0, util_1.CommandProject)('vite-ts-lit-starter', 'create-vite@latest vite-lit-skel --template lit-ts', 'vite-lit-skel'),
+    (0, util_1.CommandProject)('vite-ts-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte-ts', 'vite-svelte-skel'),
+]));
 // ----------------------------------------------------------------------------------------
+projects.define((0, util_1.ContainerProject)('css-frameworks', [
+    (0, util_1.BasicProject)('bootstrap_', ['bootstrap@5', 'sass', 'bootswatch']),
+    (0, util_1.BasicProject)('codyhouse-framework_', ['codyhouse-framework', 'sass']),
+    (0, util_1.BasicProject)('material-tailwind_', ['tailwindcss', '@material-tailwind/html']),
+    (0, util_1.BasicProject)('normalize_', ['normalize.css']),
+    (0, util_1.BasicProject)('modern-css-reset_', ['modern-css-reset']),
+    (0, util_1.BasicProject)('minireset_', ['minireset.css']),
+    (0, util_1.BasicProject)('classless', ['water.css', 'sakura.css', 'awsm.css', 'axist', 'bamboo.css', 'holiday.css', 'markdown-air', 'marx-css', 'simpledotcss', 'picnic']),
+    (0, util_1.DegitProject)('classlesscss_', 'github:emareg/classlesscss', false),
+    (0, util_1.BasicProject)('purecss_', ['purecss']),
+    (0, util_1.BasicProject)('primer_', ['@primer/css']),
+    (0, util_1.BasicProject)('radix_colors_', ['@radix-ui/colors']),
+    (0, util_1.BasicProject)('material-components_', ['material-components-web']),
+    (0, util_1.BasicProject)('sass_', ['sass', 'gorko', 'codyhouse-framework',]),
+    (0, util_1.BasicProject)('fontawesome_', ['@fortawesome/fontawesome-free', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons',]),
+]));
 projects.define((0, util_1.BasicProject)('css-libs', [
     '@fortawesome/fontawesome-free', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons',
-    '@emotion/react', '@emotion/styled', '@emotion/css', '@emotion/babel-plugin',
-    'animate.css', 'bootstrap', 'bulma', 'materialize-css@next', 'milligram', 'spectre.css',
+    '@emotion/react', '@emotion/styled', '@emotion/css', '@emotion/babel-plugin', 'tachyons@4',
+    'animate.css', 'bootstrap', 'materialize-css@next', 'milligram', 'spectre.css',
     'tachyons@4.12.0', 'tailwindcss', 'normalize.css', 'minireset.css', 'open-props', 'dashvar', 'pollen-css',
-    'postcss', 'autoprefixer', 'postcss-preset-env',
+    'postcss', 'postcss-js', 'autoprefixer', 'postcss-preset-env', 'sass', 'gorko', 'codyhouse-framework',
 ]));
 projects.define((0, util_1.BasicProject)('css-libs-2', [
     // resets
@@ -102,7 +113,7 @@ projects.define((0, util_1.BasicProject)('css-libs-2', [
     // small css frameworks
     'purecss', 'milligram', 'picnic', 'chota', '@picocss/pico',
     // 'real' css frameworks
-    'bootstrap@5', 'bootswatch', 'bulma', 'foundation-sites', '@primer/css', 'spectre.css',
+    'bootstrap@5', 'bootswatch', '@primer/css', 'spectre.css',
     // css variables
     'open-props', 'dashvar', 'pollen-css',
 ]));
@@ -113,26 +124,72 @@ projects.define((0, util_1.ContainerProject)('css-tools', [
     (0, util_1.BasicProject)('bootstrap_', ['bootstrap@5']),
     (0, util_1.BasicProject)('bootstrap_sass_', ['sass', 'bootstrap@5']),
     (0, util_1.BasicProject)('stylus_', ['stylus']),
-    (0, util_1.BasicProject)('less_', ['less']),
+]));
+projects.define((0, util_1.BasicProject)('postcss-bundle', [
+    'postcss', 'postcss-js',
+    'autoprefixer', 'atcss', 'cssnano', 'precss', 'rucksack-css', 'postcss-utilities',
+    'postcss-cli', 'postcss-layout', 'precss', 'postcss-preset-env',
+    'postcss-advanced-variables', 'postcss-bem', 'postcss-conditionals', 'postcss-each',
+    'postcss-for', 'postcss-import', 'postcss-nested', 'postcss-sassy-mixins', 'postcss-simple-vars'
+]));
+projects.define((0, util_1.BasicProject)('sass-bundle', [
+    'sass',
+    'cirrus-ui', 'iotacss', 'sierra-library', 'susy', 'open-color', 'shevy', 'typi', 'gerillass',
+    'bulma', 'bootstrap@5.2.1', 'bootswatch', 'foundation-sites', 'gorko',
+]));
+projects.define((0, util_1.ContainerProject)('atomic-css-tools', [
+    (0, util_1.BasicProject)('tailwind_', ['tailwindcss']),
+    (0, util_1.BasicProject)('tailwind-postcss_', ['tailwindcss', 'postcss', 'autoprefixer']),
+    (0, util_1.BasicProject)('tailwind-plugins', ['@tailwindcss/typography', '@tailwindcss/forms', '@tailwindcss/line-clamp', 'tailwind-color-vars']),
+    (0, util_1.BasicProject)('css-variables', ['open-props', 'dashvar', 'pollen-css']),
+    (0, util_1.BasicProject)('tachyons_', ['tachyons@4']),
+    // BasicProject('unocss-bundle', [
+    //     'unocss','@unocss/preset-mini','@unocss/preset-wind','@unocss/preset-attributify','@unocss/preset-icons','@unocss/preset-web-fonts',
+    //     '@unocss/preset-typography','@unocss/vite',
+    // ]),
+]));
+projects.define((0, util_1.ContainerProject)('tailwind-bundle', [
+    (0, util_1.BasicProject)('tailwind_', ['tailwindcss']),
+    (0, util_1.BasicProject)('tailwind-postcss_', ['tailwindcss', 'postcss', 'autoprefixer']),
+    (0, util_1.BasicProject)('tailwind-plugins', ['@tailwindcss/typography', '@tailwindcss/forms', '@tailwindcss/line-clamp', 'tailwind-color-vars']),
+    (0, util_1.BasicProject)('windstrap_', ['windstrap']),
+    (0, util_1.BasicProject)('flowbite_', ['flowbite']),
+    (0, util_1.BasicProject)('kutty_', ['kutty']),
+    (0, util_1.BasicProject)('sailui_', ['sailui']),
+    (0, util_1.BasicProject)('daisyui_', ['daisyui']),
+    (0, util_1.BasicProject)('a17t_', ['a17t']),
+    (0, util_1.BasicProject)('tw-elements_', ['tw-elements']),
+    (0, util_1.BasicProject)('vue-tailwind_', ['vue-tailwind']),
+    (0, util_1.BasicProject)('rippleui_', ['rippleui']),
+    (0, util_1.BasicProject)('sira-ui_', ['@sira-ui/tailwind']),
+    (0, util_1.DegitProject)('tailmater_', 'aribudin/tailmater'),
+]));
+projects.define((0, util_1.BasicProject)('mui-bundle', [
+    '@mui/material', '@emotion/react', '@emotion/styled', '@mui/icons-material',
+    '@mui/joy', '@mui/base', '@mui/system',
+]));
+projects.define((0, util_1.ContainerProject)('mdbootstrap-bundle', [
+    (0, util_1.DegitProject)('mdb-ui-kit', 'https://github.com/mdbootstrap/mdb-ui-kit#4.2.0'),
+    (0, util_1.DegitProject)('mdb-vue-ui-kit', 'https://github.com/mdbootstrap/mdb-vue-ui-kit#1.14.0'),
+    (0, util_1.DegitProject)('mdb-react-ui-kit', 'https://github.com/mdbootstrap/mdb-react-ui-kit#4.0.0'),
+    (0, util_1.DegitProject)('mdb-angular-ui-kit', 'https://github.com/mdbootstrap/mdb-angular-ui-kit#2.3.0'),
+    (0, util_1.DegitProject)('tw-elements-starter', 'https://github.com/mdbootstrap/Tailwind-Elements/site'),
+    (0, util_1.DegitProject)('tw-elements-src', 'https://github.com/mdbootstrap/Tailwind-Elements'),
+]));
+projects.define((0, util_1.ContainerProject)('icons-bundle', [
+    (0, util_1.BasicProject)('bootstrap-icons_', ['bootstrap-icons']),
+    (0, util_1.BasicProject)('fontawesome_', ['@fortawesome/fontawesome-free']),
+    (0, util_1.BasicProject)('feather-icons_', ['feather-icons']),
+    (0, util_1.BasicProject)('octicons_', ['@primer/octicons', '@primer/styled-octicons', '@primer/octicons-react']),
+    (0, util_1.BasicProject)('bytesize-icons_', ['bytesize-icons']),
+    (0, util_1.BasicProject)('ionicons_', ['ionicons']),
 ]));
 // ----------------------------------------------------------------------------------------
-projects.define((0, util_1.ContainerProject)('typescript-pkg', [
-    (0, util_1.BasicProject)('typescript_', ['typescript']),
-    (0, util_1.BasicProject)('types_', ['@types/node', '@types/mithril', '@types/lodash']),
-    (0, util_1.BasicProject)('webpack_', ['typescript', 'ts-loader']),
-    (0, util_1.BasicProject)('babel_', ['@babel/preset-typescript']),
-    (0, util_1.BasicProject)('parcel_', ['@parcel/transformer-typescript-tsc']),
-    (0, util_1.BasicProject)('tinyhttp_', [
-        '@tinyhttp/app', '@tinyhttp/logger', '@tinyhttp/etag', '@tinyhttp/cookie', '@tinyhttp/cors', '@tinyhttp/favicon',
-        '@tinyhttp/jsonp', '@tinyhttp/markdown', 'malibu', 'ws', 'tinyws'
-    ]),
-    (0, util_1.BasicProject)('rxjs_', ['rxjs']),
-    (0, util_1.BasicProject)('injection_', ['inversify', 'diod', 'typed-inject', 'typedi', 'reflect-metadata', 'tsyringe'])
-]));
 projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
+    (0, util_1.BasicProject)('eleventy_', ['@11ty/eleventy']),
     (0, util_1.BasicProject)('vuepress_', ['vuepress']),
-    (0, util_1.BasicProject)('vuepress-next_', ['vuepress@next']),
     (0, util_1.BasicProject)('vitepress_', ['vitepress', 'vue']),
+    (0, util_1.DegitProject)('tropical-skel', 'https://github.com/bensmithett/tropical'),
     (0, util_1.BasicProject)('20ful_', ['20ful']),
     (0, util_1.BasicProject)('hydrogen-cli_', ['hydrogen-cli']),
     (0, util_1.BasicProject)('mini-site-generator_', ['mini-site-generator']),
@@ -142,20 +199,7 @@ projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
     (0, util_1.BasicProject)('spignite_', ['spignite']),
     (0, util_1.BasicProject)('sphido_', ['@sphido/core', '@sphido/frontmatter', '@sphido/markdown', '@sphido/meta']),
     (0, util_1.AppProject)('nanogen-app', 'nanogen'),
-    (0, util_1.AppProject)('eleventy-app', '@11ty/eleventy'),
-    (0, util_1.BasicProject)('harp_', ['harp']),
-    (0, util_1.BasicProject)('sergey_', ['sergey']),
-    (0, util_1.BasicProject)('greenwood_', ['@greenwood/cli']),
 ]));
-projects.define((0, util_1.BasicProject)('parcel-bundle', [
-    'parcel', '@parcel/resolver-glob', '@parcel/optimizer-cssnano',
-    '@parcel/transformer-svg-react', '@parcel/transformer-typescript-tsc', '@parcel/transformer-coffeescript',
-    '@parcel/transformer-sass', '@parcel/transformer-stylus', '@parcel/transformer-less', '@parcel/transformer-sugarss',
-    '@parcel/transformer-vue',
-    '@parcel/transformer-toml', '@parcel/transformer-yaml', '@parcel/transformer-pug', '@parcel/transformer-mdx',
-    '@parcel/transformer-xml',
-]));
-// ----------------------------------------------------------------------------------------
 projects.define((0, util_1.ContainerProject)('astro-starters', [
     (0, util_1.DegitProject)('astro-basics-skel', 'github:withastro/astro/examples/basics'),
     (0, util_1.DegitProject)('astro-blog-skel', 'github:withastro/astro/examples/blog'),
@@ -170,48 +214,12 @@ projects.define((0, util_1.ContainerProject)('astro-starters', [
     (0, util_1.DegitProject)('astro-svelte-skel', 'github:withastro/astro/examples/framework-svelte'),
     (0, util_1.DegitProject)('astro-vue-skel', 'github:withastro/astro/examples/framework-vue'),
 ]));
-projects.define((0, util_1.ContainerProject)('astro-bundle', [
-    (0, util_1.BasicProject)('astro_', ['astro']),
-    (0, util_1.BasicProject)('astro_tailwind', ['astro @astrojs/tailwind tailwindcss']),
-    (0, util_1.BasicProject)('astro_vue_', ['astro @astrojs/vue vue vue-router@4']),
-    (0, util_1.BasicProject)('astro_vue_tailwind', ['astro @astrojs/vue vue vue-router@4 @astrojs/tailwind tailwindcss']),
-    (0, util_1.BasicProject)('astro_svelte_', ['astro @astrojs/svelte svelte']),
-    (0, util_1.BasicProject)('astro_svelte_tailwind', ['astro @astrojs/svelte svelte @astrojs/tailwind tailwindcss']),
-    (0, util_1.BasicProject)('astro_react_', ['astro @astrojs/react react react-dom react-router-dom']),
-    (0, util_1.BasicProject)('astro_react_tailwind', ['astro @astrojs/react react react-dom react-router-dom @astrojs/tailwind tailwindcss']),
-    (0, util_1.BasicProject)('astro_preact_', ['astro @astrojs/preact preact-router preact-helmet']),
-    (0, util_1.BasicProject)('astro_preact_tailwind', ['astro @astrojs/preact preact-router preact-helmet @astrojs/tailwind tailwindcss']),
-    (0, util_1.BasicProject)('astro_alpinejs_', ['astro @astrojs/alpinejs alpinejs @types/alpinejs']),
-    (0, util_1.BasicProject)('astro_alpinejs_tailwind', ['astro @astrojs/alpinejs alpinejs @types/alpinejs @astrojs/tailwind tailwindcss']),
-    (0, util_1.BasicProject)('astro_lit_', ['astro @astrojs/lit lit @webcomponents/template-shadowroot']),
-    // BasicProject('astro_lit_tailwind', ['astro @astrojs/lit lit @webcomponents/template-shadowroot @astrojs/tailwind tailwindcss']),
-]));
-// ----------------------------------------------------------------------------------------
-projects.define((0, util_1.BasicProject)('nuxt-bundle', [
-    'create-nuxt-app', 'nuxt',
-    // nuxt modules
-    '@nuxtjs/moment', '@nuxtjs/composition-api', '@nuxt/content', '@nuxt/types', '@nuxtjs/svg',
-    'bootstrap-vue', '@nuxtjs/axios', '@nuxtjs/vuetify', '@nuxtjs/tailwindcss',
-    '@nuxtjs/toast', 'nuxt-purgecss', '@nuxtjs/markdownit', 'nuxt-buefy', 'nuxt-helmet',
-    '@nuxtjs/date-fns', 'nuxt-windicss', '@unocss/nuxt', '@nuxtjs/localforage', '@chakra-ui/nuxt',
-]));
-projects.define((0, util_1.ContainerProject)('vue-cli-bundle', [
-    (0, util_1.AppProject)('vue-app', '@vue/cli', 'vue create -d vue-skel'),
-    (0, util_1.BasicProject)('vue-cli-plugins', [
-        '@vue/cli-plugin-babel', '@vue/cli-plugin-typescript', '@vue/cli-plugin-eslint', '@vue/cli-plugin-pwa',
-        '@vue/cli-plugin-vuex', '@vue/cli-plugin-router', 'vue-cli-plugin-vuetify', 'vue-cli-plugin-buefy',
-        '@inkline/vue-cli-plugin-inkline', 'vue-cli-plugin-auto-alias', 'vue-cli-plugin-vuestic-ui'
-    ]),
-    (0, util_1.BasicProject)('vue-loaders', ['sass-loader', 'sass', 'stylus-loader', 'stylus', 'pug', 'pug-plain-loader']),
-]));
 projects.define((0, util_1.ContainerProject)('vue-pkg', [
     (0, util_1.BasicProject)('vue_', ['vue']),
     (0, util_1.BasicProject)('petite-vue_', ['petite-vue']),
     (0, util_1.BasicProject)('vue-bundle', ['vue@3', 'vue-router@4', 'pinia', 'petite-vue']),
     (0, util_1.BasicProject)('vitepress_', ['vitepress', 'vue']),
     (0, util_1.BasicProject)('vuepress_', ['vuepress']),
-    // AppProject('_create-vue_3', 'create-vue@3', 'create-vue -d'),
-    // AppProject('_create-vue_2', 'create-vue@2', 'create-vue -d'),
     (0, util_1.BasicProject)('vue-loaders', ['sass-loader', 'sass', 'stylus-loader', 'stylus', 'pug', 'pug-plain-loader']),
     (0, util_1.BasicProject)('vue-components', [
         '@headlessui/vue', 'vuestic-ui', 'naive-ui', 'vfonts', 'vue-ari',
@@ -222,23 +230,6 @@ projects.define((0, util_1.ContainerProject)('vue-pkg', [
     (0, util_1.BasicProject)('inkline_', ['@inkline/inkline']),
     (0, util_1.BasicProject)('mdb-vue-ui-kit_', ['mdb-vue-ui-kit']),
 ]));
-projects.define((0, util_1.ContainerProject)('react-pkg', [
-    (0, util_1.BasicProject)('react_', ['react']),
-    (0, util_1.BasicProject)('react-dom_', ['react-dom']),
-    (0, util_1.BasicProject)('react-bundle', ['react', 'react-dom', 'react-router-dom@6']),
-    (0, util_1.AppProject)('react-app', 'create-react-app', 'create-react-app react-app-skel'),
-    // AppProject('chakra-ui-react', 'create-react-app', 'create-react-app my-app --template @chakra-ui'),
-    (0, util_1.BasicProject)('chakra-ui-vite', ['@chakra-ui/react', '@emotion/react@^11', '@emotion/styled@^11', 'framer-motion@^6']),
-    (0, util_1.BasicProject)('react-components', [
-        '@headlessui/react', '@material-tailwind/react', 'mdb-react-ui-kit', 'flowbite-react', 'flowbite',
-        'styled-components',
-    ]),
-    (0, util_1.BasicProject)('tailwind-react-ui_', ['tailwind-react-ui']),
-    (0, util_1.BasicProject)('react-bootstrap_', ['react-bootstrap', 'bootstrap']),
-    (0, util_1.BasicProject)('react-bulma_', ['react-bulma-components']),
-    // BasicProject('vechaiui_', ['@vechaiui/core','@vechaiui/react','@tailwindcss/forms']),
-]));
-// ----------------------------------------------------------------------------------------
 projects.define((0, util_1.ContainerProject)('servers-bundle', [
     'http-server_', 'json-server_', 'serve_', 'live-server_'
 ]));
@@ -247,14 +238,4 @@ projects.define((0, util_1.AppProject)('json-server_', 'json-server'));
 projects.define((0, util_1.AppProject)('zero-server-app', 'zero'));
 projects.define((0, util_1.AppProject)('serve_', 'serve'));
 projects.define((0, util_1.AppProject)('live-server_', 'live-server'));
-projects.define((0, util_1.AppProject)('angular-app', '@angular/cli', [
-    'ng new angular-skel -S --routing',
-    'ng new angular-sass-skel -S --style=scss --routing'
-]));
-projects.define((0, util_1.AppProject)('react-app', 'create-react-app', 'create-react-app react-skel'));
-projects.define((0, util_1.CommandProject)('preact-app', 'preact-cli create default preact-skel'));
-projects.define((0, util_1.DegitProject)('svelte-app', 'sveltejs/template', 'svelte-skel'));
-projects.define((0, util_1.AppProject)('next-app', 'create-next-app', 'create-next-app next-skel'));
-projects.define((0, util_1.AppProject)('nanogen-app', 'nanogen'));
-projects.define((0, util_1.AppProject)('eleventy-app', '@11ty/eleventy'));
-// ----------------------------------------------------------------------------------------
+projects.define((0, util_1.AppProject)('tiddlywiki_', 'tiddlywiki'));

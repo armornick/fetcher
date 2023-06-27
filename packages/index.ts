@@ -226,6 +226,9 @@ projects.define(
         BasicProject('a17t_', ['a17t']),
         BasicProject('tw-elements_', ['tw-elements']),
         BasicProject('vue-tailwind_', ['vue-tailwind']),
+        BasicProject('rippleui_', ['rippleui']),
+        BasicProject('sira-ui_', ['@sira-ui/tailwind']),
+        DegitProject('tailmater_', 'aribudin/tailmater'),
     ])
 )
 
