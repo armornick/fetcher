@@ -5,18 +5,6 @@ export default projects;
 
 // ----------------------------------------------------------------------------------------
 
-import packages2 from "./indexes/packages2";
-import cssFrameworks from "./indexes/css-frameworks";
-import vite from './indexes/vite';
-import bundles from './indexes/bundles';
-
-projects.index('packages2', packages2);
-projects.index('css', cssFrameworks);
-projects.index('vite', vite);
-projects.index('bundles', bundles);
-
-// ----------------------------------------------------------------------------------------
-
 projects.define(
     BasicProject('npm_', ['npm'])
 )
@@ -24,50 +12,34 @@ projects.define(
 // ----------------------------------------------------------------------------------------
 
 projects.define(
-    BasicProject('misc-libs', [
-        'lowdb','page','axios','highlight.js','prismjs','masonry-layout','lodash','rxjs',
-        'd3','chart.js','moment','dayjs','underscore','sweetalert','sweetalert2','reveal.js',
+    ContainerProject('cache-bundle', [
+        'npm_',
+        'frontend-libs','template-libs','tagged-templates-bundle','mock-data-libs',
+        'preact-bundle','vite-starters-official',
+        'css-frameworks','css-libs','css-libs-2','sass-bundle','atomic-css-tools',
+        'tailwind-bundle',
+        'staticgen-bundle','servers-bundle',
+    ])
+)
+
+// ----------------------------------------------------------------------------------------
+
+projects.define(
+    BasicProject('frontend-libs', [
+        'axios','highlight.js','prismjs','masonry-layout','lodash','rxjs',
+        'd3','chart.js','moment','dayjs','underscore','reveal.js',
         'html5sortable','csstag','facon','genel','marli','localforage','date-fns',
         'inferno','inferno-hyperscript','inferno-create-element','preact','preact-custom-element',
-        'mithril','htm','alpinejs','marked','@types/marked','stimulus','gumshoejs','offside-js',
+        'htm','alpinejs','marked','@types/marked','stimulus','gumshoejs','offside-js',
         'markdown-it','markdown-it-sub','markdown-it-sup','markdown-it-footnote','markdown-it-deflist',
         'markdown-it-abbr','markdown-it-emoji','markdown-it-container','a11y-dialog',
-        // 'fr-offcanvas','fr-dialogmodal','fr-tabs','fr-tooltip','fr-accordion','fr-bypasslinks',
         'concurrently','npm-run-all','globby','facon','genel','yaml-tag',
-        '@types/mithril','@types/node','@types/lodash','@types/express',
+        '@types/node','@types/lodash','@types/express',
         'asciidoctor','ejs','nunjucks','pug','hamljs','@shoelace-style/shoelace',
         '@socketsupply/tonic','reefjs','lemonadejs','petit-vue',
         'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
         'lit','lit-html','goober','ultramatter','gray-matter',
         'textile-js','stextile',
-    ])
-)
-
-projects.define(
-    ContainerProject('misc-libs-3', [
-        BasicProject('daisyui_', ['daisyui']),
-        BasicProject('lit_', ['lit']),
-        BasicProject('flowbite_', ['flowbite']),
-        BasicProject('headlessui_vue', ['@headlessui/vue']),
-        BasicProject('headlessui_react', ['@headlessui/react']),
-        BasicProject('tinybase_', ['tinybase']),
-        BasicProject('firebase_', ['firebase']),
-        // BasicProject('supabase_', ['@supabase/supabase-js']),
-        BasicProject('pocketbase_', ['pocketbase']),
-        BasicProject('pixelarticons_', ['pixelarticons']),
-        BasicProject('markdoc_', ['@markdoc/markdoc']),
-        BasicProject('nano-jsx_', ['nano-jsx']),
-        BasicProject('preact-libs', ['preact preact-router preact-helmet preact-render-to-string']),
-        BasicProject('vue-libs', ['vue@3 vue-router@4 petit-vue']),
-        BasicProject('react-libs', ['react react-dom react-router-dom']),
-        BasicProject('solidjs-libs', ['solid-js solid-styled-components solid-element @solidjs/router ']),
-        // BasicProject('sqlite3_', ['sqlite3']),
-        // BasicProject('better-sqlite3_', ['better-sqlite3']),
-        BasicProject('color_', ['color','@types/color']),
-        BasicProject('culori_', ['culori','@types/culori']),
-        BasicProject('colorjsio_', ['colorjs.io']),
-        BasicProject('pouchdb_', ['pouchdb']),
-        'mock-data-libs',
     ])
 )
 
@@ -93,16 +65,9 @@ projects.define(
 )
 
 projects.define(
-    BasicProject('hyperhtml-bundle', [
-        'hyperhtml','uhtml','uce','uland','hypersimple','lighterhtml','neverland','haunted','lit-html','lit',
-        'ube','ube-ssr','uland-ssr','lighterhtml-plus',
-    ])
-)
-
-projects.define(
     BasicProject('web-component-libs', [
-        'fuco','atomico','uce','lit','lit-html','haunted','petit-vue','x-tag','hybrids',
-        '@socketsupply/tonic','tonic-ssr',
+        'fuco','atomico','lit','lit-html','haunted','petit-vue','x-tag','hybrids',
+        '@socketsupply/tonic','tonic-ssr','alpinejs',
     ])
 )
 
@@ -117,15 +82,78 @@ projects.define(
     ])
 )
 
+projects.define(
+    BasicProject('template-libs', ['mustache','handlebars','nunjucks','hogan.js','pug','ejs'])
+)
+
+projects.define(
+    BasicProject('indexeddb-libs', [
+        'localforage','jsstore','zangodb','dexie','dexie-react-hooks','idb','idb-keyval','lovefield'
+    ])
+)
+
+projects.define(
+    BasicProject('preact-bundle', [
+        'preact','preact-router','preact-portal','preact-richtextarea','preact-token-input',
+        'preact-virtual-list','preact-layout','preact-helmet','preact-custom-scrollbars',
+    ])
+)
+
+projects.define(
+    ContainerProject('vite-starters', ['vite-starters-official', 'vite-starters-community'])
+)
+
+projects.define(
+    ContainerProject('vite-starters-official', [
+        CommandProject('vite-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla', 'vite-vanilla-skel'),
+        CommandProject('vite-vue-starter', 'create-vite@latest vite-vue-skel --template vue', 'vite-vue-skel'),
+        CommandProject('vite-react-starter', 'create-vite@latest vite-react-skel --template react', 'vite-react-skel'),
+        CommandProject('vite-preact-starter', 'create-vite@latest vite-preact-skel --template preact', 'vite-preact-skel'),
+        CommandProject('vite-lit-starter', 'create-vite@latest vite-lit-skel --template lit', 'vite-lit-skel'),
+        CommandProject('vite-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte', 'vite-svelte-skel'),
+    ])
+)
+
+projects.define(
+    ContainerProject('vite-starters-typescript', [
+        CommandProject('vite-ts-vanilla-starter', 'create-vite@latest vite-vanilla-skel --template vanilla-ts', 'vite-vanilla-skel'),
+        CommandProject('vite-ts-vue-starter', 'create-vite@latest vite-vue-skel --template vue-ts', 'vite-vue-skel'),
+        CommandProject('vite-ts-react-starter', 'create-vite@latest vite-react-skel --template react-ts', 'vite-react-skel'),
+        CommandProject('vite-ts-preact-starter', 'create-vite@latest vite-preact-skel --template preact-ts', 'vite-preact-skel'),
+        CommandProject('vite-ts-lit-starter', 'create-vite@latest vite-lit-skel --template lit-ts', 'vite-lit-skel'),
+        CommandProject('vite-ts-svelte-starter', 'create-vite@latest vite-svelte-skel --template svelte-ts', 'vite-svelte-skel'),
+    ])
+)
+
 // ----------------------------------------------------------------------------------------
+
+projects.define(
+    ContainerProject('css-frameworks', [
+        BasicProject('bootstrap_', ['bootstrap@5', 'sass','bootswatch']),
+        BasicProject('codyhouse-framework_', ['codyhouse-framework','sass']),
+        BasicProject('material-tailwind_', ['tailwindcss', '@material-tailwind/html']),
+        BasicProject('normalize_', ['normalize.css']),
+        BasicProject('modern-css-reset_', ['modern-css-reset']),
+        BasicProject('minireset_', ['minireset.css']),
+        BasicProject('classless', 
+            ['water.css','sakura.css','awsm.css','axist','bamboo.css','holiday.css','markdown-air','marx-css','simpledotcss','picnic']),
+        DegitProject('classlesscss_', 'github:emareg/classlesscss', false),
+        BasicProject('purecss_', ['purecss']),
+        BasicProject('primer_', ['@primer/css']),
+        BasicProject('radix_colors_', ['@radix-ui/colors']),
+        BasicProject('material-components_', ['material-components-web']),
+        BasicProject('sass_', ['sass','gorko','codyhouse-framework',]),
+        BasicProject('fontawesome_', ['@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',]),
+    ])
+)
 
 projects.define(
     BasicProject('css-libs', [
         '@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',
-        '@emotion/react','@emotion/styled','@emotion/css','@emotion/babel-plugin',
-        'animate.css','bootstrap','bulma','materialize-css@next','milligram','spectre.css',
+        '@emotion/react','@emotion/styled','@emotion/css','@emotion/babel-plugin','tachyons@4',
+        'animate.css','bootstrap','materialize-css@next','milligram','spectre.css',
         'tachyons@4.12.0','tailwindcss','normalize.css','minireset.css','open-props','dashvar','pollen-css',
-        'postcss','autoprefixer','postcss-preset-env',
+        'postcss','postcss-js','autoprefixer','postcss-preset-env','sass','gorko','codyhouse-framework',
     ])
 )
 
@@ -136,7 +164,7 @@ projects.define(
         // small css frameworks
         'purecss','milligram','picnic','chota','@picocss/pico',
         // 'real' css frameworks
-        'bootstrap@5','bootswatch','bulma','foundation-sites','@primer/css','spectre.css',
+        'bootstrap@5','bootswatch','@primer/css','spectre.css',
         // css variables
         'open-props','dashvar','pollen-css',
     ])
@@ -150,34 +178,94 @@ projects.define(
         BasicProject('bootstrap_', ['bootstrap@5']),
         BasicProject('bootstrap_sass_', ['sass','bootstrap@5']),
         BasicProject('stylus_', ['stylus']),
-        BasicProject('less_', ['less']),
+    ])
+)
+
+projects.define(
+    BasicProject('postcss-bundle', [
+        'postcss','postcss-js',
+        'autoprefixer','atcss','cssnano','precss','rucksack-css','postcss-utilities',
+        'postcss-cli','postcss-layout','precss','postcss-preset-env',
+        'postcss-advanced-variables','postcss-bem','postcss-conditionals','postcss-each',
+        'postcss-for','postcss-import','postcss-nested','postcss-sassy-mixins','postcss-simple-vars'
+    ])
+)
+
+projects.define(
+    BasicProject('sass-bundle', [
+        'sass',
+        'cirrus-ui','iotacss','sierra-library','susy','open-color','shevy','typi','gerillass',
+        'bulma','bootstrap@5.2.1','bootswatch','foundation-sites','gorko',
+    ])
+)
+
+projects.define(
+    ContainerProject('atomic-css-tools', [
+        BasicProject('tailwind_', ['tailwindcss']),
+        BasicProject('tailwind-postcss_', ['tailwindcss','postcss','autoprefixer']),
+        BasicProject('tailwind-plugins', ['@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars']),
+        BasicProject('css-variables', ['open-props','dashvar','pollen-css']),
+        BasicProject('tachyons_', ['tachyons@4']),
+        // BasicProject('unocss-bundle', [
+        //     'unocss','@unocss/preset-mini','@unocss/preset-wind','@unocss/preset-attributify','@unocss/preset-icons','@unocss/preset-web-fonts',
+        //     '@unocss/preset-typography','@unocss/vite',
+        // ]),
+    ])
+)
+
+projects.define(
+    ContainerProject('tailwind-bundle', [
+        BasicProject('tailwind_', ['tailwindcss']),
+        BasicProject('tailwind-postcss_', ['tailwindcss','postcss','autoprefixer']),
+        BasicProject('tailwind-plugins', ['@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars']),
+        BasicProject('windstrap_', ['windstrap']),
+        BasicProject('flowbite_', ['flowbite']),
+        BasicProject('kutty_', ['kutty']),
+        BasicProject('sailui_', ['sailui']),
+        BasicProject('daisyui_', ['daisyui']),
+        BasicProject('a17t_', ['a17t']),
+        BasicProject('tw-elements_', ['tw-elements']),
+        BasicProject('vue-tailwind_', ['vue-tailwind']),
+    ])
+)
+
+projects.define(
+    BasicProject('mui-bundle', [
+        '@mui/material','@emotion/react','@emotion/styled','@mui/icons-material',
+        '@mui/joy','@mui/base','@mui/system',
+    ])
+)
+
+projects.define(
+    ContainerProject('mdbootstrap-bundle', [
+        DegitProject('mdb-ui-kit', 'https://github.com/mdbootstrap/mdb-ui-kit#4.2.0'),
+        DegitProject('mdb-vue-ui-kit', 'https://github.com/mdbootstrap/mdb-vue-ui-kit#1.14.0'),
+        DegitProject('mdb-react-ui-kit', 'https://github.com/mdbootstrap/mdb-react-ui-kit#4.0.0'),
+        DegitProject('mdb-angular-ui-kit', 'https://github.com/mdbootstrap/mdb-angular-ui-kit#2.3.0'),
+        DegitProject('tw-elements-starter', 'https://github.com/mdbootstrap/Tailwind-Elements/site'),
+        DegitProject('tw-elements-src', 'https://github.com/mdbootstrap/Tailwind-Elements'),
+    ])
+)
+
+projects.define(
+    ContainerProject('icons-bundle', [
+        BasicProject('bootstrap-icons_', ['bootstrap-icons']),
+        BasicProject('fontawesome_', ['@fortawesome/fontawesome-free']),
+        BasicProject('feather-icons_', ['feather-icons']),
+        BasicProject('octicons_', ['@primer/octicons','@primer/styled-octicons','@primer/octicons-react']),
+        BasicProject('bytesize-icons_', ['bytesize-icons']),
+        BasicProject('ionicons_', ['ionicons']),
     ])
 )
 
 // ----------------------------------------------------------------------------------------
 
 projects.define(
-    ContainerProject('typescript-pkg', [
-        BasicProject('typescript_', ['typescript']),
-        BasicProject('types_', ['@types/node','@types/mithril','@types/lodash']),
-        BasicProject('webpack_', ['typescript','ts-loader']),
-        BasicProject('babel_', ['@babel/preset-typescript']),
-        BasicProject('parcel_', ['@parcel/transformer-typescript-tsc']),
-        BasicProject('tinyhttp_', [
-            '@tinyhttp/app','@tinyhttp/logger','@tinyhttp/etag','@tinyhttp/cookie','@tinyhttp/cors','@tinyhttp/favicon',
-            '@tinyhttp/jsonp','@tinyhttp/markdown','malibu','ws','tinyws'
-        ]),
-        BasicProject('rxjs_', ['rxjs']),
-        BasicProject('injection_', ['inversify','diod','typed-inject','typedi','reflect-metadata','tsyringe'])
-    ])
-)
-
-
-projects.define(
     ContainerProject('staticgen-bundle', [
+        BasicProject('eleventy_', ['@11ty/eleventy']),
         BasicProject('vuepress_', ['vuepress']),
-        BasicProject('vuepress-next_', ['vuepress@next']),
         BasicProject('vitepress_', ['vitepress','vue']),
+        DegitProject('tropical-skel', 'https://github.com/bensmithett/tropical'),
         BasicProject('20ful_', ['20ful']),
         BasicProject('hydrogen-cli_', ['hydrogen-cli']),
         BasicProject('mini-site-generator_', ['mini-site-generator']),
@@ -187,26 +275,8 @@ projects.define(
         BasicProject('spignite_', ['spignite']),
         BasicProject('sphido_', ['@sphido/core','@sphido/frontmatter','@sphido/markdown','@sphido/meta']),
         AppProject('nanogen-app', 'nanogen'),
-        AppProject('eleventy-app', '@11ty/eleventy'),
-        BasicProject('harp_', ['harp']),
-        BasicProject('sergey_', ['sergey']),
-        BasicProject('greenwood_', ['@greenwood/cli']),
     ])
 )
-
-projects.define(
-    BasicProject('parcel-bundle', [
-        'parcel','@parcel/resolver-glob','@parcel/optimizer-cssnano',
-        '@parcel/transformer-svg-react','@parcel/transformer-typescript-tsc','@parcel/transformer-coffeescript',
-        '@parcel/transformer-sass','@parcel/transformer-stylus','@parcel/transformer-less','@parcel/transformer-sugarss',
-        '@parcel/transformer-vue',
-        '@parcel/transformer-toml','@parcel/transformer-yaml','@parcel/transformer-pug','@parcel/transformer-mdx',
-        '@parcel/transformer-xml',
-    ])
-)
-
-
-// ----------------------------------------------------------------------------------------
 
 projects.define(
     ContainerProject('astro-starters', [
@@ -226,58 +296,12 @@ projects.define(
 )
 
 projects.define(
-    ContainerProject('astro-bundle', [
-        BasicProject('astro_', ['astro']),
-        BasicProject('astro_tailwind', ['astro @astrojs/tailwind tailwindcss']),
-        BasicProject('astro_vue_', ['astro @astrojs/vue vue vue-router@4']),
-        BasicProject('astro_vue_tailwind', ['astro @astrojs/vue vue vue-router@4 @astrojs/tailwind tailwindcss']),
-        BasicProject('astro_svelte_', ['astro @astrojs/svelte svelte']),
-        BasicProject('astro_svelte_tailwind', ['astro @astrojs/svelte svelte @astrojs/tailwind tailwindcss']),
-        BasicProject('astro_react_', ['astro @astrojs/react react react-dom react-router-dom']),
-        BasicProject('astro_react_tailwind', ['astro @astrojs/react react react-dom react-router-dom @astrojs/tailwind tailwindcss']),
-        BasicProject('astro_preact_', ['astro @astrojs/preact preact-router preact-helmet']),
-        BasicProject('astro_preact_tailwind', ['astro @astrojs/preact preact-router preact-helmet @astrojs/tailwind tailwindcss']),
-        BasicProject('astro_alpinejs_', ['astro @astrojs/alpinejs alpinejs @types/alpinejs']),
-        BasicProject('astro_alpinejs_tailwind', ['astro @astrojs/alpinejs alpinejs @types/alpinejs @astrojs/tailwind tailwindcss']),
-        BasicProject('astro_lit_', ['astro @astrojs/lit lit @webcomponents/template-shadowroot']),
-        // BasicProject('astro_lit_tailwind', ['astro @astrojs/lit lit @webcomponents/template-shadowroot @astrojs/tailwind tailwindcss']),
-    ])
-)
-
-// ----------------------------------------------------------------------------------------
-
-projects.define(
-    BasicProject('nuxt-bundle', [
-        'create-nuxt-app','nuxt',
-        // nuxt modules
-        '@nuxtjs/moment','@nuxtjs/composition-api','@nuxt/content','@nuxt/types','@nuxtjs/svg',
-        'bootstrap-vue','@nuxtjs/axios','@nuxtjs/vuetify','@nuxtjs/tailwindcss',
-        '@nuxtjs/toast','nuxt-purgecss','@nuxtjs/markdownit','nuxt-buefy','nuxt-helmet',
-        '@nuxtjs/date-fns','nuxt-windicss','@unocss/nuxt','@nuxtjs/localforage','@chakra-ui/nuxt',
-    ])
-)
-
-projects.define(
-    ContainerProject('vue-cli-bundle', [
-        AppProject('vue-app', '@vue/cli', 'vue create -d vue-skel'),
-        BasicProject('vue-cli-plugins', [
-            '@vue/cli-plugin-babel','@vue/cli-plugin-typescript','@vue/cli-plugin-eslint','@vue/cli-plugin-pwa',
-            '@vue/cli-plugin-vuex','@vue/cli-plugin-router','vue-cli-plugin-vuetify','vue-cli-plugin-buefy',
-            '@inkline/vue-cli-plugin-inkline','vue-cli-plugin-auto-alias','vue-cli-plugin-vuestic-ui'
-        ]),
-        BasicProject('vue-loaders', ['sass-loader','sass','stylus-loader','stylus','pug','pug-plain-loader']),
-    ])
-)
-
-projects.define(
     ContainerProject('vue-pkg', [
         BasicProject('vue_', ['vue']),
         BasicProject('petite-vue_', ['petite-vue']),
         BasicProject('vue-bundle', ['vue@3','vue-router@4','pinia','petite-vue']),
         BasicProject('vitepress_', ['vitepress','vue']),
         BasicProject('vuepress_', ['vuepress']),
-        // AppProject('_create-vue_3', 'create-vue@3', 'create-vue -d'),
-        // AppProject('_create-vue_2', 'create-vue@2', 'create-vue -d'),
         BasicProject('vue-loaders', ['sass-loader','sass','stylus-loader','stylus','pug','pug-plain-loader']),
         BasicProject('vue-components', [
             '@headlessui/vue','vuestic-ui','naive-ui','vfonts','vue-ari',
@@ -289,27 +313,6 @@ projects.define(
         BasicProject('mdb-vue-ui-kit_', ['mdb-vue-ui-kit']),
     ])
 )
-
-projects.define(
-    ContainerProject('react-pkg', [
-        BasicProject('react_', ['react']),
-        BasicProject('react-dom_', ['react-dom']),
-        BasicProject('react-bundle', ['react', 'react-dom', 'react-router-dom@6']),
-        AppProject('react-app', 'create-react-app', 'create-react-app react-app-skel'),
-        // AppProject('chakra-ui-react', 'create-react-app', 'create-react-app my-app --template @chakra-ui'),
-        BasicProject('chakra-ui-vite', ['@chakra-ui/react','@emotion/react@^11','@emotion/styled@^11','framer-motion@^6']),
-        BasicProject('react-components', [
-            '@headlessui/react','@material-tailwind/react','mdb-react-ui-kit','flowbite-react','flowbite',
-            'styled-components',
-        ]),
-        BasicProject('tailwind-react-ui_',['tailwind-react-ui']),
-        BasicProject('react-bootstrap_', ['react-bootstrap','bootstrap']),
-        BasicProject('react-bulma_', ['react-bulma-components']),
-        // BasicProject('vechaiui_', ['@vechaiui/core','@vechaiui/react','@tailwindcss/forms']),
-    ])
-)
-
-// ----------------------------------------------------------------------------------------
 
 projects.define(
     ContainerProject('servers-bundle', [ 
@@ -338,36 +341,5 @@ projects.define(
 )
 
 projects.define(
-    AppProject('angular-app', '@angular/cli', [
-        'ng new angular-skel -S --routing',
-        'ng new angular-sass-skel -S --style=scss --routing'
-    ])
+    AppProject('tiddlywiki_', 'tiddlywiki')
 )
-
-projects.define(
-    AppProject('react-app', 'create-react-app', 'create-react-app react-skel')
-)
-
-projects.define(
-    CommandProject('preact-app', 'preact-cli create default preact-skel')
-)
-
-projects.define(
-    DegitProject('svelte-app', 'sveltejs/template', 'svelte-skel')
-)
-
-projects.define(
-    AppProject('next-app', 'create-next-app', 'create-next-app next-skel')
-)
-
-projects.define(
-    AppProject('nanogen-app', 'nanogen')
-)
-
-projects.define(
-    AppProject('eleventy-app', '@11ty/eleventy')
-)
-
-
-// ----------------------------------------------------------------------------------------
-
