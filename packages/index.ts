@@ -381,3 +381,35 @@ projects.define(
 projects.define(
     AppProject('tiddlywiki_', 'tiddlywiki')
 )
+
+// ----------------------------------------------------------------------------------------
+
+projects.define(
+    ContainerProject('design-tools', [
+        // DegitProject('shadowlord', 'https://github.com/noeldelgado/shadowlord'),
+        DegitProject('oklch-picker', 'https://github.com/evilmartians/oklch-picker'),
+        // DegitProject('Rainbow-Palette', 'pawcoding/Rainbow-Palette'),
+        DegitProject('material-palette-generator', 'https://github.com/edelstone/material-palette-generator'),
+        DegitProject('tints-and-shades', 'https://github.com/edelstone/tints-and-shades'),
+    ])
+)
+
+projects.define(
+    ContainerProject('metalsmith-starters', [
+        DegitProject('metalsmith-bare-bones-starter', 'https://github.com/wernerglinka/metalsmith-bare-bones-starter'),
+        DegitProject('startbootstrap-clean-blog', 'https://github.com/metalsmith/startbootstrap-clean-blog'),
+        DegitProject('metalsmith-blog-starter', 'https://github.com/wernerglinka/metalsmith-blog-starter'),
+        DegitProject('metalsmith-company-starter', 'https://github.com/wernerglinka/metalsmith-company-starter'),
+        DegitProject('metalsmith-starter-resume', 'https://github.com/webketje/metalsmith-starter-resume'),
+    ])
+)
+
+projects.define(
+    ContainerProject('capri-skels', [
+        DegitProject('capri-preact-skel', 'capri-js/capri/examples/preact'),
+        DegitProject('capri-react-skel', 'capri-js/capri/examples/react'),
+        DegitProject('capri-solid-skel', 'capri-js/capri/examples/solid'),
+        DegitProject('capri-svelte-skel', 'capri-js/capri/examples/svelte'),
+        DegitProject('capri-vue-skel', 'capri-js/capri/examples/vue'),
+    ])
+)

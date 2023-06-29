@@ -265,3 +265,25 @@ projects.define((0, util_1.AppProject)('zero-server-app', 'zero'));
 projects.define((0, util_1.AppProject)('serve_', 'serve'));
 projects.define((0, util_1.AppProject)('live-server_', 'live-server'));
 projects.define((0, util_1.AppProject)('tiddlywiki_', 'tiddlywiki'));
+// ----------------------------------------------------------------------------------------
+projects.define((0, util_1.ContainerProject)('design-tools', [
+    // DegitProject('shadowlord', 'https://github.com/noeldelgado/shadowlord'),
+    (0, util_1.DegitProject)('oklch-picker', 'https://github.com/evilmartians/oklch-picker'),
+    // DegitProject('Rainbow-Palette', 'pawcoding/Rainbow-Palette'),
+    (0, util_1.DegitProject)('material-palette-generator', 'https://github.com/edelstone/material-palette-generator'),
+    (0, util_1.DegitProject)('tints-and-shades', 'https://github.com/edelstone/tints-and-shades'),
+]));
+projects.define((0, util_1.ContainerProject)('metalsmith-starters', [
+    (0, util_1.DegitProject)('metalsmith-bare-bones-starter', 'https://github.com/wernerglinka/metalsmith-bare-bones-starter'),
+    (0, util_1.DegitProject)('startbootstrap-clean-blog', 'https://github.com/metalsmith/startbootstrap-clean-blog'),
+    (0, util_1.DegitProject)('metalsmith-blog-starter', 'https://github.com/wernerglinka/metalsmith-blog-starter'),
+    (0, util_1.DegitProject)('metalsmith-company-starter', 'https://github.com/wernerglinka/metalsmith-company-starter'),
+    (0, util_1.DegitProject)('metalsmith-starter-resume', 'https://github.com/webketje/metalsmith-starter-resume'),
+]));
+projects.define((0, util_1.ContainerProject)('capri-skels', [
+    (0, util_1.DegitProject)('capri-preact-skel', 'capri-js/capri/examples/preact'),
+    (0, util_1.DegitProject)('capri-react-skel', 'capri-js/capri/examples/react'),
+    (0, util_1.DegitProject)('capri-solid-skel', 'capri-js/capri/examples/solid'),
+    (0, util_1.DegitProject)('capri-svelte-skel', 'capri-js/capri/examples/svelte'),
+    (0, util_1.DegitProject)('capri-vue-skel', 'capri-js/capri/examples/vue'),
+]));
