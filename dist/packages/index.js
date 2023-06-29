@@ -4,11 +4,12 @@ const util_1 = require("./util");
 const projects = new util_1.ProjectList();
 exports.default = projects;
 // ----------------------------------------------------------------------------------------
-projects.define((0, util_1.BasicProject)('npm_', ['npm']));
+projects.define((0, util_1.BasicProject)('npm_', ['npm@latest']));
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.ContainerProject)('cache-bundle', [
     'npm_',
-    'frontend-libs', 'template-libs', 'tagged-templates-bundle', 'mock-data-libs',
+    'frontend-libs', 'template-libs', 'template-libs-2',
+    'tagged-templates-bundle', 'mock-data-libs', 'indexeddb-libs',
     'preact-bundle', 'vite-starters-official',
     'css-frameworks', 'css-libs', 'css-libs-2', 'sass-bundle', 'atomic-css-tools',
     'tailwind-bundle',
@@ -29,7 +30,8 @@ projects.define((0, util_1.BasicProject)('frontend-libs', [
     '@socketsupply/tonic', 'reefjs', 'lemonadejs', 'petit-vue',
     'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
     'lit', 'lit-html', 'goober', 'ultramatter', 'gray-matter',
-    'textile-js', 'stextile',
+    'textile-js', 'stextile', 'polished', 'color', 'colorjs.io', 'values.js',
+    '@pandacss/dev',
 ]));
 projects.define((0, util_1.BasicProject)('bentojs_', [
     '@bentoproject/accordion', '@bentoproject/base-carousel', '@bentoproject/date-countdown',
@@ -58,13 +60,23 @@ projects.define((0, util_1.ContainerProject)('mock-data-libs', [
     (0, util_1.BasicProject)('jsonplaceholder_', ['jsonplaceholder']),
     (0, util_1.BasicProject)('miragejs_', ['miragejs']),
 ]));
-projects.define((0, util_1.BasicProject)('template-libs', ['mustache', 'handlebars', 'nunjucks', 'hogan.js', 'pug', 'ejs']));
+projects.define((0, util_1.BasicProject)('template-libs', ['mustache', 'handlebars', 'nunjucks', 'hogan.js', 'pug', 'ejs', 'eta']));
+projects.define((0, util_1.ContainerProject)('template-libs-2', [
+    (0, util_1.BasicProject)('nunjucks-cli_', ['nunjucks-cli']),
+    (0, util_1.BasicProject)('cli-njk_', ['cli-njk']),
+    (0, util_1.BasicProject)('pug-cli_', ['pug-cli']),
+    (0, util_1.BasicProject)('jstransformer-cli_', ['jstransformer-cli', 'jstransformer-pug', 'jstransformer-nunjucks', 'jstransformer-ejs']),
+]));
 projects.define((0, util_1.BasicProject)('indexeddb-libs', [
-    'localforage', 'jsstore', 'zangodb', 'dexie', 'dexie-react-hooks', 'idb', 'idb-keyval', 'lovefield'
+    'localforage', 'jsstore', 'zangodb', 'dexie', 'dexie-react-hooks', 'idb', 'idb-keyval', 'lovefield',
+    'pouchdb', 'pouchdb-server',
 ]));
 projects.define((0, util_1.BasicProject)('preact-bundle', [
     'preact', 'preact-router', 'preact-portal', 'preact-richtextarea', 'preact-token-input',
     'preact-virtual-list', 'preact-layout', 'preact-helmet', 'preact-custom-scrollbars',
+]));
+projects.define((0, util_1.BasicProject)('vue-bundle', [
+    'vue@latest', 'vue-router@4', 'pinia'
 ]));
 projects.define((0, util_1.ContainerProject)('vite-starters', ['vite-starters-official', 'vite-starters-community']));
 projects.define((0, util_1.ContainerProject)('vite-starters-official', [
@@ -104,7 +116,7 @@ projects.define((0, util_1.BasicProject)('css-libs', [
     '@fortawesome/fontawesome-free', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons',
     '@emotion/react', '@emotion/styled', '@emotion/css', '@emotion/babel-plugin', 'tachyons@4',
     'animate.css', 'bootstrap', 'materialize-css@next', 'milligram', 'spectre.css',
-    'tachyons@4.12.0', 'tailwindcss', 'normalize.css', 'minireset.css', 'open-props', 'dashvar', 'pollen-css',
+    'tailwindcss', 'normalize.css', 'minireset.css', 'open-props', 'dashvar', 'pollen-css',
     'postcss', 'postcss-js', 'autoprefixer', 'postcss-preset-env', 'sass', 'gorko', 'codyhouse-framework',
 ]));
 projects.define((0, util_1.BasicProject)('css-libs-2', [
@@ -130,12 +142,13 @@ projects.define((0, util_1.BasicProject)('postcss-bundle', [
     'autoprefixer', 'atcss', 'cssnano', 'precss', 'rucksack-css', 'postcss-utilities',
     'postcss-cli', 'postcss-layout', 'precss', 'postcss-preset-env',
     'postcss-advanced-variables', 'postcss-bem', 'postcss-conditionals', 'postcss-each',
-    'postcss-for', 'postcss-import', 'postcss-nested', 'postcss-sassy-mixins', 'postcss-simple-vars'
+    'postcss-for', 'postcss-import', 'postcss-nested', 'postcss-sassy-mixins', 'postcss-simple-vars',
+    '@fullhuman/postcss-purgecss',
 ]));
 projects.define((0, util_1.BasicProject)('sass-bundle', [
     'sass',
     'cirrus-ui', 'iotacss', 'sierra-library', 'susy', 'open-color', 'shevy', 'typi', 'gerillass',
-    'bulma', 'bootstrap@5.2.1', 'bootswatch', 'foundation-sites', 'gorko',
+    'bulma', 'bootstrap@5', 'bootswatch', 'bulma', 'gorko',
 ]));
 projects.define((0, util_1.ContainerProject)('atomic-css-tools', [
     (0, util_1.BasicProject)('tailwind_', ['tailwindcss']),
@@ -195,10 +208,23 @@ projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
     (0, util_1.BasicProject)('mini-site-generator_', ['mini-site-generator']),
     (0, util_1.BasicProject)('onessg_', ['onessg']),
     (0, util_1.BasicProject)('onessg_ejs_', ['onessg', 'jstransformer-ejs']),
-    (0, util_1.BasicProject)('onessg_swig_', ['onessg', 'jstransformer-swig']),
+    (0, util_1.BasicProject)('onessg_nunjucks_', ['onessg', 'jstransformer-nunjucks']),
+    (0, util_1.BasicProject)('onessg_pug_', ['onessg', 'jstransformer-pug']),
     (0, util_1.BasicProject)('spignite_', ['spignite']),
     (0, util_1.BasicProject)('sphido_', ['@sphido/core', '@sphido/frontmatter', '@sphido/markdown', '@sphido/meta']),
     (0, util_1.AppProject)('nanogen-app', 'nanogen'),
+    'metalsmith-bundle',
+]));
+projects.define((0, util_1.ContainerProject)('metalsmith-bundle', [
+    (0, util_1.BasicProject)('metalsmith_', [
+        'metalsmith', '@metalsmith/collections', '@metalsmith/layouts', '@metalsmith/markdown', '@metalsmith/permalinks',
+    ]),
+    (0, util_1.DegitProject)('metalsmith-static-site', 'metalsmith/metalsmith/examples/static-site'),
+    (0, util_1.DegitProject)('metalsmith-jekyll', 'metalsmith/metalsmith/examples/jekyll'),
+    (0, util_1.DegitProject)('metalsmith-wintersmith', 'metalsmith/metalsmith/examples/wintersmith'),
+    (0, util_1.DegitProject)('metalsmith-build-tool', 'metalsmith/metalsmith/examples/build-tool'),
+    (0, util_1.DegitProject)('metalsmith-drafts-plugin', 'metalsmith/metalsmith/examples/drafts-plugin'),
+    (0, util_1.DegitProject)('metalsmith-project-scaffolder', 'metalsmith/metalsmith/examples/project-scaffolder'),
 ]));
 projects.define((0, util_1.ContainerProject)('astro-starters', [
     (0, util_1.DegitProject)('astro-basics-skel', 'github:withastro/astro/examples/basics'),

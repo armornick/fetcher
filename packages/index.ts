@@ -6,7 +6,7 @@ export default projects;
 // ----------------------------------------------------------------------------------------
 
 projects.define(
-    BasicProject('npm_', ['npm'])
+    BasicProject('npm_', ['npm@latest'])
 )
 
 // ----------------------------------------------------------------------------------------
@@ -14,7 +14,8 @@ projects.define(
 projects.define(
     ContainerProject('cache-bundle', [
         'npm_',
-        'frontend-libs','template-libs','tagged-templates-bundle','mock-data-libs',
+        'frontend-libs','template-libs','template-libs-2',
+        'tagged-templates-bundle','mock-data-libs','indexeddb-libs',
         'preact-bundle','vite-starters-official',
         'css-frameworks','css-libs','css-libs-2','sass-bundle','atomic-css-tools',
         'tailwind-bundle',
@@ -39,7 +40,8 @@ projects.define(
         '@socketsupply/tonic','reefjs','lemonadejs','petit-vue',
         'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
         'lit','lit-html','goober','ultramatter','gray-matter',
-        'textile-js','stextile',
+        'textile-js','stextile','polished','color','colorjs.io','values.js',
+        '@pandacss/dev',
     ])
 )
 
@@ -83,12 +85,22 @@ projects.define(
 )
 
 projects.define(
-    BasicProject('template-libs', ['mustache','handlebars','nunjucks','hogan.js','pug','ejs'])
+    BasicProject('template-libs', ['mustache','handlebars','nunjucks','hogan.js','pug','ejs','eta'])
+)
+
+projects.define(
+    ContainerProject('template-libs-2', [
+        BasicProject('nunjucks-cli_', ['nunjucks-cli']),
+        BasicProject('cli-njk_', ['cli-njk']),
+        BasicProject('pug-cli_', ['pug-cli']),
+        BasicProject('jstransformer-cli_', ['jstransformer-cli','jstransformer-pug','jstransformer-nunjucks','jstransformer-ejs']),
+    ])
 )
 
 projects.define(
     BasicProject('indexeddb-libs', [
-        'localforage','jsstore','zangodb','dexie','dexie-react-hooks','idb','idb-keyval','lovefield'
+        'localforage','jsstore','zangodb','dexie','dexie-react-hooks','idb','idb-keyval','lovefield',
+        'pouchdb','pouchdb-server',
     ])
 )
 
@@ -96,6 +108,12 @@ projects.define(
     BasicProject('preact-bundle', [
         'preact','preact-router','preact-portal','preact-richtextarea','preact-token-input',
         'preact-virtual-list','preact-layout','preact-helmet','preact-custom-scrollbars',
+    ])
+)
+
+projects.define(
+    BasicProject('vue-bundle', [
+        'vue@latest','vue-router@4','pinia'
     ])
 )
 
@@ -152,7 +170,7 @@ projects.define(
         '@fortawesome/fontawesome-free','@fortawesome/fontawesome-svg-core','@fortawesome/free-solid-svg-icons',
         '@emotion/react','@emotion/styled','@emotion/css','@emotion/babel-plugin','tachyons@4',
         'animate.css','bootstrap','materialize-css@next','milligram','spectre.css',
-        'tachyons@4.12.0','tailwindcss','normalize.css','minireset.css','open-props','dashvar','pollen-css',
+        'tailwindcss','normalize.css','minireset.css','open-props','dashvar','pollen-css',
         'postcss','postcss-js','autoprefixer','postcss-preset-env','sass','gorko','codyhouse-framework',
     ])
 )
@@ -187,7 +205,8 @@ projects.define(
         'autoprefixer','atcss','cssnano','precss','rucksack-css','postcss-utilities',
         'postcss-cli','postcss-layout','precss','postcss-preset-env',
         'postcss-advanced-variables','postcss-bem','postcss-conditionals','postcss-each',
-        'postcss-for','postcss-import','postcss-nested','postcss-sassy-mixins','postcss-simple-vars'
+        'postcss-for','postcss-import','postcss-nested','postcss-sassy-mixins','postcss-simple-vars',
+        '@fullhuman/postcss-purgecss',
     ])
 )
 
@@ -195,7 +214,7 @@ projects.define(
     BasicProject('sass-bundle', [
         'sass',
         'cirrus-ui','iotacss','sierra-library','susy','open-color','shevy','typi','gerillass',
-        'bulma','bootstrap@5.2.1','bootswatch','foundation-sites','gorko',
+        'bulma','bootstrap@5','bootswatch','bulma','gorko',
     ])
 )
 
@@ -274,10 +293,26 @@ projects.define(
         BasicProject('mini-site-generator_', ['mini-site-generator']),
         BasicProject('onessg_', ['onessg']),
         BasicProject('onessg_ejs_', ['onessg','jstransformer-ejs']),
-        BasicProject('onessg_swig_', ['onessg','jstransformer-swig']),
+        BasicProject('onessg_nunjucks_', ['onessg','jstransformer-nunjucks']),
+        BasicProject('onessg_pug_', ['onessg','jstransformer-pug']),
         BasicProject('spignite_', ['spignite']),
         BasicProject('sphido_', ['@sphido/core','@sphido/frontmatter','@sphido/markdown','@sphido/meta']),
         AppProject('nanogen-app', 'nanogen'),
+        'metalsmith-bundle',
+    ])
+)
+
+projects.define(
+    ContainerProject('metalsmith-bundle', [
+        BasicProject('metalsmith_', [
+            'metalsmith','@metalsmith/collections','@metalsmith/layouts','@metalsmith/markdown','@metalsmith/permalinks',
+        ]),
+        DegitProject('metalsmith-static-site', 'metalsmith/metalsmith/examples/static-site'),
+        DegitProject('metalsmith-jekyll', 'metalsmith/metalsmith/examples/jekyll'),
+        DegitProject('metalsmith-wintersmith', 'metalsmith/metalsmith/examples/wintersmith'),
+        DegitProject('metalsmith-build-tool', 'metalsmith/metalsmith/examples/build-tool'),
+        DegitProject('metalsmith-drafts-plugin', 'metalsmith/metalsmith/examples/drafts-plugin'),
+        DegitProject('metalsmith-project-scaffolder', 'metalsmith/metalsmith/examples/project-scaffolder'),
     ])
 )
 
