@@ -11,8 +11,8 @@ projects.define((0, util_1.ContainerProject)('cache-bundle', [
     'frontend-libs', 'template-libs', 'template-libs-2',
     'tagged-templates-bundle', 'mock-data-libs', 'indexeddb-libs',
     'preact-bundle', 'vite-starters-official',
-    'css-frameworks', 'css-libs', 'css-libs-2', 'sass-bundle', 'atomic-css-tools',
-    'tailwind-bundle',
+    'css-frameworks', 'css-libs', 'css-libs-2', 'atomic-css-tools',
+    'tailwind-bundle', 'postcss-bundle', 'sass-bundle',
     'staticgen-bundle', 'servers-bundle',
 ]));
 // ----------------------------------------------------------------------------------------
@@ -30,7 +30,7 @@ projects.define((0, util_1.BasicProject)('frontend-libs', [
     '@socketsupply/tonic', 'reefjs', 'lemonadejs', 'petit-vue',
     'htm', 'vhtml', 'hyperscript', 'hyperx', 'virtual-dom', 'mithril', '@types/mithril',
     'lit', 'lit-html', 'goober', 'ultramatter', 'gray-matter',
-    'textile-js', 'stextile', 'polished', 'color', 'colorjs.io', 'values.js',
+    'textile-js', 'stextile', 'polished', 'color', 'colorjs.io', 'values.js', 'chroma-js',
     '@pandacss/dev',
 ]));
 projects.define((0, util_1.BasicProject)('bentojs_', [
@@ -118,6 +118,7 @@ projects.define((0, util_1.BasicProject)('css-libs', [
     'animate.css', 'bootstrap', 'materialize-css@next', 'milligram', 'spectre.css',
     'tailwindcss', 'normalize.css', 'minireset.css', 'open-props', 'dashvar', 'pollen-css',
     'postcss', 'postcss-js', 'autoprefixer', 'postcss-preset-env', 'sass', 'gorko', 'codyhouse-framework',
+    'open-color', '@radix-ui/colors', 'reasonable-colors',
 ]));
 projects.define((0, util_1.BasicProject)('css-libs-2', [
     // resets
@@ -148,7 +149,7 @@ projects.define((0, util_1.BasicProject)('postcss-bundle', [
 projects.define((0, util_1.BasicProject)('sass-bundle', [
     'sass',
     'cirrus-ui', 'iotacss', 'sierra-library', 'susy', 'open-color', 'shevy', 'typi', 'gerillass',
-    'bulma', 'bootstrap@5', 'bootswatch', 'bulma', 'gorko',
+    'bulma', 'bootstrap@5', 'bootswatch', 'bulma', 'gorko', 'backbreeze', 'animatewithsass',
 ]));
 projects.define((0, util_1.ContainerProject)('atomic-css-tools', [
     (0, util_1.BasicProject)('tailwind_', ['tailwindcss']),
@@ -156,10 +157,10 @@ projects.define((0, util_1.ContainerProject)('atomic-css-tools', [
     (0, util_1.BasicProject)('tailwind-plugins', ['@tailwindcss/typography', '@tailwindcss/forms', '@tailwindcss/line-clamp', 'tailwind-color-vars']),
     (0, util_1.BasicProject)('css-variables', ['open-props', 'dashvar', 'pollen-css']),
     (0, util_1.BasicProject)('tachyons_', ['tachyons@4']),
-    // BasicProject('unocss-bundle', [
-    //     'unocss','@unocss/preset-mini','@unocss/preset-wind','@unocss/preset-attributify','@unocss/preset-icons','@unocss/preset-web-fonts',
-    //     '@unocss/preset-typography','@unocss/vite',
-    // ]),
+    (0, util_1.BasicProject)('unocss-bundle', [
+        'unocss', '@unocss/preset-uno', '@unocss/preset-typography', '@unocss/preset-web-fonts', '@unocss/preset-wind',
+        '@unocss/preset-mini', '@unocss/extractor-pug', '@unocss/extractor-svelte',
+    ]),
 ]));
 projects.define((0, util_1.ContainerProject)('tailwind-bundle', [
     (0, util_1.BasicProject)('tailwind_', ['tailwindcss']),
@@ -200,24 +201,25 @@ projects.define((0, util_1.ContainerProject)('icons-bundle', [
 // ----------------------------------------------------------------------------------------
 projects.define((0, util_1.ContainerProject)('staticgen-bundle', [
     (0, util_1.BasicProject)('eleventy_', ['@11ty/eleventy']),
-    (0, util_1.BasicProject)('vuepress_', ['vuepress']),
+    // BasicProject('vuepress_', ['vuepress']),
     (0, util_1.BasicProject)('vitepress_', ['vitepress', 'vue']),
     (0, util_1.DegitProject)('tropical-skel', 'https://github.com/bensmithett/tropical'),
-    (0, util_1.BasicProject)('20ful_', ['20ful']),
-    (0, util_1.BasicProject)('hydrogen-cli_', ['hydrogen-cli']),
-    (0, util_1.BasicProject)('mini-site-generator_', ['mini-site-generator']),
+    // BasicProject('hydrogen-cli_', ['hydrogen-cli']),
+    // BasicProject('mini-site-generator_', ['mini-site-generator']),
     (0, util_1.BasicProject)('onessg_', ['onessg']),
     (0, util_1.BasicProject)('onessg_ejs_', ['onessg', 'jstransformer-ejs']),
     (0, util_1.BasicProject)('onessg_nunjucks_', ['onessg', 'jstransformer-nunjucks']),
     (0, util_1.BasicProject)('onessg_pug_', ['onessg', 'jstransformer-pug']),
     (0, util_1.BasicProject)('spignite_', ['spignite']),
     (0, util_1.BasicProject)('sphido_', ['@sphido/core', '@sphido/frontmatter', '@sphido/markdown', '@sphido/meta']),
-    (0, util_1.AppProject)('nanogen-app', 'nanogen'),
+    // AppProject('nanogen-app', 'nanogen'),
     'metalsmith-bundle',
 ]));
 projects.define((0, util_1.ContainerProject)('metalsmith-bundle', [
     (0, util_1.BasicProject)('metalsmith_', [
         'metalsmith', '@metalsmith/collections', '@metalsmith/layouts', '@metalsmith/markdown', '@metalsmith/permalinks',
+        '@metalsmith/js-bundle', '@metalsmith/sass', '@metalsmith/remove', '@metalsmith/metadata', '@metalsmith/postcss',
+        '@metalsmith/in-place',
     ]),
     (0, util_1.DegitProject)('metalsmith-static-site', 'metalsmith/metalsmith/examples/static-site'),
     (0, util_1.DegitProject)('metalsmith-jekyll', 'metalsmith/metalsmith/examples/jekyll'),
@@ -286,4 +288,11 @@ projects.define((0, util_1.ContainerProject)('capri-skels', [
     (0, util_1.DegitProject)('capri-solid-skel', 'capri-js/capri/examples/solid'),
     (0, util_1.DegitProject)('capri-svelte-skel', 'capri-js/capri/examples/svelte'),
     (0, util_1.DegitProject)('capri-vue-skel', 'capri-js/capri/examples/vue'),
+]));
+projects.define((0, util_1.ContainerProject)('vite-starters-community', [
+    (0, util_1.DegitProject)('vitesse', 'https://github.com/antfu/vitesse'),
+    (0, util_1.DegitProject)('vitesse-lite', 'https://github.com/antfu/vitesse-lite'),
+    (0, util_1.DegitProject)('vite-template-react', 'https://github.com/SafdarJamal/vite-template-react'),
+    (0, util_1.DegitProject)('vite-solid-skel', 'andreecy/vite-solid'),
+    (0, util_1.DegitProject)('vite-petite-vue-starter', 'https://github.com/misitebao/vite-petite-vue-starter'),
 ]));

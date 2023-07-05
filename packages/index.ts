@@ -17,8 +17,8 @@ projects.define(
         'frontend-libs','template-libs','template-libs-2',
         'tagged-templates-bundle','mock-data-libs','indexeddb-libs',
         'preact-bundle','vite-starters-official',
-        'css-frameworks','css-libs','css-libs-2','sass-bundle','atomic-css-tools',
-        'tailwind-bundle',
+        'css-frameworks','css-libs','css-libs-2','atomic-css-tools',
+        'tailwind-bundle','postcss-bundle','sass-bundle',
         'staticgen-bundle','servers-bundle',
     ])
 )
@@ -40,7 +40,7 @@ projects.define(
         '@socketsupply/tonic','reefjs','lemonadejs','petit-vue',
         'htm','vhtml','hyperscript','hyperx','virtual-dom','mithril','@types/mithril',
         'lit','lit-html','goober','ultramatter','gray-matter',
-        'textile-js','stextile','polished','color','colorjs.io','values.js',
+        'textile-js','stextile','polished','color','colorjs.io','values.js','chroma-js',
         '@pandacss/dev',
     ])
 )
@@ -172,6 +172,7 @@ projects.define(
         'animate.css','bootstrap','materialize-css@next','milligram','spectre.css',
         'tailwindcss','normalize.css','minireset.css','open-props','dashvar','pollen-css',
         'postcss','postcss-js','autoprefixer','postcss-preset-env','sass','gorko','codyhouse-framework',
+        'open-color','@radix-ui/colors','reasonable-colors',
     ])
 )
 
@@ -214,7 +215,7 @@ projects.define(
     BasicProject('sass-bundle', [
         'sass',
         'cirrus-ui','iotacss','sierra-library','susy','open-color','shevy','typi','gerillass',
-        'bulma','bootstrap@5','bootswatch','bulma','gorko',
+        'bulma','bootstrap@5','bootswatch','bulma','gorko','backbreeze','animatewithsass',
     ])
 )
 
@@ -225,10 +226,10 @@ projects.define(
         BasicProject('tailwind-plugins', ['@tailwindcss/typography','@tailwindcss/forms','@tailwindcss/line-clamp','tailwind-color-vars']),
         BasicProject('css-variables', ['open-props','dashvar','pollen-css']),
         BasicProject('tachyons_', ['tachyons@4']),
-        // BasicProject('unocss-bundle', [
-        //     'unocss','@unocss/preset-mini','@unocss/preset-wind','@unocss/preset-attributify','@unocss/preset-icons','@unocss/preset-web-fonts',
-        //     '@unocss/preset-typography','@unocss/vite',
-        // ]),
+        BasicProject('unocss-bundle', [
+            'unocss','@unocss/preset-uno','@unocss/preset-typography','@unocss/preset-web-fonts','@unocss/preset-wind',
+            '@unocss/preset-mini','@unocss/extractor-pug','@unocss/extractor-svelte',
+        ]),
     ])
 )
 
@@ -285,19 +286,18 @@ projects.define(
 projects.define(
     ContainerProject('staticgen-bundle', [
         BasicProject('eleventy_', ['@11ty/eleventy']),
-        BasicProject('vuepress_', ['vuepress']),
+        // BasicProject('vuepress_', ['vuepress']),
         BasicProject('vitepress_', ['vitepress','vue']),
         DegitProject('tropical-skel', 'https://github.com/bensmithett/tropical'),
-        BasicProject('20ful_', ['20ful']),
-        BasicProject('hydrogen-cli_', ['hydrogen-cli']),
-        BasicProject('mini-site-generator_', ['mini-site-generator']),
+        // BasicProject('hydrogen-cli_', ['hydrogen-cli']),
+        // BasicProject('mini-site-generator_', ['mini-site-generator']),
         BasicProject('onessg_', ['onessg']),
         BasicProject('onessg_ejs_', ['onessg','jstransformer-ejs']),
         BasicProject('onessg_nunjucks_', ['onessg','jstransformer-nunjucks']),
         BasicProject('onessg_pug_', ['onessg','jstransformer-pug']),
         BasicProject('spignite_', ['spignite']),
         BasicProject('sphido_', ['@sphido/core','@sphido/frontmatter','@sphido/markdown','@sphido/meta']),
-        AppProject('nanogen-app', 'nanogen'),
+        // AppProject('nanogen-app', 'nanogen'),
         'metalsmith-bundle',
     ])
 )
@@ -306,6 +306,8 @@ projects.define(
     ContainerProject('metalsmith-bundle', [
         BasicProject('metalsmith_', [
             'metalsmith','@metalsmith/collections','@metalsmith/layouts','@metalsmith/markdown','@metalsmith/permalinks',
+            '@metalsmith/js-bundle','@metalsmith/sass','@metalsmith/remove','@metalsmith/metadata','@metalsmith/postcss',
+            '@metalsmith/in-place',
         ]),
         DegitProject('metalsmith-static-site', 'metalsmith/metalsmith/examples/static-site'),
         DegitProject('metalsmith-jekyll', 'metalsmith/metalsmith/examples/jekyll'),
@@ -411,5 +413,15 @@ projects.define(
         DegitProject('capri-solid-skel', 'capri-js/capri/examples/solid'),
         DegitProject('capri-svelte-skel', 'capri-js/capri/examples/svelte'),
         DegitProject('capri-vue-skel', 'capri-js/capri/examples/vue'),
+    ])
+)
+
+projects.define(
+    ContainerProject('vite-starters-community', [
+        DegitProject('vitesse', 'https://github.com/antfu/vitesse'),
+        DegitProject('vitesse-lite', 'https://github.com/antfu/vitesse-lite'),
+        DegitProject('vite-template-react', 'https://github.com/SafdarJamal/vite-template-react'),
+        DegitProject('vite-solid-skel', 'andreecy/vite-solid'),
+        DegitProject('vite-petite-vue-starter', 'https://github.com/misitebao/vite-petite-vue-starter'),
     ])
 )
